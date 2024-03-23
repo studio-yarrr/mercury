@@ -1,0 +1,67 @@
+html {
+  --text-01: #ffffff;
+  --text-02: #999999;
+  --text-03: #4d4d4d;
+  --black-01: #101010;
+  --black-02: #1c1d1d;
+
+  --primary: #ffffff;
+  --primary-hover: #e6e6e6;
+  --primary-active: #cccccc;
+
+  --primary-inverse: #000000;
+  --primary-inverse-hover: #1a1a1a;
+  --primary-inverse-active: #333333;
+
+  --secondary: #333333;
+  --secondary-hover: #4d4d4d;
+  --secondary-active: #666666;
+
+  --secondary-inverse: #cccccc;
+  --secondary-inverse-hover: #b3b3b3;
+  --secondary-inverse-active: #999999;
+
+  --white-04: rgba(255, 255, 255, 0.04);
+  --white-08: rgba(255, 255, 255, 0.08);
+  --black-04: rgba(0, 0, 0, 0.04);
+  --black-08: rgba(0, 0, 0, 0.08);
+}
+
+body {
+  font-family: "Formular", sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.2;
+  color: $text-01;
+  background-color: $black-01;
+}
+
+a,
+button,
+input,
+textarea {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  border-radius: 0;
+  outline: none;
+
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.container {
+  max-width: 114rem;
+  width: 100%;
+  margin: 0 auto;
+}

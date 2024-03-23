@@ -1,0 +1,84 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import { Sprite } from "astro-icon";
+import Layout from "src/layouts/Layout.astro";
+---
+
+<Layout title="UI">
+  <div class="container">
+    <div class="box">
+      <DefaultBtn>Text</DefaultBtn>
+      <DefaultBtn>
+        Text
+        <Sprite name="plus" />
+      </DefaultBtn>
+      <DefaultBtn color="secondary">Text</DefaultBtn>
+      <DefaultBtn color="secondary">
+        Text
+        <Sprite name="plus" />
+      </DefaultBtn>
+
+      <div class="box white">
+        <DefaultBtn color="inverse">Text</DefaultBtn>
+        <DefaultBtn color="inverse">
+          Text
+          <Sprite name="plus" />
+        </DefaultBtn>
+
+        <DefaultBtn color="secondary-inverse">Text</DefaultBtn>
+        <DefaultBtn color="secondary-inverse">
+          Text
+          <Sprite name="plus" />
+        </DefaultBtn>
+      </div>
+    </div>
+
+    <div class="box">
+      <DefaultBtn type="width">Text</DefaultBtn>
+      <DefaultBtn type="width" color="secondary">Text</DefaultBtn>
+      <DefaultBtn type="width" theme="stroke">Text</DefaultBtn>
+      <DefaultBtn type="width" color="secondary" theme="stroke">
+        Text
+      </DefaultBtn>
+
+      <div class="box white">
+        <DefaultBtn type="width" color="inverse">Text</DefaultBtn>
+        <DefaultBtn type="width" color="secondary-inverse">Text</DefaultBtn>
+        <DefaultBtn type="width" theme="stroke" color="inverse">
+          Text
+        </DefaultBtn>
+        <DefaultBtn type="width" theme="stroke" color="secondary-inverse">
+          Text
+        </DefaultBtn>
+      </div>
+    </div>
+  </div>
+
+  <style is:inline>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4rem;
+      padding: 4rem 2rem;
+    }
+
+    .box {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .box .box {
+      width: calc(100% + 2rem);
+      margin: 0 -1rem;
+    }
+
+    .box.white {
+      background-color: #ffffff;
+    }
+  </style>
+</Layout>

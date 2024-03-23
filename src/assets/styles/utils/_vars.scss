@@ -1,0 +1,31 @@
+$xl-bp: 1440px;
+$xm-bp: 834px;
+$xs-bp: 600px;
+
+// $primary-inverse: var(--text, red);
+// colors
+$text-01: var(--text-01, #ffffff);
+$text-02: var(--text-02, #999999);
+$text-03: var(--text-03, #4d4d4d);
+$black-01: var(--black-01, #101010);
+
+$white-04: var(--white-04, rgba(255, 255, 255, 0.04));
+$white-08: var(--white-08, rgba(255, 255, 255, 0.08));
+$black-04: var(--black-04, rgba(0, 0, 0, 0.04));
+$black-08: var(--black-08, rgba(0, 0, 0, 0.08));
+
+$primary: var(--primary, #ffffff);
+$primary-hover: var(--primary-hover, #e6e6e6);
+$primary-active: var(--primary-active, #cccccc);
+
+$primary-inverse: var(--primary-inverse, #000000);
+$primary-inverse-hover: var(--primary-inverse-hover, #1a1a1a);
+$primary-inverse-active: var(--primary-inverse-active, #333333);
+
+$secondary: var(--secondary, #333333);
+$secondary-hover: var(--secondary-hover, #4d4d4d);
+$secondary-active: var(--secondary-active, #666666);
+
+$secondary-inverse: var(--secondary-inverse, #cccccc);
+$secondary-inverse-hover: var(--secondary-inverse-hover, #b3b3b3);
+$secondary-inverse-active: var(--secondary-inverse-active, #999999);

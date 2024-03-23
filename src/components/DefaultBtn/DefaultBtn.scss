@@ -1,0 +1,150 @@
+.default-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-width: 9.4rem;
+  padding: 1.4rem 2.9rem;
+  border: 0.1rem solid $primary;
+  border-radius: 10rem;
+  background-color: $primary;
+  color: $secondary;
+  font-size: 1.6rem;
+  font-weight: 500;
+  transition: 0.3s;
+  @include hover {
+    background-color: $primary-hover;
+    border-color: $primary-hover;
+  }
+
+  &:active {
+    background-color: $primary-active;
+    border-color: $primary-active;
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &.stroke {
+    background-color: transparent;
+    color: $primary;
+
+    @include hover {
+      background-color: $white-04;
+    }
+
+    &:active {
+      background-color: $white-08;
+    }
+  }
+
+  &.secondary {
+    background-color: $secondary;
+    border-color: $secondary;
+    color: $primary;
+
+    @include hover {
+      background-color: $secondary-hover;
+      border-color: $secondary-hover;
+    }
+
+    &:active {
+      background-color: $secondary-active;
+      border-color: $secondary-active;
+    }
+
+    &.stroke {
+      background-color: transparent;
+      color: $primary;
+      border-color: $secondary;
+
+      @include hover {
+        background-color: $white-04;
+      }
+
+      &:active {
+        background-color: $white-08;
+      }
+    }
+
+    &.stroke-light {
+      background-color: transparent;
+      border-color: $secondary-inverse;
+      color: $secondary;
+
+      @include hover {
+        background-color: $black-04;
+      }
+
+      &:active {
+        background-color: $black-08;
+      }
+    }
+  }
+
+  &.inverse {
+    background-color: $primary-inverse;
+    border-color: $primary-inverse;
+    color: $primary;
+
+    @include hover {
+      background-color: $primary-inverse-hover;
+      border-color: $primary-inverse-hover;
+    }
+
+    &:active {
+      background-color: $primary-inverse-active;
+      border-color: $primary-inverse-active;
+    }
+
+    &.stroke {
+      background-color: transparent;
+      color: $primary-inverse;
+
+      @include hover {
+        background-color: $black-04;
+      }
+
+      &:active {
+        background-color: $black-08;
+      }
+    }
+  }
+
+  &.secondary-inverse {
+    background-color: $secondary-inverse;
+    border-color: $secondary-inverse;
+    color: $secondary;
+
+    @include hover {
+      background-color: $secondary-inverse-hover;
+      border-color: $secondary-inverse-hover;
+    }
+
+    &:active {
+      background-color: $secondary-inverse-active;
+      border-color: $secondary-inverse-active;
+    }
+
+    &.stroke {
+      background-color: transparent;
+      color: $primary-inverse;
+
+      @include hover {
+        background-color: $black-04;
+      }
+
+      &:active {
+        background-color: $black-08;
+      }
+    }
+  }
+
+  &.width {
+    min-width: 24rem;
+    padding: 2.1rem 2.9rem;
+    border-radius: 2rem;
+  }
+}

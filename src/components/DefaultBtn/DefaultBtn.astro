@@ -1,0 +1,27 @@
+---
+interface Props {
+  as?: astroHTML.JSX.IntrinsicElements;
+  type?: "width" | "icon";
+  theme?: "stroke";
+  size?: "sm";
+  color?: "inverse" | "secondary" | "secondary-inverse";
+  className?: string;
+}
+
+const {
+  as: Wrapper = "button",
+  type,
+  size,
+  color,
+  theme,
+  className,
+  ...rest
+} = Astro.props;
+---
+
+<Wrapper
+  {...rest}
+  class:list={["default-btn", type, size, color, theme, className]}
+>
+  <slot />
+</Wrapper>

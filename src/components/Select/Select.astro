@@ -1,0 +1,34 @@
+---
+import { Sprite } from "astro-icon";
+
+interface Props extends astroHTML.JSX.HTMLAttributes {
+  className?: string;
+  placeholder?: string;
+  theme?: "white";
+  label?: string;
+}
+
+const { className, theme, placeholder, label, ...rest } = Astro.props;
+---
+
+<div class:list={["select", theme, className]} {...rest}>
+  {label && <span class="text-input__label">{label}</span>}
+
+  <button type="button" class="select__btn" data-btn>
+    <span class="select__btn-text" data-btn-text>
+      {placeholder}
+    </span>
+    <span class="select__btn-icon">
+      <Sprite name="bi--chevron-down" />
+    </span>
+  </button>
+
+  <div class="select__container">
+    <slot />
+  </div>
+</div>
+
+<!-- <label class="select-item" data-item>
+  <input hidden type="radio" name="1" />
+  <span class="select-item__text" data-text></span>
+</label> -->
