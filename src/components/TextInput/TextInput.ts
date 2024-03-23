@@ -1,31 +1,9 @@
-export const initPasswordInputs = (wrapperSelector?: string) => {
-  const wrapper =
-    wrapperSelector && document.querySelector<HTMLElement>(wrapperSelector);
-  const containers = wrapper
-    ? wrapper.querySelectorAll<HTMLElement>(".text-input[data-password]")
-    : document.querySelectorAll<HTMLElement>(".text-input[data-password]");
+export function textInputHandler(target: HTMLElement) {
+  const btn = target.closest(".text-input__btn");
 
-  containers.forEach((container) => {
-    const btn = container.querySelector<HTMLButtonElement>(".text-input__btn");
+  if (btn) {
     const input =
-      container.querySelector<HTMLInputElement>(".text-input__field");
-
-    if (btn && input) {
-      if (input.type === "password") {
-        btn.classList.remove("show");
-      } else {
-        btn.classList.add("show");
-      }
-
-      btn.addEventListener("click", () => {
-        if (input.type === "password") {
-          btn.classList.add("show");
-          input.type = "text";
-        } else {
-          btn.classList.remove("show");
-          input.type = "password";
-        }
-      });
-    }
-  });
-};
+      btn.parentElement?.querySelector<HTMLInputElement>(".text-input__field");
+    input && (input.value = "");
+  }
+}

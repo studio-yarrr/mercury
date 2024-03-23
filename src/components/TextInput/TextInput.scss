@@ -1,154 +1,134 @@
 .text-input {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
   position: relative;
+  display: flex;
+  align-items: center;
 
-  &.valid {
-    .text-input {
-      &__field {
-        border-color: $Status-Success;
-        background-color: transparent;
-      }
+  @include hover {
+    .text-input__field {
+      border-color: $primary;
     }
   }
 
   &.invalid {
-    .text-input {
-      &__field {
-        border-color: $Status-Alert;
-        background-color: transparent;
-      }
+    .text-input__field {
+      border-color: $error;
+    }
+
+    .text-input__message {
+      opacity: 1;
     }
   }
 
-  &.disabled {
-    .text-input {
-      &__label {
-        color: $Gray-500;
-      }
+  &.inverse {
+    color: $primary-inverse;
 
-      &__field {
-        &:disabled {
-          border-color: $Gray-400;
-          color: $Gray-400;
-          background-color: transparent;
+    @include hover {
+      .text-input__field {
+        border-color: $primary-inverse;
+      }
+    }
+
+    &.invalid {
+      .text-input__field {
+        border-color: $error;
+
+        @include hover {
+          border-color: $error;
+        }
+
+        &:focus {
+          border-color: $error;
         }
       }
     }
-  }
 
-  &[data-password] {
     .text-input {
       &__field {
-        padding-right: 5.5rem;
+        border-color: $base-gray;
+
+        @include hover {
+          border-color: $primary-inverse;
+        }
+
+        &:focus {
+          border-color: $primary-inverse;
+        }
+      }
+
+      &__label {
+        color: $secondary-inverse-hover;
+      }
+    }
+  }
+
+  &__field {
+    padding: 2.7rem 4.5rem 1.1rem 1.9rem;
+    border: 0.1rem solid $secondary;
+    border-radius: 2rem;
+    transition: 0.3s;
+
+    @include hover {
+      border-color: $primary;
+    }
+
+    &:focus {
+      border-color: $primary;
+
+      & ~ .text-input__label {
+        top: 1.2rem;
+        transform: scale(0.625);
+      }
+    }
+
+    &:not(:placeholder-shown) {
+      & ~ .text-input__label {
+        top: 1.2rem;
+        transform: scale(0.625);
+      }
+
+      & ~ .text-input__btn {
+        opacity: 1;
       }
     }
   }
 
   &__label {
-    font-size: 1.4rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-  }
-
-  &__field {
-    width: 100%;
-    padding: 1.1rem 1.5rem;
-    border: 0.1rem solid $Gray-400;
-    border-radius: 100rem;
-    font-size: 1.4rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 140%;
+    position: absolute;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: $text-02;
+    left: 2rem;
+    top: 50%;
+    transform-origin: left center;
+    transform: translateY(-50%);
     transition: 0.3s;
-
-    @include hover {
-      background-color: $BG-Base;
-      border-color: $BG-Base;
-    }
-
-    &:focus {
-      border-color: $Primary-Light;
-      background-color: transparent;
-    }
-
-    &:active {
-      border-color: $Primary-Base;
-      background-color: transparent;
-    }
-
-    &::placeholder {
-      color: $Gray-500;
-    }
-
-    &:is(textarea) {
-      height: 10.4rem;
-      resize: none;
-      border-radius: 1.6rem;
-    }
-  }
-
-  &__message {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.4rem;
-    font-size: 1.2rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-
-    &.red {
-      color: $Status-Alert;
-    }
-
-    svg {
-      width: 1.6rem;
-      height: 1.6rem;
-      flex: none;
-    }
   }
 
   &__btn {
     position: absolute;
-    width: 2.4rem;
-    height: 2.4rem;
-    bottom: 1.1rem;
-    right: 1.6rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: $Gray-500;
-    @include hover {
-      color: $Base-Black;
-    }
-
-    &.show {
-      svg {
-        &:nth-child(1) {
-          opacity: 0;
-          transform: scale(0);
-        }
-
-        &:nth-child(2) {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-    }
+    width: 2rem;
+    height: 2rem;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: 0.3s;
 
     svg {
       width: 100%;
       height: 100%;
-      position: absolute;
-      transition: 0.3s;
-
-      &:nth-child(2) {
-        opacity: 0;
-        transform: scale(0);
-      }
     }
+  }
+
+  &__message {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 0.5rem);
+    color: $error;
+    transition: 0.3s;
+    font-size: 1.2rem;
+    font-weight: 500;
   }
 }
