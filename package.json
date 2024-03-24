@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
-    "bxBuild": "astro build && node bx-build.js",
+    "build": "node icons.js && astro build",
+    "bxBuild": "node icons.js && astro build && node bx-build.js",
     "preview": "astro preview",
     "astro": "astro"
   },
