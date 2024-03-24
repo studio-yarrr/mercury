@@ -1,0 +1,92 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import { Sprite } from "astro-icon";
+---
+
+<footer class="footer">
+  <div class="container footer__wrapper">
+    <div class="footer__head">
+      <a href="#" class="footer__logo">
+        <img src="./img/logo.svg" alt="" />
+      </a>
+
+      <DefaultBtn
+        type="button"
+        className="footer__btn"
+        viewType="icon"
+        color="secondary"
+      >
+        <Sprite name="chevron-up" />
+      </DefaultBtn>
+    </div>
+
+    <div class="footer__container">
+      <div class="footer-nav">
+        <div class="footer-nav__list">
+          <a href="#" class="body-2 primary-hover footer-nav__link"
+            >Стоматологические установки</a
+          >
+          <a href="#" class="body-2 primary-hover footer-nav__link"
+            >Наконечники</a
+          >
+          <a href="#" class="body-2 primary-hover footer-nav__link"
+            >Стерилизация</a
+          >
+          <a href="#" class="body-2 primary-hover footer-nav__link"
+            >Оптика для стоматологии</a
+          >
+          <a href="#" class="body-2 primary-hover footer-nav__link"
+            >Российское производство</a
+          >
+          <a href="#" class="body-2 primary-hover footer-nav__link"
+            >Российское производство</a
+          >
+        </div>
+        <div class="footer-nav__list">
+          <a href="#" class="body-2 primary-hover footer-nav__link"
+            >О компании</a
+          >
+          <a href="#" class="body-2 primary-hover footer-nav__link"
+            >Блог компании</a
+          >
+          <a href="#" class="body-2 primary-hover footer-nav__link">Новости</a>
+          <a href="#" class="body-2 primary-hover footer-nav__link"
+            >Лизинг и рассрочка</a
+          >
+          <a href="#" class="body-2 primary-hover footer-nav__link"
+            >Доставка и оплата</a
+          >
+          <a href="#" class="body-2 primary-hover footer-nav__link">Контакты</a>
+        </div>
+      </div>
+      <div class="footer-contacts">
+        <div class="footer-contacts-item">
+          <span class="body-4 footer-contacts-item__title">Телефон:</span>
+          <a href="#" class="heading-6 medium footer-contacts-item__text"
+            >8 (800) 2345-888</a
+          >
+        </div>
+        <div class="footer-contacts-item">
+          <span class="body-4 footer-contacts-item__title">Телефон:</span>
+          <a href="#" class="heading-6 medium footer-contacts-item__text"
+            >8 (800) 2345-888</a
+          >
+        </div>
+        <div class="footer-contacts-item">
+          <span class="body-4 footer-contacts-item__title"
+            >Электронная почта:</span
+          >
+          <a href="#" class="heading-6 medium footer-contacts-item__text"
+            >shop@novgodent.ru</a
+          >
+        </div>
+        <div class="footer-contacts-item">
+          <span class="body-4 footer-contacts-item__title">Адрес</span>
+          <span class="heading-6 medium footer-contacts-item__text">
+            Ставропольский край, с. Верхнерусское, ул. Батайская, д. 24г.
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

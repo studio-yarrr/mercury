@@ -1,7 +1,7 @@
 ---
 interface Props {
   as?: astroHTML.JSX.IntrinsicElements;
-  type?: "width" | "icon";
+  viewType?: "width" | "icon";
   theme?: "stroke";
   size?: "sm";
   color?: "inverse" | "secondary" | "secondary-inverse";
@@ -10,7 +10,7 @@ interface Props {
 
 const {
   as: Wrapper = "button",
-  type,
+  viewType,
   size,
   color,
   theme,
@@ -21,7 +21,7 @@ const {
 
 <Wrapper
   {...rest}
-  class:list={["default-btn", type, size, color, theme, className]}
+  class:list={["default-btn", viewType, size, color, theme, className]}
 >
   <slot />
 </Wrapper>

@@ -36,3 +36,15 @@
     }
   }
 }
+
+@mixin secondary-inverse-hover {
+  transition: 0.3s;
+
+  @include hover {
+    color: $secondary-inverse-active;
+  }
+
+  &:active {
+    color: $secondary-inverse-hover;
+  }
+}
