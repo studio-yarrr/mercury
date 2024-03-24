@@ -1,11 +1,23 @@
 ---
-import PopupLogin from "@modules/Popup/PopupLogin.astro";
 import Layout from "../layouts/Layout.astro";
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
 ---
 
 <Layout title="Главная страница">
-  <div
-    style="display: flex; flex-direction: column; align-items: flex-start; gap: 5rem; padding: 5rem;"
-  >
+  <div class="container">
+    <DefaultBtn as="a" href="./ui">ui (dev)</DefaultBtn>
+
+    <DefaultBtn as="a" href="./main">Главная страница</DefaultBtn>
   </div>
+
+  <style is:inline>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+  </style>
 </Layout>

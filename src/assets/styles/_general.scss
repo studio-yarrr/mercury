@@ -3,6 +3,7 @@ html {
   --text-02: #999999;
   --text-03: #4d4d4d;
   --strokes-primary: #101010;
+  --strokes-secondary: #161616;
 
   --error: #fd6060;
 
@@ -52,6 +53,7 @@ textarea {
   font-family: inherit;
   font-weight: inherit;
   line-height: inherit;
+  text-decoration: none;
 }
 
 .page {
@@ -62,9 +64,18 @@ textarea {
 }
 
 .container {
-  max-width: 114rem;
   width: 100%;
+  max-width: 144rem;
+  padding: 0rem 5rem;
   margin: 0 auto;
+
+  @include breakpoint($xm-bp) {
+    padding: 0rem 3rem;
+  }
+
+  @include breakpoint($xs-bp) {
+    padding: 0rem 1.5rem;
+  }
 }
 
 .title-1,
@@ -190,4 +201,24 @@ h6,
 
 .bold {
   font-weight: 700;
+}
+
+.primary-hover {
+  transition: 0.3s;
+
+  @include hover {
+    color: $secondary-inverse-active;
+  }
+
+  &:active {
+    color: $secondary-inverse-hover;
+  }
+}
+
+.shadow-m {
+  box-shadow: 0 0.4rem 3rem rgba(105, 105, 105, 0.3);
+}
+
+.grad-bg {
+  background: linear-gradient(0deg, #dcd1c0, #dcd1c0, #ffffff);
 }

@@ -12,7 +12,7 @@ html {
   font-size: 10px;
 
   @include breakpoint($xl-bp) {
-    font-size: calc(100vw / 1920 * 10);
+    font-size: calc(100vw / 1440 * 10);
   }
 
   @include breakpoint($xm-bp) {

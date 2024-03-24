@@ -1,0 +1,215 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import { Sprite } from "astro-icon";
+---
+
+<header class="container header">
+  <div class="header__container">
+    <a href="#" class="header__logo">
+      <picture>
+        <source media="(max-width: 600px)" srcset="./img/logo_min.svg" />
+        <img src="./img/logo.svg" alt="" />
+      </picture>
+    </a>
+
+    <DefaultBtn className="header__btn" theme="stroke" color="secondary">
+      <span class="header__btn-icon">
+        <Sprite name="burger" />
+        <Sprite name="x" />
+      </span>
+       Меню
+    </DefaultBtn>
+
+    <nav class="header-nav">
+      <div class="header-nav__container">
+        <div class="header-nav-item" data-menu-item data-group="menu">
+          <a href="#" class="boby-3 primary-hover header-nav__link" data-btn
+            >Каталог</a
+          >
+          <div class="header-nav-item__container">
+            <div class="header-nav-item__inner">
+              <a
+                href="#"
+                class="medium body-4 primary-hover header-nav-item__link"
+              >
+                Стоматологические установки
+              </a>
+              <a
+                href="#"
+                class="medium body-4 primary-hover header-nav-item__link"
+              >
+                Стоматологические стулья
+              </a>
+              <a
+                href="#"
+                class="medium body-4 primary-hover header-nav-item__link"
+              >
+                Стоматологические наконечники
+              </a>
+              <a
+                href="#"
+                class="medium body-4 primary-hover header-nav-item__link"
+                >Цифровое оборудование</a
+              >
+              <a
+                href="#"
+                class="medium body-4 primary-hover header-nav-item__link"
+                >Микроскопы</a
+              >
+              <a
+                href="#"
+                class="medium body-4 primary-hover header-nav-item__link"
+                >Имплантология</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="header-nav-item" data-menu-item data-group="menu">
+          <a href="#" class="boby-3 primary-hover header-nav__link" data-btn>
+            Российское производство
+          </a>
+          <div class="header-nav-item__container">
+            <div class="header-nav-item__inner">
+              <a
+                href="#"
+                class="medium body-4 primary-hover header-nav-item__link"
+              >
+                Стоматологические установки
+              </a>
+              <a
+                href="#"
+                class="medium body-4 primary-hover header-nav-item__link"
+              >
+                Стоматологические стулья
+              </a>
+              <a
+                href="#"
+                class="medium body-4 primary-hover header-nav-item__link"
+              >
+                Стоматологические наконечники
+              </a>
+              <a
+                href="#"
+                class="medium body-4 primary-hover header-nav-item__link"
+                >Цифровое оборудование</a
+              >
+              <a
+                href="#"
+                class="medium body-4 primary-hover header-nav-item__link"
+                >Микроскопы</a
+              >
+              <a
+                href="#"
+                class="medium body-4 primary-hover header-nav-item__link"
+                >Имплантология</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="header-nav-item" data-menu-item data-group="menu">
+          <a href="#" class="boby-3 primary-hover header-nav__link" data-btn
+            >О нас</a
+          >
+          <div class="header-nav-item__container">
+            <div class="header-nav-item__inner">
+              <a
+                href="#"
+                class="medium body-4 primary-hover header-nav-item__link"
+              >
+                История компании
+              </a>
+              <a
+                href="#"
+                class="medium body-4 primary-hover header-nav-item__link"
+              >
+                Блог компании
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="header-nav-item" data-menu-item data-group="menu">
+          <a href="#" class="boby-3 primary-hover header-nav__link" data-btn>
+            Покупателям
+          </a>
+          <div class="header-nav-item__container">
+            <div class="header-nav-item__inner">
+              <a
+                href="#"
+                class="medium body-4 primary-hover header-nav-item__link"
+              >
+                Лизинг и рассрочка
+              </a>
+              <a
+                href="#"
+                class="medium body-4 primary-hover header-nav-item__link"
+              >
+                Доставка и оплата
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="header-nav-item" data-menu-item data-group="menu">
+          <a href="#" class="boby-3 primary-hover header-nav__link" data-btn
+            >Контакты</a
+          >
+          <div class="header-nav-item__container">
+            <div class="header-nav-item__inner">
+              <a
+                href="#"
+                class="medium body-4 primary-hover header-nav-item__link"
+              >
+                Стоматологические установки
+              </a>
+              <a
+                href="#"
+                class="medium body-4 primary-hover header-nav-item__link"
+              >
+                Стоматологические стулья
+              </a>
+              <a
+                href="#"
+                class="medium body-4 primary-hover header-nav-item__link"
+              >
+                Стоматологические наконечники
+              </a>
+              <a
+                href="#"
+                class="medium body-4 primary-hover header-nav-item__link"
+                >Цифровое оборудование</a
+              >
+              <a
+                href="#"
+                class="medium body-4 primary-hover header-nav-item__link"
+                >Микроскопы</a
+              >
+              <a
+                href="#"
+                class="medium body-4 primary-hover header-nav-item__link"
+                >Имплантология</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="header-control">
+      <button type="button" class="primary-hover header-control__btn">
+        <Sprite name="search" />
+      </button>
+      <button type="button" class="primary-hover header-control__btn">
+        <Sprite name="heart" />
+        <span class="grad-bg shadow-m header-control__btn-count" data-count=""
+        ></span>
+      </button>
+      <button type="button" class="primary-hover header-control__btn">
+        <Sprite name="shopping-cart" />
+        <span class="grad-bg shadow-m header-control__btn-count" data-count="2"
+        ></span>
+      </button>
+      <button type="button" class="primary-hover header-control__btn">
+        <Sprite name="user" />
+      </button>
+    </div>
+  </div>
+</header>

@@ -40,7 +40,9 @@ export class Dropdown {
     this.btn = this.container.querySelector<HTMLElement>("[data-btn]");
 
     if (this.btn) {
-      this.btn.addEventListener("click", this.dropStateHandler.bind(this));
+      this.btn.addEventListener("click", (e) =>
+        this.dropStateHandler.call(this, e),
+      );
     }
 
     // data-dropdown-close на контейнере будет закрыть при клике вне контейнера
@@ -74,7 +76,7 @@ export class Dropdown {
     // this.scrollTo = this.container.hasAttribute("data-scroll-to");
   }
 
-  dropStateHandler() {
+  dropStateHandler(e: Event) {
     if (this.dropped) {
       this.close();
     } else {
@@ -112,6 +114,23 @@ export class Dropdown {
           });
         }
       }, 500);
+    }
+  }
+}
+
+export class MenuItem extends Dropdown {
+  constructor(container: HTMLElement) {
+    super(container);
+  }
+
+  dropStateHandler(e: Event): void {
+    if (this.dropped) {
+      this.close();
+    } else {
+      if (window.matchMedia("(max-width: 834px)").matches) {
+        e.preventDefault();
+      }
+      this.open();
     }
   }
 }
@@ -461,4 +480,11 @@ export const initTooltipItems = (wrapperSelector?: string) => {
     `${wrapperSelector || ""} [data-tooltip]`,
   );
   list.forEach((container) => new Tooltip(container));
+};
+
+export const initMenuItems = (wrapperSelector?: string) => {
+  const list = document.querySelectorAll<HTMLElement>(
+    `${wrapperSelector || ""} [data-menu-item]`,
+  );
+  list.forEach((container) => new MenuItem(container));
 };
