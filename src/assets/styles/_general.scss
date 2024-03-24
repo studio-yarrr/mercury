@@ -63,6 +63,18 @@ textarea {
   position: relative;
 }
 
+.wrapper {
+  margin: 5rem 0rem 10rem;
+
+  @include breakpoint($xm-bp) {
+    margin: 3rem 0rem 0rem;
+  }
+
+  @include breakpoint($xs-bp) {
+    margin: 1.5rem 0rem 0rem;
+  }
+}
+
 .container {
   width: 100%;
   max-width: 144rem;
@@ -76,123 +88,6 @@ textarea {
   @include breakpoint($xs-bp) {
     padding: 0rem 1.5rem;
   }
-}
-
-.title-1,
-.title-2,
-.title-3,
-.title-4,
-.title-5,
-.title-6,
-.title-7,
-.title-8 {
-  text-transform: uppercase;
-}
-
-h1,
-.title-1 {
-  font-size: 7rem;
-  line-height: 1em;
-}
-
-h2,
-.title-2 {
-  font-size: 5.5rem;
-  line-height: 1em;
-}
-
-h3,
-.title-3 {
-  font-size: 5rem;
-  line-height: 1em;
-}
-
-h4,
-.title-4 {
-  font-size: 4rem;
-  line-height: 1em;
-}
-
-h5,
-.title-5 {
-  font-size: 3rem;
-  line-height: 1.1em;
-}
-
-h6,
-.title-6 {
-  font-size: 2.5rem;
-  line-height: 1.1em;
-}
-
-.title-7 {
-  font-size: 2rem;
-  line-height: 1.1em;
-}
-
-.title-8 {
-  font-size: 1.8rem;
-  line-height: 1.1em;
-}
-
-.heading-1 {
-  font-size: 4rem;
-  line-height: 1.1em;
-}
-
-.heading-2 {
-  font-size: 3.4rem;
-  line-height: 1.1em;
-}
-
-.heading-3 {
-  font-size: 3rem;
-  line-height: 1.1em;
-}
-
-.heading-4 {
-  font-size: 2.8rem;
-  line-height: 1.1em;
-}
-
-.heading-5 {
-  font-size: 2.4rem;
-  line-height: 1.1em;
-}
-
-.heading-6 {
-  font-size: 2rem;
-  line-height: 1em;
-}
-
-.heading-7 {
-  font-size: 1.6rem;
-  line-height: 1em;
-}
-
-.heading-8 {
-  font-size: 1.4rem;
-  line-height: 1em;
-}
-
-.body-1 {
-  font-size: 2rem;
-  line-height: 1.2em;
-}
-
-.body-2 {
-  font-size: 1.8rem;
-  line-height: 1.2em;
-}
-
-.body-3 {
-  font-size: 1.6rem;
-  line-height: 1.25em;
-}
-
-.body-4 {
-  font-size: 1.4rem;
-  line-height: 1.25em;
 }
 
 .medium {
@@ -225,4 +120,20 @@ h6,
 
 .grad-bg {
   background: linear-gradient(0deg, #dcd1c0, #dcd1c0, #ffffff);
+}
+
+.grad-2 {
+  background: linear-gradient(45deg, #e7e7f2, #fcfaf8, #e4d2c5);
+}
+
+.section-margin {
+  margin-bottom: 20rem;
+
+  @include breakpoint($xm-bp) {
+    margin-bottom: 10rem;
+  }
+
+  @include breakpoint($xs-bp) {
+    margin-bottom: 5rem;
+  }
 }

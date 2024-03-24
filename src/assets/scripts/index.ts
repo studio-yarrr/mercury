@@ -6,12 +6,13 @@ import {
   initSelectInputs,
   scrollUpHandler,
 } from "./utils";
-import { Navigation, EffectCreative, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Scrollbar } from "swiper/modules";
 import Swiper from "swiper";
 import { textInputHandler } from "@components/TextInput/TextInput";
 import { initMeaderMenu } from "@modules/Header/Header";
+import { initMainBannerSlider } from "@modules/Main/MainBanner/MainBanner";
 
-Swiper.use([Navigation, EffectCreative, Pagination]);
+Swiper.use([Navigation, Pagination, Scrollbar]);
 
 document.addEventListener("DOMContentLoaded", () => {
   formValidateInit(".fv");
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMenuItems();
 
   initMeaderMenu();
+  initMainBannerSlider();
 
   document.addEventListener("click", (e) => {
     const target = e.target as HTMLElement;

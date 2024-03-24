@@ -1,11 +1,16 @@
 ---
 import Footer from "@modules/Footer/Footer.astro";
 import Header from "@modules/Header/Header.astro";
+import MainBanner from "@modules/Main/MainBanner/MainBanner.astro";
 import Layout from "src/layouts/Layout.astro";
 ---
 
 <Layout title="Главная страница">
   <Header />
+
+  <div class="wrapper">
+    <MainBanner />
+  </div>
 
   <Footer />
 </Layout>

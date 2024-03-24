@@ -1,0 +1,72 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import { Sprite } from "astro-icon";
+---
+
+<section class="section-margin main-banner">
+  <div class="container main-banner__container">
+    <div class="main-banner__content">
+      <h1 class="title-2 main-banner__title">
+        Стоматологическое оборудование Mercury
+      </h1>
+      <div class="body-2 main-banner__text">
+        <p>
+          Mercury – бренд, созданный в 2013 году врачом стоматологом для врачей
+          и их комфортной работы.
+        </p>
+      </div>
+    </div>
+
+    <div class="main-banner-slider">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide main-banner-slider__slide">
+            <div class="main-banner-slider__img">
+              <img src="./img/main-banner-1.png" alt="" />
+            </div>
+            <span class="body-1 main-banner-slider__text">
+              Наконечник Mercury 111
+            </span>
+          </div>
+          <div class="swiper-slide main-banner-slider__slide">
+            <div class="main-banner-slider__img">
+              <img src="./img/main-banner-1.png" alt="" />
+            </div>
+            <span class="body-1 main-banner-slider__text">
+              Наконечник Mercury 111
+            </span>
+          </div>
+          <div class="swiper-slide main-banner-slider__slide">
+            <div class="main-banner-slider__img">
+              <img src="./img/main-banner-1.png" alt="" />
+            </div>
+            <span class="body-1 main-banner-slider__text">
+              Наконечник Mercury 111
+            </span>
+          </div>
+        </div>
+        <div class="main-banner-slider__progress"></div>
+        <div class="main-banner-slider__btns">
+          <button
+            type="button"
+            class="primary-hover main-banner-slider__btn"
+            data-prev
+          >
+            <Sprite name="chevron-left" />
+          </button>
+          <button
+            type="button"
+            class="primary-hover main-banner-slider__btn"
+            data-next
+          >
+            <Sprite name="chevron-right" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <DefaultBtn as="a" href="#" className="main-banner__btn">
+      Каталог оборудования
+    </DefaultBtn>
+  </div>
+</section>
