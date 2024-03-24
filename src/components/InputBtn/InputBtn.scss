@@ -1,0 +1,21 @@
+.input-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $strokes-secondary;
+  border-radius: 5rem;
+  padding: 0.5rem 0.5rem 0.5rem 3rem;
+
+  &__input {
+    flex: 1;
+    font-size: 1.6rem;
+
+    &::placeholder {
+      color: $text-03;
+    }
+  }
+
+  &__btn {
+    flex: none;
+  }
+}

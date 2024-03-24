@@ -1,5 +1,6 @@
 ---
 import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import InputBtn from "@components/InputBtn/InputBtn.astro";
 import { Sprite } from "astro-icon";
 ---
 
@@ -15,6 +16,7 @@ import { Sprite } from "astro-icon";
         className="footer__btn"
         viewType="icon"
         color="secondary"
+        data-scroll-up
       >
         <Sprite name="chevron-up" />
       </DefaultBtn>
@@ -87,6 +89,32 @@ import { Sprite } from "astro-icon";
           </span>
         </div>
       </div>
+    </div>
+
+    <form action="#" class="footer-form">
+      <h6 class="heading-5 medium footer-form__title">
+        Подпишитесь на рассылку <br />
+         и получите скидку 5%
+      </h6>
+
+      <InputBtn className="footer-form__input" placeholder="Электронная почта">
+        Отправить
+      </InputBtn>
+    </form>
+
+    <div class="footer-legal">
+      <span class="body-2 footer-legal__text"
+        >2024 Mercury. Все права защищены</span
+      >
+      <div class="footer-legal__inner">
+        <span class="body-2 footer-legal__text">Договор офферты</span>
+        <a href="#" class="body-2 footer-legal__text"
+          >Политика конфедициальности</a
+        >
+      </div>
+      <a href="#" class="body-2 footer-legal__text primary"
+        >Сайт разработали в NDA</a
+      >
     </div>
   </div>
 </footer>

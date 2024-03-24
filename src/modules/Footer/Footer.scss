@@ -13,10 +13,23 @@
     gap: 2rem;
     padding: 2rem 0rem;
     margin-bottom: 6rem;
+
+    @include breakpoint($xm-bp) {
+      padding: 1rem 0rem;
+      margin-bottom: 3rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      margin-bottom: 4rem;
+    }
   }
 
   &__logo {
     height: 6rem;
+
+    @include breakpoint($xm-bp) {
+      height: 5rem;
+    }
 
     img {
       object-fit: contain;
@@ -31,6 +44,19 @@
     grid-template-columns: 2fr 1fr;
     gap: 2rem;
     margin-bottom: 10rem;
+    align-items: flex-end;
+
+    @include breakpoint($xm-bp) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 8rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
   }
 
   &-nav {
@@ -39,11 +65,27 @@
     gap: 2rem;
     align-items: flex-end;
 
+    @include breakpoint($xm-bp) {
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
     &__list {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       gap: 2.5rem;
+
+      @include breakpoint($xm-bp) {
+        gap: 2rem;
+      }
+    }
+
+    &__link {
+      @include breakpoint($xm-bp) {
+        font-size: 1.6rem;
+        line-height: 1.25em;
+      }
     }
   }
 
@@ -61,12 +103,104 @@
 
       &__title {
         color: $text-03;
+
+        @include breakpoint($xm-bp) {
+          font-size: 1.4rem;
+          line-height: 1.25em;
+        }
       }
 
       &__text {
+        @include breakpoint($xm-bp) {
+          font-size: 1.6rem;
+          line-height: 1em;
+        }
+
         &:is(a) {
           @include secondary-inverse-hover;
         }
+      }
+    }
+  }
+
+  &-form {
+    margin-bottom: 10rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    @include breakpoint($xm-bp) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 8rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    &__title {
+      @include breakpoint($xm-bp) {
+        font-size: 2rem;
+        line-height: 1em;
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.6rem;
+        line-height: 1em;
+      }
+    }
+
+    &__input {
+      flex: none;
+      width: 100%;
+    }
+  }
+
+  &-legal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0rem;
+    gap: 2rem;
+    color: $text-03;
+
+    @include breakpoint($xm-bp) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      grid-template-columns: 1fr;
+    }
+
+    &__inner {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      @include breakpoint($xm-bp) {
+        grid-row: span 2;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      @include breakpoint($xs-bp) {
+        order: 1;
+        margin-bottom: 3rem;
+      }
+    }
+
+    &__text {
+      @include breakpoint($xs-bp) {
+        order: 2;
+      }
+
+      &:is(a) {
+        @include secondary-inverse-hover;
       }
     }
   }

@@ -1,6 +1,11 @@
 import VenoBox from "venobox/dist/venobox";
 import { formValidateInit } from "./fv";
-import { initDropdownItems, initMenuItems, initSelectInputs } from "./utils";
+import {
+  initDropdownItems,
+  initMenuItems,
+  initSelectInputs,
+  scrollUpHandler,
+} from "./utils";
 import { Navigation, EffectCreative, Pagination } from "swiper/modules";
 import Swiper from "swiper";
 import { textInputHandler } from "@components/TextInput/TextInput";
@@ -20,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const target = e.target as HTMLElement;
 
     textInputHandler(target);
+    scrollUpHandler(target);
   });
 });
 

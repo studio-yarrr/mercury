@@ -488,3 +488,12 @@ export const initMenuItems = (wrapperSelector?: string) => {
   );
   list.forEach((container) => new MenuItem(container));
 };
+
+export function scrollUpHandler(target: HTMLElement) {
+  if (target.closest("[data-scroll-up]")) {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+}

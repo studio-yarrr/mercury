@@ -1,5 +1,6 @@
 ---
 import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import InputBtn from "@components/InputBtn/InputBtn.astro";
 import TextInput from "@components/TextInput/TextInput.astro";
 import { Sprite } from "astro-icon";
 import Layout from "src/layouts/Layout.astro";
@@ -7,6 +8,9 @@ import Layout from "src/layouts/Layout.astro";
 
 <Layout title="UI">
   <div class="container">
+    <div class="box">
+      <InputBtn placeholder="Электронная почта">Text</InputBtn>
+    </div>
     <div class="box">
       <DefaultBtn>Text</DefaultBtn>
       <DefaultBtn>
