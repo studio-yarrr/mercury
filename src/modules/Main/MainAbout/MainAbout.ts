@@ -10,11 +10,11 @@ export function initMainAbout() {
   const canvas =
     container &&
     container.querySelector<HTMLCanvasElement>(".main-about__canvas");
-  const infiItems =
+  const infoItems =
     container &&
     container.querySelectorAll<HTMLElement>(".main-about-info[data-item]");
 
-  if (container && title && canvas && infiItems) {
+  if (container && title && canvas && infoItems) {
     gsap.registerPlugin(ScrollTrigger);
 
     const { scene, engine, model } = initScene(canvas);
@@ -25,170 +25,21 @@ export function initMainAbout() {
 
     document.addEventListener("resize", () => {
       engine.resize();
+      ScrollTrigger.refresh();
+      ScrollTrigger.update();
     });
 
-    const TL = gsap.timeline({
-      scrollTrigger: {
-        trigger: container,
-        start: "bottom bottom",
-        end: "1000% bottom",
-        scrub: true,
-        pin: true,
-        // markers: true,
-      },
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 835px)", () => {
+      descAnim(container, model, title, infoItems);
+      return () => {};
     });
 
-    const tl_1 = gsap.timeline();
-    tl_1.from(
-      model.position,
-      {
-        y: -2,
-        duration: 5,
-        ease: "none",
-      },
-      "-=10",
-    );
-
-    TL.add(tl_1);
-
-    const tl_2 = gsap.timeline();
-    tl_2.to(
-      title,
-      {
-        translateY: "-100%",
-        opacity: 0,
-        duration: 5,
-        ease: "none",
-      },
-      "sin",
-    );
-    tl_2.to(
-      model.rotation,
-      {
-        y: degToRad(-180),
-        z: degToRad(0),
-        duration: 10,
-        ease: "none",
-      },
-      "sin",
-    );
-    tl_2.to(
-      model.position,
-      {
-        y: -1,
-        x: -0.25,
-        duration: 10,
-      },
-      "sin",
-    );
-    infiItems[0] &&
-      tl_2.from(
-        infiItems[0],
-        {
-          top: "100%",
-          opacity: 0,
-          duration: 10,
-        },
-        "sin",
-      );
-    TL.add(tl_2);
-
-    const tl_3 = gsap.timeline({
-      delay: 8,
+    mm.add("(min-width: 0px)", () => {
+      tabletAnim(container, model, title, infoItems);
+      return () => {};
     });
-    tl_3.to(
-      model.rotation,
-      {
-        delay: 10,
-        y: degToRad(-200),
-        duration: 10,
-      },
-      "sin",
-    );
-    infiItems[0] &&
-      tl_3.to(
-        infiItems[0],
-        {
-          delay: 10,
-          top: "-50%",
-          opacity: 0,
-          duration: 10,
-        },
-        "sin",
-      );
-    infiItems[1] &&
-      tl_3.from(
-        infiItems[1],
-        {
-          delay: 10,
-          top: "150%",
-          opacity: 0,
-          duration: 10,
-        },
-        "sin",
-      );
-    TL.add(tl_3);
-
-    const tl_4 = gsap.timeline({
-      delay: 8,
-    });
-    tl_4.to(
-      model.rotation,
-      {
-        delay: 10,
-        y: degToRad(-180),
-        duration: 10,
-      },
-      "sin",
-    );
-    tl_4.to(
-      model.position,
-      {
-        delay: 10,
-        z: 0.5,
-        x: 0.2,
-        duration: 10,
-      },
-      "sin",
-    );
-    infiItems[1] &&
-      tl_4.to(
-        infiItems[1],
-        {
-          delay: 10,
-          top: "0",
-          opacity: 0,
-          duration: 10,
-        },
-        "sin",
-      );
-    infiItems[2] &&
-      tl_4.from(
-        infiItems[2],
-        {
-          delay: 10,
-          top: "150%",
-          opacity: 0,
-          duration: 10,
-        },
-        "sin",
-      );
-    TL.add(tl_4);
-
-    const tl_5 = gsap.timeline({
-      delay: 8,
-    });
-    infiItems[3] &&
-      tl_5.to(
-        infiItems[3],
-        {
-          top: "0",
-          opacity: 0,
-          duration: 10,
-        },
-        "sin",
-      );
-    TL.add(tl_5);
   }
 }
 
@@ -254,4 +105,338 @@ function initScene(canvas: HTMLCanvasElement) {
     engine,
     model,
   };
+}
+
+function descAnim(
+  container: HTMLElement,
+  model: BABYLON.TransformNode,
+  title: HTMLElement,
+  items: NodeListOf<HTMLElement>,
+) {
+  const TL = gsap.timeline({
+    scrollTrigger: {
+      trigger: container,
+      start: "bottom bottom",
+      end: `${(items.length + 1) * 100}% bottom`,
+      scrub: true,
+      pin: true,
+      // markers: true,
+    },
+  });
+
+  // step-1
+  {
+    TL.from(
+      model.position,
+      {
+        y: -2,
+        duration: 4,
+        ease: "none",
+      },
+      "step-1",
+    );
+  }
+  // step-2
+  {
+    TL.to(
+      title,
+      {
+        opacity: 0,
+        translateY: "-100%",
+        duration: 8,
+        ease: "none",
+      },
+      "step-2",
+    );
+    TL.to(
+      model.rotation,
+      {
+        y: degToRad(-180),
+        z: degToRad(0),
+        duration: 8,
+        ease: "none",
+      },
+      "step-2",
+    );
+    TL.to(
+      model.position,
+      {
+        y: -1,
+        duration: 8,
+        ease: "none",
+      },
+      "step-2",
+    );
+
+    if (items[0]) {
+      TL.from(
+        items[0],
+        {
+          top: "100%",
+          opacity: 0,
+          duration: 8,
+          ease: "none",
+        },
+        "step-2",
+      );
+    }
+  }
+  // step-3
+  {
+    TL.to(
+      model.rotation,
+      {
+        y: degToRad(-220),
+        duration: 8,
+        delay: 4,
+        ease: "none",
+      },
+      "step-3",
+    );
+
+    if (items[0]) {
+      TL.to(
+        items[0],
+        {
+          top: "-50%",
+          opacity: 0,
+          duration: 8,
+          delay: 4,
+          ease: "none",
+        },
+        "step-3",
+      );
+    }
+
+    if (items[1]) {
+      TL.from(
+        items[1],
+        {
+          top: "150%",
+          opacity: 0,
+          duration: 8,
+          delay: 4,
+          ease: "none",
+        },
+        "step-3",
+      );
+    }
+  }
+  // step-4
+  {
+    TL.to(
+      model.rotation,
+      {
+        y: degToRad(-180),
+        duration: 8,
+        delay: 4,
+        ease: "none",
+      },
+      "step-4",
+    );
+
+    if (items[1]) {
+      TL.to(
+        items[1],
+        {
+          top: "-50%",
+          opacity: 0,
+          duration: 8,
+          delay: 4,
+          ease: "none",
+        },
+        "step-4",
+      );
+    }
+
+    if (items[2]) {
+      TL.from(
+        items[2],
+        {
+          top: "100%",
+          opacity: 0,
+          duration: 8,
+          delay: 4,
+          ease: "none",
+        },
+        "step-4",
+      );
+    }
+  }
+  // step-5
+  {
+    TL.to(container, {
+      duration: 4,
+      delay: 4,
+    });
+  }
+}
+
+function tabletAnim(
+  container: HTMLElement,
+  model: BABYLON.TransformNode,
+  title: HTMLElement,
+  items: NodeListOf<HTMLElement>,
+) {
+  model.position.z = 0.8;
+
+  const TL = gsap.timeline({
+    scrollTrigger: {
+      trigger: container,
+      start: "bottom bottom",
+      end: `${(items.length + 1) * 100}% bottom`,
+      scrub: true,
+      pin: true,
+      // markers: true,
+    },
+  });
+
+  // step-1
+  {
+    TL.from(
+      model.position,
+      {
+        y: -2,
+        duration: 4,
+        ease: "none",
+      },
+      "step-1",
+    );
+  }
+  // step-2
+  {
+    TL.to(
+      title,
+      {
+        opacity: 0,
+        translateY: "-100%",
+        duration: 8,
+        ease: "none",
+      },
+      "step-2",
+    );
+    TL.to(
+      model.rotation,
+      {
+        y: degToRad(-180),
+        z: degToRad(0),
+        duration: 8,
+        ease: "none",
+      },
+      "step-2",
+    );
+    TL.to(
+      model.position,
+      {
+        y: -1,
+        x: -0.2,
+        z: 2,
+        duration: 8,
+        ease: "none",
+      },
+      "step-2",
+    );
+
+    if (items[0]) {
+      TL.from(
+        items[0],
+        {
+          top: "100%",
+          opacity: 0,
+          duration: 8,
+          ease: "none",
+        },
+        "step-2",
+      );
+    }
+  }
+  // step-3
+  {
+    TL.to(
+      model.rotation,
+      {
+        y: degToRad(-220),
+        duration: 8,
+        delay: 4,
+        ease: "none",
+      },
+      "step-3",
+    );
+
+    if (items[0]) {
+      TL.to(
+        items[0],
+        {
+          top: "-50%",
+          opacity: 0,
+          duration: 8,
+          delay: 4,
+          ease: "none",
+        },
+        "step-3",
+      );
+    }
+
+    if (items[1]) {
+      TL.from(
+        items[1],
+        {
+          top: "150%",
+          opacity: 0,
+          duration: 8,
+          delay: 4,
+          ease: "none",
+        },
+        "step-3",
+      );
+    }
+  }
+  // step-4
+  {
+    TL.to(
+      model.rotation,
+      {
+        y: degToRad(-180),
+        duration: 8,
+        delay: 4,
+        ease: "none",
+      },
+      "step-4",
+    );
+
+    if (items[1]) {
+      TL.to(
+        items[1],
+        {
+          top: "-50%",
+          opacity: 0,
+          duration: 8,
+          delay: 4,
+          ease: "none",
+        },
+        "step-4",
+      );
+    }
+
+    if (items[2]) {
+      TL.from(
+        items[2],
+        {
+          top: "100%",
+          opacity: 0,
+          duration: 8,
+          delay: 4,
+          ease: "none",
+        },
+        "step-4",
+      );
+    }
+  }
+  // step-5
+  {
+    TL.to(container, {
+      duration: 4,
+      delay: 4,
+    });
+  }
 }

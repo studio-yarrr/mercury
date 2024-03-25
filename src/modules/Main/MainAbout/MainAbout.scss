@@ -3,10 +3,25 @@
   padding-top: 18rem;
   height: 100dvh;
 
+  @include breakpoint($xm-bp) {
+    padding-top: 14rem;
+  }
+
   &__title {
     margin: 0 auto;
     max-width: 84rem;
     text-align: center;
+
+    @include breakpoint($xm-bp) {
+      font-size: 5rem;
+      line-height: 1em;
+      max-width: 64.4rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      font-size: 3rem;
+      line-height: 1.1em;
+    }
   }
 
   &__canvas {
@@ -33,28 +48,76 @@
     border-radius: 3rem;
     overflow: hidden;
 
+    @include breakpoint($xm-bp) {
+      padding: 3rem;
+      border-radius: 2.5rem;
+      width: 38.2rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      gap: 1rem;
+      width: 31.4rem;
+      height: fit-content;
+    }
+
     &[data-item="1"] {
       right: 5rem;
       top: 20rem;
+
+      @include breakpoint($xs-bp) {
+        right: 1.5rem;
+        top: unset;
+        bottom: 2rem;
+      }
     }
 
     &[data-item="2"] {
       top: calc(100% - 5rem);
       left: 50%;
       transform: translate(-50%, -100%);
+
+      @include breakpoint($xs-bp) {
+        top: unset;
+        bottom: 2rem;
+        transform: translateX(-50%);
+      }
     }
 
     &[data-item="3"] {
-      top: calc(100% - 5rem);
+      top: 20rem;
       left: 5rem;
-      transform: translateY(-100%);
+
+      @include breakpoint($xs-bp) {
+        top: unset;
+        bottom: 2rem;
+        left: 1.5rem;
+      }
     }
 
     &__title {
+      @include breakpoint($xm-bp) {
+        font-size: 2rem;
+        line-height: 1.1em;
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.8rem;
+        line-height: 1.25em;
+      }
     }
 
     &__text {
       color: $text-02;
+
+      @include breakpoint($xm-bp) {
+        font-size: 1.6rem;
+        line-height: 1.25em;
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.4rem;
+        line-height: 1.25em;
+      }
     }
   }
 }
