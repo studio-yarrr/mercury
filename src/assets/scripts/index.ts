@@ -11,6 +11,7 @@ import Swiper from "swiper";
 import { textInputHandler } from "@components/TextInput/TextInput";
 import { initMeaderMenu } from "@modules/Header/Header";
 import { initMainBannerSlider } from "@modules/Main/MainBanner/MainBanner";
+import { initMainAbout } from "@modules/Main/MainAbout/MainAbout";
 
 Swiper.use([Navigation, Pagination, Scrollbar]);
 
@@ -22,6 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initMeaderMenu();
   initMainBannerSlider();
+
+  initMainAbout();
 
   document.addEventListener("click", (e) => {
     const target = e.target as HTMLElement;
