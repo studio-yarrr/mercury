@@ -23,23 +23,54 @@ export function initMainAbout() {
       scene.render();
     });
 
-    document.addEventListener("resize", () => {
-      engine.resize();
-      ScrollTrigger.refresh();
-      ScrollTrigger.update();
+    let resizeID = 0;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeID);
+      resizeID = setTimeout(() => {
+        engine.resize();
+        ScrollTrigger.refresh();
+        ScrollTrigger.update();
+      }, 100);
     });
 
-    let mm = gsap.matchMedia();
+    const mm = gsap.matchMedia();
 
-    mm.add("(min-width: 835px)", () => {
-      descAnim(container, model, title, infoItems);
-      return () => {};
-    });
+    const breakPoint = 835;
+    mm.add(
+      {
+        // set up any number of arbitrarily-named conditions. The function below will be called when ANY of them match.
+        isDesktop: `(min-width: ${breakPoint}px)`,
+        isMobile: `(max-width: ${breakPoint - 1}px)`,
+      },
+      (context) => {
+        // context.conditions has a boolean property for each condition defined above indicating if it's matched or not.
+        if (context.conditions) {
+          let { isDesktop, isMobile } = context.conditions;
 
-    mm.add("(min-width: 0px)", () => {
-      tabletAnim(container, model, title, infoItems);
-      return () => {};
-    });
+          if (isDesktop) {
+            descAnim(container, model, title, infoItems);
+            return;
+          } else if (isMobile) {
+            mobAnim(container, model, title, infoItems);
+          }
+        }
+
+        return () => {
+          // optionally return a cleanup function that will be called when none of the conditions match anymore (after having matched)
+          // it'll automatically call context.revert() - do NOT do that here . Only put custom cleanup code here.
+        };
+      },
+    );
+
+    // mm.add("(min-width: 835px)", () => {
+    //   descAnim(container, model, title, infoItems);
+    //   return () => {};
+    // });
+
+    // mm.add("(min-width: 0px)", () => {
+    //   mobAnim(container, model, title, infoItems);
+    //   return () => {};
+    // });
   }
 }
 
@@ -64,7 +95,7 @@ function initScene(canvas: HTMLCanvasElement) {
     new BABYLON.Vector3(-10, 0, -10),
     scene,
   );
-  mainLight.intensity = 0.5;
+  mainLight.intensity = 0.8;
 
   const light_1 = new BABYLON.PointLight(
     "light_1",
@@ -113,6 +144,16 @@ function descAnim(
   title: HTMLElement,
   items: NodeListOf<HTMLElement>,
 ) {
+  const MAIN_TL = gsap.timeline({
+    scrollTrigger: {
+      trigger: container,
+      start: "top bottom",
+      end: "bottom bottom",
+      scrub: true,
+      // markers: true,
+    },
+  });
+
   const TL = gsap.timeline({
     scrollTrigger: {
       trigger: container,
@@ -124,18 +165,35 @@ function descAnim(
     },
   });
 
+  MAIN_TL.from(
+    title,
+    {
+      opacity: 0,
+      translateY: "100%",
+      duration: 8,
+      ease: "none",
+    },
+    "step-1",
+  );
+
   // step-1
   {
-    TL.from(
+    MAIN_TL.fromTo(
       model.position,
       {
         y: -2,
-        duration: 4,
+        duration: 8,
         ease: "none",
+      },
+      {
+        y: -1,
       },
       "step-1",
     );
   }
+
+  MAIN_TL.add(TL);
+
   // step-2
   {
     TL.to(
@@ -272,13 +330,23 @@ function descAnim(
   }
 }
 
-function tabletAnim(
+function mobAnim(
   container: HTMLElement,
   model: BABYLON.TransformNode,
   title: HTMLElement,
   items: NodeListOf<HTMLElement>,
 ) {
   model.position.z = 0.8;
+
+  const MAIN_TL = gsap.timeline({
+    scrollTrigger: {
+      trigger: container,
+      start: "top bottom",
+      end: "bottom bottom",
+      scrub: true,
+      // markers: true,
+    },
+  });
 
   const TL = gsap.timeline({
     scrollTrigger: {
@@ -291,18 +359,34 @@ function tabletAnim(
     },
   });
 
+  MAIN_TL.from(
+    title,
+    {
+      opacity: 0,
+      translateY: "100%",
+      duration: 8,
+      ease: "none",
+    },
+    "step-1",
+  );
+
   // step-1
   {
-    TL.from(
+    MAIN_TL.fromTo(
       model.position,
       {
         y: -2,
-        duration: 4,
+        duration: 8,
         ease: "none",
+      },
+      {
+        y: -1,
       },
       "step-1",
     );
   }
+
+  MAIN_TL.add(TL);
   // step-2
   {
     TL.to(
