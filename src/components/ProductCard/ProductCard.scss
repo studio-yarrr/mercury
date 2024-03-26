@@ -1,0 +1,94 @@
+.product-card {
+  border-radius: 2rem;
+  overflow: hidden;
+  position: relative;
+  height: 61.3rem;
+  background-color: $strokes-secondary;
+
+  @include hover {
+    &::before {
+      opacity: 1;
+    }
+
+    .product-card {
+      &__title {
+        color: $primary-inverse;
+      }
+
+      &__text {
+        color: $secondary-inverse-hover;
+      }
+
+      &__btn {
+        border-color: $primary-inverse;
+        color: $primary-inverse;
+
+        @include hover {
+          background-color: $black-04;
+        }
+
+        &:active {
+          background-color: $black-08;
+        }
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e7e7f2, #fcfaf8, #e4d2c5);
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+      object-fit: contain;
+      object-position: right bottom;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%;
+    max-width: 41rem;
+  }
+
+  &__title {
+    transition: 0.3s;
+  }
+
+  &__text {
+    transition: 0.3s;
+    color: $secondary-hover;
+  }
+}

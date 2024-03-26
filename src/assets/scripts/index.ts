@@ -12,6 +12,7 @@ import { textInputHandler } from "@components/TextInput/TextInput";
 import { initMeaderMenu } from "@modules/Header/Header";
 import { initMainBannerSlider } from "@modules/Main/MainBanner/MainBanner";
 import { initMainAbout } from "@modules/Main/MainAbout/MainAbout";
+import { initMainProdAnim } from "@modules/Main/MainProducts/MainProducts";
 
 Swiper.use([Navigation, Pagination, Scrollbar]);
 
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMainBannerSlider();
 
   initMainAbout();
+  initMainProdAnim();
 
   document.addEventListener("click", (e) => {
     const target = e.target as HTMLElement;

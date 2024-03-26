@@ -1,0 +1,53 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import ProductCard from "@components/ProductCard/ProductCard.astro";
+---
+
+<section class="section-margin main-products">
+  <div class="container">
+    <h3 class="title-3 main-products__title">
+      продукция <br />
+       mercury
+    </h3>
+    <div class="main-products__list">
+      <ProductCard
+        title="Стоматологические стулья"
+        text="20 видов"
+        img="./img/products/prod-1.png"
+      />
+      <ProductCard
+        title="Российское производство"
+        text="20 видов"
+        img="./img/products/prod-2.png"
+      />
+      <ProductCard
+        title="Стоматологические установки"
+        text="20 видов"
+        img="./img/products/prod-3.png"
+      />
+      <ProductCard
+        title="Стоматологические наконечники"
+        text="20 видов"
+        img="./img/products/prod-4.png"
+      />
+      <ProductCard
+        title="Цифровое оборудование"
+        text="2 видов"
+        img="./img/products/prod-5.png"
+      />
+      <ProductCard
+        title="Микроскопы"
+        text="5 видов"
+        img="./img/products/prod-6.png"
+      />
+      <ProductCard
+        title="имплантология"
+        text="5 видов"
+        img="./img/products/prod-7.png"
+      />
+    </div>
+    <DefaultBtn as="a" href="#" viewType="width">
+      Полный каталог продукции
+    </DefaultBtn>
+  </div>
+</section>
