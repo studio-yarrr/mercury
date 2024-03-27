@@ -12,10 +12,10 @@ import { textInputHandler } from "@components/TextInput/TextInput";
 import { initMeaderMenu } from "@modules/Header/Header";
 import { initMainBannerSlider } from "@modules/Main/MainBanner/MainBanner";
 import { initMainAbout } from "@modules/Main/MainAbout/MainAbout";
-import { initMainProdAnim } from "@modules/Main/MainProducts/MainProducts";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { initSpinner } from "@components/Spinner/Spinner";
+import { initMainCategoryAnim } from "@modules/Main/MainCategory/MainCategory";
 
 Swiper.use([Navigation, Pagination, Scrollbar]);
 
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMainBannerSlider();
 
   initMainAbout();
-  initMainProdAnim();
+  initMainCategoryAnim();
 
   initFadeAnim();
 
@@ -81,7 +81,7 @@ function initFadeAnim() {
   const items = document.querySelectorAll<HTMLElement>("[data-fade-anim]");
   ScrollTrigger.batch(items, {
     once: true,
-    start: "-200px 120%",
+    start: "-200% bottom",
     onEnter: (batch) => {
       gsap.to(batch, {
         duration: 0.8,

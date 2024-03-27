@@ -1,4 +1,4 @@
-.main-products {
+.main-category {
   position: relative;
   z-index: 1;
   background-color: $strokes-primary;
@@ -50,7 +50,7 @@
       align-items: stretch;
     }
 
-    .product-card {
+    .category-card {
       height: 100%;
       grid-row: span 3;
       grid-column: span 2;

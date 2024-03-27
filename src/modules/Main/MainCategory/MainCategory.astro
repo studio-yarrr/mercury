@@ -1,64 +1,62 @@
 ---
+import CategoryCard from "@components/CategoryCard/CategoryCard.astro";
 import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
-import ProductCard from "@components/ProductCard/ProductCard.astro";
 ---
 
-<section class="section-margin main-products">
+<section class="section-margin main-category">
   <div class="container">
-    <h3 class="title-3 main-products__title" data-fade-anim>
+    <h3 class="title-3 main-category__title" data-fade-anim>
       продукция <br />
        mercury
     </h3>
-    <div class="main-products__list">
-      <ProductCard
+    <div class="main-category__list">
+      <CategoryCard
         data-fade-anim
         title="Стоматологические стулья"
         text="20 видов"
         img="./img/products/prod-1.png"
       />
-      <ProductCard
+      <CategoryCard
         data-fade-anim
         title="Российское производство"
         text="20 видов"
         img="./img/products/prod-2.png"
       >
         <img src="./img/ru-flag.jpg" alt="" class="flag" />
-      </ProductCard>
-      <ProductCard
+      </CategoryCard>
+      <CategoryCard
         data-fade-anim
         title="Стоматологические установки"
         text="20 видов"
         img="./img/products/prod-3.png"
       />
-      <ProductCard
+      <CategoryCard
         data-fade-anim
         title="Стоматологические наконечники"
         text="20 видов"
         img="./img/products/prod-4.png"
       />
-      <ProductCard
+      <CategoryCard
         data-fade-anim
         title="Цифровое оборудование"
         text="2 видов"
         img="./img/products/prod-5.png"
       />
-      <ProductCard
+      <CategoryCard
         data-fade-anim
         title="Микроскопы"
         text="5 видов"
         img="./img/products/prod-6.png"
       />
-      <ProductCard
+      <CategoryCard
         data-fade-anim
         title="имплантология"
         text="5 видов"
         img="./img/products/prod-7.png"
       />
     </div>
-    <div data-fade-anim>
-      <DefaultBtn as="a" href="#" viewType="width">
-        Полный каталог продукции
-      </DefaultBtn>
-    </div>
+    <DefaultBtn as="a" href="#" viewType="width">
+      Полный каталог продукции
+    </DefaultBtn>
   </div>
 </section>

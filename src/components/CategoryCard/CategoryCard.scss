@@ -1,4 +1,4 @@
-.product-card {
+.category-card {
   border-radius: 2rem;
   overflow: hidden;
   position: relative;
@@ -19,7 +19,7 @@
       opacity: 1;
     }
 
-    .product-card {
+    .category-card {
       &__title {
         color: $primary-inverse;
       }

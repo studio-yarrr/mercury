@@ -1,8 +1,8 @@
 import gsap from "gsap";
 
-export function initMainProdAnim() {
+export function initMainCategoryAnim() {
   const about = document.querySelector(".main-about");
-  const container = document.querySelector<HTMLElement>(".main-products");
+  const container = document.querySelector<HTMLElement>(".main-category");
 
   if (container) {
     const TL = gsap.timeline({

@@ -12,19 +12,19 @@ interface Props {
 const { title, text, img, className, ...rest } = Astro.props;
 ---
 
-<div class:list={["product-card", className]} {...rest}>
-  <div class="product-card__img">
+<div class:list={["category-card", className]} {...rest}>
+  <div class="category-card__img">
     <img src={img} alt="" />
   </div>
-  <div class="product-card__container">
-    <div class="product-card__head">
-      {title && <h6 class="title-5 product-card__title" set:html={title} />}
-      {text && <span class="body-1 product-card__text" set:html={text} />}
+  <div class="category-card__container">
+    <div class="category-card__head">
+      {title && <h6 class="title-5 category-card__title" set:html={title} />}
+      {text && <span class="body-1 category-card__text" set:html={text} />}
     </div>
     <DefaultBtn
       as="a"
       href="#"
-      className="product-card__btn"
+      className="category-card__btn"
       viewType="icon"
       theme="stroke"
     >
