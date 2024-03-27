@@ -142,3 +142,23 @@ textarea {
     margin-bottom: 5rem;
   }
 }
+
+.gradient-text {
+  background: linear-gradient(135deg, #e7e7f2, #fcfaf8, #e4d2c5);
+  color: transparent;
+  background-clip: text;
+}
+
+.page-title {
+  text-transform: uppercase;
+
+  @include breakpoint($xm-bp) {
+    font-size: 4rem;
+    line-height: 1em;
+  }
+
+  @include breakpoint($xs-bp) {
+    font-size: 3rem;
+    line-height: 1.1em;
+  }
+}

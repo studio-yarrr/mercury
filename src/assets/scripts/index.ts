@@ -79,19 +79,22 @@ function openVBox(src: string, vbtype?: string) {
 
 function initFadeAnim() {
   const items = document.querySelectorAll<HTMLElement>("[data-fade-anim]");
-  ScrollTrigger.batch(items, {
-    once: true,
-    start: "-200% bottom",
-    onEnter: (batch) => {
-      gsap.to(batch, {
-        duration: 0.8,
-        opacity: 1,
-        translateY: 0,
-        stagger: { each: 0.2, grid: [1, 2] },
-        overwrite: true,
-      });
-    },
-  });
+
+  if (items.length > 0) {
+    ScrollTrigger.batch(items, {
+      once: true,
+      start: "-200% bottom",
+      onEnter: (batch) => {
+        gsap.to(batch, {
+          duration: 0.8,
+          opacity: 1,
+          translateY: 0,
+          stagger: { each: 0.2, grid: [1, 2] },
+          overwrite: true,
+        });
+      },
+    });
+  }
 }
 
 // {

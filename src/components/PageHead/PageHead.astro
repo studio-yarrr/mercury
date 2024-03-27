@@ -1,0 +1,15 @@
+---
+import Breadcrumbs from "@components/Breadcrumbs/Breadcrumbs.astro";
+
+interface Props {
+  title: string;
+  breadcrumbs: string[];
+}
+
+const { title, breadcrumbs } = Astro.props;
+---
+
+<div class="page-head">
+  <h1 class="title-3 page-title" set:html={title} />
+  <Breadcrumbs items={breadcrumbs} />
+</div>
