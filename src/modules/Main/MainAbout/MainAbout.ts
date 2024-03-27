@@ -1,7 +1,6 @@
 import * as BABYLON from "@babylonjs/core";
 import "@babylonjs/loaders/glTF";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
 
 export function initMainAbout() {
   const container = document.querySelector<HTMLElement>(".main-about");
@@ -15,8 +14,6 @@ export function initMainAbout() {
     container.querySelectorAll<HTMLElement>(".main-about-info[data-item]");
 
   if (container && title && canvas && infoItems) {
-    gsap.registerPlugin(ScrollTrigger);
-
     const { scene, engine, model } = initScene(canvas);
 
     engine.runRenderLoop(() => {
@@ -28,8 +25,8 @@ export function initMainAbout() {
       clearTimeout(resizeID);
       resizeID = setTimeout(() => {
         engine.resize();
-        ScrollTrigger.refresh();
-        ScrollTrigger.update();
+        // ScrollTrigger.refresh();
+        // ScrollTrigger.update();
       }, 100);
     });
 
@@ -38,12 +35,10 @@ export function initMainAbout() {
     const breakPoint = 835;
     mm.add(
       {
-        // set up any number of arbitrarily-named conditions. The function below will be called when ANY of them match.
         isDesktop: `(min-width: ${breakPoint}px)`,
         isMobile: `(max-width: ${breakPoint - 1}px)`,
       },
       (context) => {
-        // context.conditions has a boolean property for each condition defined above indicating if it's matched or not.
         if (context.conditions) {
           let { isDesktop, isMobile } = context.conditions;
 
@@ -55,22 +50,9 @@ export function initMainAbout() {
           }
         }
 
-        return () => {
-          // optionally return a cleanup function that will be called when none of the conditions match anymore (after having matched)
-          // it'll automatically call context.revert() - do NOT do that here . Only put custom cleanup code here.
-        };
+        return () => {};
       },
     );
-
-    // mm.add("(min-width: 835px)", () => {
-    //   descAnim(container, model, title, infoItems);
-    //   return () => {};
-    // });
-
-    // mm.add("(min-width: 0px)", () => {
-    //   mobAnim(container, model, title, infoItems);
-    //   return () => {};
-    // });
   }
 }
 

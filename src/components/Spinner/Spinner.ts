@@ -24,7 +24,6 @@ export function initSpinner() {
           loaded += 1;
           valueText.textContent =
             Math.round((100 / imgList.length) * loaded) + "%";
-          console.log(Math.round((100 / imgList.length) * loaded) + "%");
 
           if (loaded >= imgList.length) {
             container.classList.add("_loaded");

@@ -18,6 +18,7 @@ import { initSpinner } from "@components/Spinner/Spinner";
 import { initMainCategoryAnim } from "@modules/Main/MainCategory/MainCategory";
 
 Swiper.use([Navigation, Pagination, Scrollbar]);
+gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
   initSpinner();
@@ -40,6 +41,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     textInputHandler(target);
     scrollUpHandler(target);
+  });
+
+  let resizeID = 0;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeID);
+    resizeID = setTimeout(() => {
+      ScrollTrigger.update();
+    }, 100);
   });
 });
 
@@ -83,7 +92,7 @@ function initFadeAnim() {
   if (items.length > 0) {
     ScrollTrigger.batch(items, {
       once: true,
-      start: "-200% bottom",
+      start: "-100% bottom",
       onEnter: (batch) => {
         gsap.to(batch, {
           duration: 0.8,
@@ -96,15 +105,3 @@ function initFadeAnim() {
     });
   }
 }
-
-// {
-//   let id = 0;
-
-//   window.addEventListener("resize", () => {
-//     clearTimeout(id);
-
-//     id = setTimeout(() => {
-//       ScrollTrigger.update();
-//     }, 100);
-//   });
-// }
