@@ -2,6 +2,7 @@
   position: relative;
   z-index: 1;
   background-color: $strokes-primary;
+  overflow: hidden;
 
   &::before {
     content: "";
@@ -17,14 +18,37 @@
     text-align: center;
     margin: 0 auto;
     margin-bottom: 15rem;
+
+    @include breakpoint($xm-bp) {
+      margin-bottom: 10rem;
+      font-size: 4rem;
+      line-height: 1em;
+    }
+
+    @include breakpoint($xs-bp) {
+      font-size: 3rem;
+      line-height: 1.1em;
+      margin-bottom: 5rem;
+    }
   }
 
   &__list {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-auto-rows: 1fr;
+    grid-auto-rows: auto;
     gap: 2rem;
     margin-bottom: 4rem;
+
+    @include breakpoint($xm-bp) {
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
 
     .product-card {
       height: 100%;
@@ -34,18 +58,67 @@
       &:nth-child(1) {
         height: 61.3rem;
         grid-area: 1/1/5/4;
+
+        @include breakpoint($xm-bp) {
+          height: 35.4rem;
+        }
       }
 
       &:nth-child(2) {
         grid-area: 1/4/4/7;
+        height: 44.3rem;
+
+        @include breakpoint($xm-bp) {
+          height: 26rem;
+        }
       }
 
       &:nth-child(3) {
         grid-area: 5/1/9/4;
+        height: 61.3rem;
+
+        @include breakpoint($xm-bp) {
+          height: 35.4rem;
+        }
       }
 
       &:nth-child(4) {
         grid-area: 4/4/9/7;
+      }
+
+      &:nth-child(1n + 5) {
+        height: 49.2rem;
+
+        @include breakpoint($xm-bp) {
+          height: 32rem;
+        }
+      }
+
+      &:nth-child(1n + 1) {
+        @include breakpoint($xs-bp) {
+          height: 25.4rem;
+        }
+      }
+
+      .flag {
+        position: absolute;
+        top: 4rem;
+        right: 4rem;
+        width: 4.6rem;
+        height: 4.6rem;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+
+        @include breakpoint($xm-bp) {
+          top: 3rem;
+          right: 3rem;
+        }
+
+        @include breakpoint($xs-bp) {
+          width: 3rem;
+          height: 3rem;
+        }
       }
     }
   }

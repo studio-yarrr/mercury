@@ -9,10 +9,10 @@ interface Props {
   className?: string;
 }
 
-const { title, text, img, className } = Astro.props;
+const { title, text, img, className, ...rest } = Astro.props;
 ---
 
-<div class:list={["product-card", className]}>
+<div class:list={["product-card", className]} {...rest}>
   <div class="product-card__img">
     <img src={img} alt="" />
   </div>
@@ -31,4 +31,5 @@ const { title, text, img, className } = Astro.props;
       <Sprite name="chevron-right" />
     </DefaultBtn>
   </div>
+  <slot />
 </div>

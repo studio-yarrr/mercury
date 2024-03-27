@@ -1,0 +1,147 @@
+.spinner {
+  position: fixed;
+  z-index: 2147483647;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $strokes-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &._loaded {
+    animation: fadeOut 0.8s 1.2s ease-out forwards;
+
+    .spinner {
+      &-logo {
+        transform: translateX(0);
+
+        &__name {
+          opacity: 1;
+
+          img {
+            transform: translateY(0);
+          }
+        }
+
+        &__img {
+          animation: none;
+        }
+      }
+    }
+  }
+
+  &-logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.8s ease-in-out;
+    transform: translateX(calc(-50% + 8.85rem / 2));
+
+    &__name {
+      height: 7.3rem;
+      padding-right: 0.85rem;
+      overflow: hidden;
+      opacity: 0;
+      transition: 0.8s ease-in-out;
+
+      img {
+        object-fit: contain;
+        object-position: left center;
+        height: 100%;
+        width: 100%;
+        transform: translateY(120%);
+        transition: 0.4s 0.4s ease-in-out;
+      }
+    }
+
+    &__img {
+      width: 8.4rem;
+      height: 8.4rem;
+      animation: spin 3s linear infinite;
+
+      img {
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0.9rem;
+      height: 0.9rem;
+      transform: translate(50%, -50%);
+
+      img {
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__inner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 2rem;
+  }
+
+  &__text {
+    max-width: 38.6rem;
+
+    @include breakpoint($xm-bp) {
+      font-size: 1.6rem;
+      line-height: 1.25em;
+      max-width: 22rem;
+    }
+  }
+
+  &__value {
+    flex: none;
+    font-size: 7rem;
+
+    @include breakpoint($xm-bp) {
+      font-size: 5rem;
+    }
+
+    &::before {
+      content: "|";
+      width: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    pointer-events: all;
+  }
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

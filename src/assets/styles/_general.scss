@@ -90,6 +90,11 @@ textarea {
   }
 }
 
+[data-fade-anim] {
+  opacity: 0;
+  transform: translateY(200px);
+}
+
 .medium {
   font-weight: 500;
 }

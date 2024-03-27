@@ -1,4 +1,5 @@
 ---
+import Spinner from "@components/Spinner/Spinner.astro";
 import Footer from "@modules/Footer/Footer.astro";
 import Header from "@modules/Header/Header.astro";
 import MainAbout from "@modules/Main/MainAbout/MainAbout.astro";
@@ -8,6 +9,8 @@ import Layout from "src/layouts/Layout.astro";
 ---
 
 <Layout title="Главная страница">
+  <Spinner slot="beforePage" />
+
   <Header />
 
   <div class="wrapper">

@@ -1,9 +1,21 @@
+body._loaded {
+  .main-banner__container {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .main-banner {
+  overflow: hidden;
+
   &__container {
     display: grid;
     grid-template-columns: 1fr 54.7rem;
     grid-template-rows: 1fr auto;
     gap: 13rem;
+    opacity: 0;
+    transform: translateY(20rem);
+    transition: 0.8s 2s ease-in-out;
 
     @include breakpoint($xm-bp) {
       grid-template-columns: 1fr 33.8rem;

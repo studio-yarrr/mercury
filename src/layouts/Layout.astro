@@ -1,6 +1,7 @@
 ---
 import { Sprite } from "astro-icon";
 import "../assets/styles/style.scss";
+import Spinner from "@components/Spinner/Spinner.astro";
 
 interface Props {
   title?: string;
@@ -24,6 +25,7 @@ const { title = "заголовок страницы" } = Astro.props;
   </head>
   <body>
     <Sprite.Provider>
+      <slot name="beforePage" />
       <main class="page">
         <slot />
       </main>
