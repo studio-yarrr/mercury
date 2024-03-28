@@ -47,6 +47,10 @@
       font-size: 1.6rem;
       line-height: 1.25em;
     }
+
+    &::after {
+      content: " " attr(data-currency);
+    }
   }
 
   &__btns {

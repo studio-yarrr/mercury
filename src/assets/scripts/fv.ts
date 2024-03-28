@@ -1,11 +1,13 @@
 import Inputmask from "inputmask";
 
 export const formValidateInit = (wrapperSelector: string) => {
-  const DATA_ACTION = "data-action";
+  const dataAction = "data-action";
   const validClass = "valid";
   const invalidClass = "invalid";
   const dataMaskSelector = "[data-mask-init]";
+  const countryMaskWrapperSelector = "[data-country-mask]";
   const requiredSelector = "[required]";
+  const countryMaskAction = "change-mask";
   const inputTextAction = "required-text";
   const inputNumberAction = "required-number";
   const inputEmailAction = "required-email";
@@ -22,6 +24,7 @@ export const formValidateInit = (wrapperSelector: string) => {
 
   const inputMaskInit = (node: HTMLInputElement) => {
     const nodeMask = node.dataset.mask || "";
+    const regexpMask: string = node.dataset.regexp || "";
     const nodePlaceholder = node.dataset.placeholder;
     const config: Inputmask.Options = {
       showMaskOnHover: false,
@@ -51,7 +54,14 @@ export const formValidateInit = (wrapperSelector: string) => {
       config["placeholder"] = nodePlaceholder;
     }
 
-    Inputmask(nodeMask, config).mask(node);
+    if (regexpMask) {
+      Inputmask("", {
+        regex: regexpMask,
+        ...config,
+      }).mask(node);
+    } else {
+      Inputmask(nodeMask, config).mask(node);
+    }
   };
 
   const wrapperSetValid = (wrapper: HTMLElement) => {
@@ -219,27 +229,57 @@ export const formValidateInit = (wrapperSelector: string) => {
     Array.from(inputMaskNodes).map((item) => inputMaskInit(item));
   }
 
+  const updateCountryMask = (input: HTMLInputElement) => {
+    const closest = input.closest(countryMaskWrapperSelector);
+    const inputTel =
+      closest &&
+      closest.querySelector<HTMLInputElement>("input[data-mask-init]");
+
+    const mask = input.dataset.mask;
+    const placeholder = input.dataset.maskPlaceholder;
+
+    if (inputTel) {
+      if (inputTel.inputmask) {
+        inputTel.inputmask.remove();
+      }
+
+      if (mask === "other") {
+        inputTel.value = "";
+        placeholder && inputTel.setAttribute("placeholder", placeholder);
+        inputTel.setAttribute("data-mask", "");
+        placeholder && inputTel.setAttribute("data-placeholder", placeholder);
+        inputTel.setAttribute(dataAction, inputTextAction);
+      } else {
+        inputTel.setAttribute(dataAction, "");
+        placeholder && inputTel.setAttribute("placeholder", placeholder);
+        mask && inputTel.setAttribute("data-mask", mask);
+        placeholder && inputTel.setAttribute("data-placeholder", placeholder);
+        inputMaskInit(inputTel);
+      }
+    }
+  };
+
   document.addEventListener("click", (e) => {
-    const eTarget = (e.target as HTMLElement).closest(`[${DATA_ACTION}]`);
+    const eTarget = (e.target as HTMLElement).closest(`[${dataAction}]`);
     const submit = (e.target as HTMLElement).closest("[type='submit']");
 
     if (eTarget && submit) {
-      const actions = eTarget.getAttribute(DATA_ACTION);
+      const actions = eTarget.getAttribute(dataAction);
       const targetNode = e.target as HTMLElement;
 
       if (actions && targetNode) {
         actions.split(" ").map((item) => {
           if (item === formSubmit) {
             const selectors = [
-              `[${DATA_ACTION}="${inputTextAction}"]`,
-              `[${DATA_ACTION}="${inputNumberAction}"]`,
-              `[${DATA_ACTION}="${inputEmailAction}"]`,
-              `[${DATA_ACTION}="${selectAction}"]`,
-              `[${DATA_ACTION}="${radiobuttonAction}"]`,
-              `[${DATA_ACTION}="${checkboxAction}"]`,
-              `[${DATA_ACTION}="${inputPasswordAction}"]`,
-              `[${DATA_ACTION}="${fileAction}"]${requiredSelector}`,
-              `[${DATA_ACTION}="${fileMultipleAction}"]${requiredSelector}`,
+              `[${dataAction}="${inputTextAction}"]`,
+              `[${dataAction}="${inputNumberAction}"]`,
+              `[${dataAction}="${inputEmailAction}"]`,
+              `[${dataAction}="${selectAction}"]`,
+              `[${dataAction}="${radiobuttonAction}"]`,
+              `[${dataAction}="${checkboxAction}"]`,
+              `[${dataAction}="${inputPasswordAction}"]`,
+              `[${dataAction}="${fileAction}"]${requiredSelector}`,
+              `[${dataAction}="${fileMultipleAction}"]${requiredSelector}`,
               `${dataMaskSelector}${requiredSelector}`,
             ];
 
@@ -276,11 +316,11 @@ export const formValidateInit = (wrapperSelector: string) => {
 
   document.addEventListener("input", (e) => {
     const eTarget = (e.target as HTMLElement).closest<HTMLInputElement>(
-      `[${DATA_ACTION}]`,
+      `[${dataAction}]`,
     );
 
     if (eTarget) {
-      const actions = eTarget.getAttribute(DATA_ACTION);
+      const actions = eTarget.getAttribute(dataAction);
 
       if (actions) {
         actions.split(" ").map((item) => {
@@ -310,11 +350,11 @@ export const formValidateInit = (wrapperSelector: string) => {
 
   document.addEventListener("change", (e) => {
     const eTarget = (e.target as HTMLElement).closest<HTMLInputElement>(
-      `[${DATA_ACTION}]`,
+      `[${dataAction}]`,
     );
 
     if (eTarget) {
-      const actions = eTarget.getAttribute(DATA_ACTION);
+      const actions = eTarget.getAttribute(dataAction);
 
       if (actions) {
         actions.split(" ").map((item) => {
@@ -328,6 +368,10 @@ export const formValidateInit = (wrapperSelector: string) => {
 
           if (item === fileAction) {
             inputFileHandler(eTarget);
+          }
+
+          if (item === countryMaskAction) {
+            updateCountryMask(eTarget);
           }
         });
       }

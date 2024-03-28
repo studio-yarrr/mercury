@@ -1,4 +1,5 @@
 ---
+import Checkbox from "@components/Checkbox/Checkbox.astro";
 import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
 import PageHead from "@components/PageHead/PageHead.astro";
 import Pagination from "@components/Pagination/Pagination.astro";
@@ -22,11 +23,134 @@ import { Sprite } from "astro-icon";
         <span class="heading-7 medium category-head-filter__text">
           Сортировка: <span>по популярности</span>
         </span>
-        <DefaultBtn type="button">
+        <DefaultBtn
+          type="button"
+          className="category-head-filter__btn"
+          data-toggle-filter
+        >
           Фильтр
           <Sprite name="plus" />
         </DefaultBtn>
       </div>
+
+      <form action="#" class="category-filter">
+        <div class="category-filter__wrapper">
+          <div class="category-filter__container">
+            <div class="category-filter__box">
+              <div class="category-filter__group">
+                <span class="body-1 bold category-filter__title"
+                  >Тип подачи инструментов:</span
+                >
+                <div class="category-filter__list">
+                  <Checkbox>Нижняя</Checkbox>
+                  <Checkbox>Верхняя</Checkbox>
+                  <Checkbox>Подкатной модуль</Checkbox>
+                </div>
+              </div>
+              <div class="category-filter__group">
+                <span class="body-1 bold category-filter__title"
+                  >Стулья в комплекте</span
+                >
+                <div class="category-filter__list">
+                  <Checkbox>Стул врача и стул ассистента</Checkbox>
+                  <Checkbox>Стул врача</Checkbox>
+                </div>
+              </div>
+            </div>
+            <div class="category-filter__box">
+              <div class="category-filter__group">
+                <span class="body-1 bold category-filter__title">Обивка</span>
+                <div class="category-filter__list">
+                  <Checkbox>Стандартная</Checkbox>
+                  <Checkbox>Мягкая</Checkbox>
+                  <Checkbox>Премиум</Checkbox>
+                  <Checkbox>Опиционально</Checkbox>
+                </div>
+              </div>
+              <div class="category-filter__group">
+                <span class="body-1 bold category-filter__title">
+                  С функцией массажа
+                </span>
+                <div class="category-filter__list">
+                  <Checkbox>Все</Checkbox>
+                  <Checkbox>Да</Checkbox>
+                  <Checkbox>Нет</Checkbox>
+                </div>
+              </div>
+            </div>
+            <div class="category-filter__box category-filter__main">
+              <div class="category-filter__group">
+                <span class="body-1 bold category-filter__title">Цена:</span>
+                <div class="category-filter-price">
+                  <label
+                    class="body-3 category-filter-price__input"
+                    data-name="от"
+                    data-currency="₽"
+                  >
+                    <input type="number" />
+                  </label>
+                  <label
+                    class="body-3 category-filter-price__input"
+                    data-name="до"
+                    data-currency="₽"
+                  >
+                    <input type="number" />
+                  </label>
+                </div>
+              </div>
+              <div class="category-filter__group">
+                <span class="body-1 bold category-filter__title">Цвет:</span>
+                <div class="category-filter-color">
+                  <label class="category-filter-color__item">
+                    <input type="checkbox" hidden />
+                    <span
+                      class="category-filter-color__fill"
+                      style="--color: #E8E8E8"></span>
+                  </label>
+                  <label class="category-filter-color__item">
+                    <input type="checkbox" hidden />
+                    <span
+                      class="category-filter-color__fill"
+                      style="--color: #37E3B0"></span>
+                  </label>
+                  <label class="category-filter-color__item">
+                    <input type="checkbox" hidden />
+                    <span
+                      class="category-filter-color__fill"
+                      style="--color: #2266E8"></span>
+                  </label>
+                  <label class="category-filter-color__item">
+                    <input type="checkbox" hidden />
+                    <span
+                      class="category-filter-color__fill"
+                      style="--color: #DF2D8D"></span>
+                  </label>
+                  <label class="category-filter-color__item">
+                    <input type="checkbox" hidden />
+                    <span
+                      class="category-filter-color__fill"
+                      style="--color: #1B1B1B"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="category-filter__btns">
+              <button
+                type="reset"
+                class="primary-hover body-3 category-filter__reset"
+              >
+                Сбросить фильтры
+                <Sprite name="x" />
+              </button>
+
+              <DefaultBtn type="submit" color="inverse" data-close-filter>
+                Применить
+              </DefaultBtn>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
 
     <div class="category__container">

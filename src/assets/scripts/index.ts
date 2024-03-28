@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     textInputHandler(target);
     scrollUpHandler(target);
+    categoryFilterHandler(target);
   });
 
   let resizeID = 0;
@@ -103,5 +104,22 @@ function initFadeAnim() {
         });
       },
     });
+  }
+}
+
+function categoryFilterHandler(target: HTMLElement) {
+  if (target.closest("[data-toggle-filter]")) {
+    document.body.classList.toggle("_open-filter");
+    return;
+  }
+
+  if (target.closest("[data-close-filter]")) {
+    document.body.classList.remove("_open-filter");
+    return;
+  }
+
+  if (target.closest("[data-open-filter]")) {
+    document.body.classList.add("_open-filter");
+    return;
   }
 }
