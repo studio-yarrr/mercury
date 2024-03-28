@@ -1,0 +1,48 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import { Sprite } from "astro-icon";
+
+interface Props {
+  title: string;
+  price: string;
+  img: string;
+  active?: boolean;
+  className?: string;
+}
+
+const { title, price, img, active, className, ...rest } = Astro.props;
+---
+
+<div class:list={["product-card", className]} {...rest}>
+  <div class="product-card__container">
+    <div class="product-card__head">
+      <a
+        href="#"
+        class="heading-6 medium primary-hover product-card__title"
+        set:html={title}
+      />
+      <span
+        class="bold body-1 product-card__price"
+        set:html={price}
+        data-currency="₽"
+      />
+    </div>
+    <div class="product-card__btns">
+      <DefaultBtn
+        type="button"
+        viewType="icon"
+        theme="stroke"
+        color="inverse"
+        className={active ? "product-card__fav active" : "product-card__fav"}
+      >
+        <Sprite name="heart" />
+      </DefaultBtn>
+      <DefaultBtn type="button" viewType="icon" theme="stroke" color="inverse">
+        <Sprite name="shopping-cart" />
+      </DefaultBtn>
+    </div>
+  </div>
+  <div class="product-card__img">
+    <img src={img} alt="" />
+  </div>
+</div>

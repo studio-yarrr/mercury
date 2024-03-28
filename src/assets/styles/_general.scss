@@ -37,6 +37,10 @@ body {
   background-color: $strokes-primary;
 }
 
+svg {
+  fill: transparent;
+}
+
 a,
 button,
 input,

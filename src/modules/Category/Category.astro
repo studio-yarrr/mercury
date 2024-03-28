@@ -1,0 +1,79 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import PageHead from "@components/PageHead/PageHead.astro";
+import Pagination from "@components/Pagination/Pagination.astro";
+import ProductCard from "@components/ProductCard/ProductCard.astro";
+import { Sprite } from "astro-icon";
+---
+
+<div class="category">
+  <div class="container">
+    <div class="category-head">
+      <PageHead
+        title="стоматологические установки"
+        breadcrumbs={[
+          "главная",
+          "каталог mercury",
+          "стоматологические установки",
+        ]}
+      />
+
+      <div class="category-head-filter">
+        <span class="heading-7 medium category-head-filter__text">
+          Сортировка: <span>по популярности</span>
+        </span>
+        <DefaultBtn type="button">
+          Фильтр
+          <Sprite name="plus" />
+        </DefaultBtn>
+      </div>
+    </div>
+
+    <div class="category__container">
+      <div class="category__list">
+        <ProductCard
+          data-fade-anim
+          title="Стоматологическая установка mercury"
+          price="385 000"
+          img="./img/products/prod-8.png"
+          active
+        />
+        <ProductCard
+          data-fade-anim
+          title="Стоматологическая установка mercury"
+          price="385 000"
+          img="./img/products/prod-9.png"
+        />
+        <ProductCard
+          data-fade-anim
+          title="Стоматологическая установка mercury"
+          price="385 000"
+          img="./img/products/prod-10.png"
+        />
+        <ProductCard
+          data-fade-anim
+          title="Стоматологическая установка mercury"
+          price="385 000"
+          img="./img/products/prod-11.png"
+        />
+        <ProductCard
+          data-fade-anim
+          title="Стоматологическая установка mercury"
+          price="385 000"
+          img="./img/products/prod-12.png"
+        />
+        <ProductCard
+          data-fade-anim
+          title="Стоматологическая установка mercury"
+          price="385 000"
+          img="./img/products/prod-13.png"
+        />
+      </div>
+      <div class="category__pagination">
+        <DefaultBtn viewType="width" theme="stroke">Показать еще</DefaultBtn>
+
+        <Pagination />
+      </div>
+    </div>
+  </div>
+</div>

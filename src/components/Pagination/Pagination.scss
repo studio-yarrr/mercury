@@ -1,49 +1,42 @@
 .pagination {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
   flex-wrap: wrap;
+  gap: 0.5rem;
 
-  &__link {
-    flex: none;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 1.2rem;
-    border: 0.1rem solid $Primary-Light;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.6rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 135%;
-    color: $Primary-Base;
+  &__btn {
+    width: 2.4rem;
+    height: 2.4rem;
     transition: 0.3s;
 
-    @include hover {
-      color: $white;
-      background-color: $Primary-Dark;
+    &:first-child {
+      margin-right: 1.5rem;
     }
 
-    &.active {
-      background-color: $Primary-Base;
-      color: $white;
+    &:last-child {
+      margin-left: 1.5rem;
     }
 
-    &.pagination__btn {
-      border: none;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
 
-      svg {
-        width: 2rem;
-        height: 2rem;
+  &__link {
+    &.default-btn {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 1.5rem;
+      padding: 0;
+
+      &:not(.active) {
+        border-color: transparent;
       }
-    }
 
-    &.disabled {
-      color: $Primary-Tint;
-      pointer-events: none;
-      border-color: $Primary-Tint;
+      &.active {
+        pointer-events: none;
+      }
     }
   }
 }

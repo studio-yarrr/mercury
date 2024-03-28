@@ -1,0 +1,99 @@
+.product-card {
+  padding: 3rem;
+  border-radius: 3rem;
+  overflow: hidden;
+  background-color: $primary;
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+  justify-content: space-between;
+  height: 39rem;
+  color: $primary-inverse;
+
+  @include breakpoint($xm-bp) {
+    height: 23rem;
+    padding: 2rem;
+    border-radius: 2rem;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+
+    @include breakpoint($xm-bp) {
+      gap: 1rem;
+    }
+  }
+
+  &__title {
+    @include breakpoint($xm-bp) {
+      font-size: 1.6rem;
+      line-height: 1em;
+    }
+  }
+
+  &__price {
+    @include breakpoint($xm-bp) {
+      font-size: 1.6rem;
+      line-height: 1.25em;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    .default-btn {
+      @include breakpoint($xm-bp) {
+        padding: 0;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 1.4rem;
+      }
+
+      svg {
+        @include breakpoint($xm-bp) {
+          width: 1.6rem;
+          height: 1.6rem;
+        }
+      }
+    }
+  }
+
+  &__fav {
+    &.active {
+      svg {
+        fill: $primary-inverse;
+      }
+    }
+  }
+
+  &__img {
+    flex: none;
+    width: 34.5rem;
+    height: auto;
+
+    @include breakpoint($xm-bp) {
+      width: 16rem;
+    }
+
+    img {
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

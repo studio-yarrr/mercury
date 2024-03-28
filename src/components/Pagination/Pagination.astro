@@ -1,16 +1,75 @@
 ---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
 import { Sprite } from "astro-icon";
 ---
 
 <div class="pagination">
-  <a href="#" class="pagination__link pagination__btn disabled">
+  <a href="#" class="primary-hover pagination__btn disabled">
     <Sprite name="chevron-left" />
   </a>
-  <span class="pagination__link active">1</span>
-  <a href="#" class="pagination__link">2</a>
-  <a href="#" class="pagination__link">3</a>
-  <a href="#" class="pagination__link">4</a>
-  <a href="#" class="pagination__link pagination__btn">
+  <DefaultBtn
+    as="span"
+    viewType="icon"
+    theme="stroke"
+    className="pagination__link active"
+  >
+    1
+  </DefaultBtn>
+  <DefaultBtn
+    as="a"
+    href="#"
+    viewType="icon"
+    theme="stroke"
+    className="pagination__link"
+  >
+    2
+  </DefaultBtn>
+  <DefaultBtn
+    as="a"
+    href="#"
+    viewType="icon"
+    theme="stroke"
+    className="pagination__link"
+  >
+    3
+  </DefaultBtn>
+  <DefaultBtn
+    as="a"
+    href="#"
+    viewType="icon"
+    theme="stroke"
+    className="pagination__link"
+  >
+    4
+  </DefaultBtn>
+  <DefaultBtn
+    as="a"
+    href="#"
+    viewType="icon"
+    theme="stroke"
+    className="pagination__link"
+  >
+    5
+  </DefaultBtn>
+  <DefaultBtn
+    as="a"
+    href="#"
+    viewType="icon"
+    theme="stroke"
+    className="pagination__link"
+  >
+    ...
+  </DefaultBtn>
+  <DefaultBtn
+    as="a"
+    href="#"
+    viewType="icon"
+    theme="stroke"
+    className="pagination__link"
+  >
+    11
+  </DefaultBtn>
+  <a href="#" class="primary-hover pagination__btn">
     <Sprite name="chevron-right" />
   </a>
 </div>

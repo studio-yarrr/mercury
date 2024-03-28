@@ -1,0 +1,83 @@
+.category {
+  @include breakpoint($xm-bp) {
+    margin-bottom: 10rem;
+  }
+
+  &-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 4rem;
+    margin-bottom: 7rem;
+
+    @include breakpoint($xm-bp) {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 4rem;
+    }
+
+    .page-head {
+      max-width: 60rem;
+
+      @include breakpoint($xm-bp) {
+        max-width: 100%;
+      }
+    }
+
+    &-filter {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+
+      @include breakpoint($xm-bp) {
+        width: 100%;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        gap: 2rem;
+      }
+
+      &__text {
+        color: $secondary-inverse-active;
+
+        @include breakpoint($xs-bp) {
+          display: flex;
+          flex-direction: column;
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
+    @include breakpoint($xm-bp) {
+      gap: 4rem;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    @include breakpoint($xm-bp) {
+      gap: 1rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__pagination {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
