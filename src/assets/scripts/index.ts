@@ -6,7 +6,13 @@ import {
   initSelectInputs,
   scrollUpHandler,
 } from "./utils";
-import { Navigation, Pagination, Scrollbar } from "swiper/modules";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  Thumbs,
+  FreeMode,
+} from "swiper/modules";
 import Swiper from "swiper";
 import { textInputHandler } from "@components/TextInput/TextInput";
 import { initMeaderMenu } from "@modules/Header/Header";
@@ -16,8 +22,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { initSpinner } from "@components/Spinner/Spinner";
 import { initMainCategoryAnim } from "@modules/Main/MainCategory/MainCategory";
+import { initProductHeadSwiper } from "@modules/Product/ProductHead/ProductHead";
 
-Swiper.use([Navigation, Pagination, Scrollbar]);
+Swiper.use([Navigation, Pagination, Scrollbar, Thumbs, FreeMode]);
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -33,6 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initMainAbout();
   initMainCategoryAnim();
+
+  initProductHeadSwiper();
 
   initFadeAnim();
 

@@ -1,0 +1,91 @@
+---
+import Breadcrumbs from "@components/Breadcrumbs/Breadcrumbs.astro";
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import { Sprite } from "astro-icon";
+---
+
+<section class="container section-margin product-head">
+  <Breadcrumbs
+    items={["главная", "каталог mercury", "стоматологические установки"]}
+  />
+  <div class="product-head__wrapper">
+    <div class="product-head-swiper">
+      <div class="swiper product-head-swiper__nav">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./img/products/prod-13.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/products/prod-12.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/products/prod-11.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/products/prod-10.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/products/prod-9.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/products/prod-8.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="swiper product-head-swiper__main">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./img/products/prod-13.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/products/prod-12.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/products/prod-11.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/products/prod-10.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/products/prod-9.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/products/prod-8.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-head__container">
+      <div class="product-head__inner">
+        <span class="body-4 product-head__id">Артикул: cc06cf78ef00</span>
+        <div class="product-head__box">
+          <h1 class="heading-4 medium product-head__title">
+            Стоматологическая установка mercury 550
+          </h1>
+          <DefaultBtn viewType="icon" theme="stroke">
+            <Sprite name="heart" />
+          </DefaultBtn>
+        </div>
+        <span class="heading-2 medium product-head__price" data-currency="₽"
+          >385 000</span
+        >
+        <span class="body-4 product-head__fabric">
+          Производство: Россия
+          <img src="./img/ru-flag.jpg" alt="" />
+        </span>
+      </div>
+      <div class="product-head__btns">
+        <DefaultBtn viewType="basket">
+          Добавить в корзину
+          <Sprite name="shopping-cart" />
+        </DefaultBtn>
+        <DefaultBtn viewType="width" theme="stroke" color="secondary">
+          Оформить лизинг
+        </DefaultBtn>
+        <DefaultBtn viewType="width" color="secondary">
+          Получить консультацию
+        </DefaultBtn>
+      </div>
+    </div>
+  </div>
+</section>
