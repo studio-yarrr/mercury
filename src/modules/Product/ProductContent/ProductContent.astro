@@ -18,28 +18,26 @@ const links: string[] = [
 ];
 ---
 
-<section class="container product-content">
+<section class="container section-margin product-content">
   <div class="product-content-nav" data-dropdown data-close>
-    <DefaultBtn className="product-content-nav__btn" data-btn>
+    <DefaultBtn className="product-content-nav__btn" viewType="width" data-btn>
       {links[activeIndex]}
-      <Sprite name="" />
+      <Sprite name="chevron-down" />
     </DefaultBtn>
-    <div class="product-content-nav__container">
-      <div class="product-content-nav__list">
-        {
-          links.map((link, i) => (
-            <a
-              href="#"
-              class:list={[
-                "body-2 medium primary-hover product-content-nav__link",
-                { active: i === activeIndex },
-              ]}
-            >
-              {link}
-            </a>
-          ))
-        }
-      </div>
+    <div class="product-content-nav__list">
+      {
+        links.map((link, i) => (
+          <a
+            href="#"
+            class:list={[
+              "body-2 medium primary-hover product-content-nav__link",
+              { active: i === activeIndex },
+            ]}
+          >
+            {link}
+          </a>
+        ))
+      }
     </div>
   </div>
   <div class="product-content__container">

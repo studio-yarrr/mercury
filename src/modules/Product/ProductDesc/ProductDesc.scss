@@ -1,0 +1,102 @@
+.product-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+
+  @include breakpoint($xm-bp) {
+    gap: 6rem;
+  }
+
+  @include breakpoint($xs-bp) {
+    gap: 4rem;
+  }
+
+  &__text {
+    @include breakpoint($xs-bp) {
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem 2rem;
+
+    @include breakpoint($xs-bp) {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+  }
+
+  &__card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+
+    @include breakpoint($xs-bp) {
+      gap: 2rem;
+    }
+
+    &-img {
+      width: 100%;
+      aspect-ratio: 4 / 2.7;
+      border-radius: 3rem;
+      overflow: hidden;
+
+      img {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-swiper {
+      width: 100%;
+      border-radius: 3rem;
+      user-select: none;
+
+      .product-desc__card-img {
+        border-radius: 0;
+      }
+
+      .default-btn {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0.4;
+
+        &[data-prev] {
+          left: 3rem;
+
+          @include breakpoint($xs-bp) {
+            left: 2rem;
+          }
+        }
+
+        &[data-next] {
+          right: 3rem;
+
+          @include breakpoint($xs-bp) {
+            right: 2rem;
+          }
+        }
+
+        &:disabled {
+          opacity: 0.2;
+        }
+      }
+    }
+
+    &-text {
+      max-width: 36rem;
+      color: $secondary-inverse-active;
+      text-align: center;
+    }
+  }
+}

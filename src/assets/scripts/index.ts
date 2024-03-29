@@ -1,6 +1,7 @@
 import VenoBox from "venobox/dist/venobox";
 import { formValidateInit } from "./fv";
 import {
+  initDefaultSwipers,
   initDropdownItems,
   initMenuItems,
   initSelectInputs,
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initDropdownItems();
   initSelectInputs();
   initMenuItems();
+  initDefaultSwipers();
 
   initMeaderMenu();
   initMainBannerSlider();

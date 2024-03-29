@@ -1,3 +1,4 @@
+import Swiper from "swiper";
 import VenoBox from "venobox/dist/venobox";
 
 export class DropdownController {
@@ -496,4 +497,19 @@ export function scrollUpHandler(target: HTMLElement) {
       behavior: "smooth",
     });
   }
+}
+
+export function initDefaultSwipers() {
+  const containers = document.querySelectorAll<HTMLElement>(
+    ".swiper[data-swiper]",
+  );
+  containers.forEach((container) => {
+    new Swiper(container, {
+      speed: 600,
+      navigation: {
+        prevEl: "[data-prev]",
+        nextEl: "[data-next]",
+      },
+    });
+  });
 }
