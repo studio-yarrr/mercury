@@ -4,19 +4,20 @@ import Header from "@modules/Header/Header.astro";
 import ProductContent from "@modules/Product/ProductContent/ProductContent.astro";
 import ProductDesc from "@modules/Product/ProductDesc/ProductDesc.astro";
 import ProductHead from "@modules/Product/ProductHead/ProductHead.astro";
+import RelatedProd from "@modules/RelatedProd/RelatedProd.astro";
 import Layout from "src/layouts/Layout.astro";
 ---
 
 <Layout title="">
   <Header />
 
-  <div class="wrapper">
-    <ProductHead />
+  <ProductHead />
 
-    <ProductContent activeIndex={0}>
-      <ProductDesc />
-    </ProductContent>
-  </div>
+  <ProductContent activeIndex={0}>
+    <ProductDesc />
+  </ProductContent>
+
+  <RelatedProd />
 
   <Footer />
 </Layout>

@@ -1,0 +1,13 @@
+.related-prod {
+  margin-bottom: 15rem;
+
+  @include breakpoint($xm-bp) {
+    margin-bottom: 10rem;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+  }
+}

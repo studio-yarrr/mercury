@@ -2,9 +2,16 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 15rem;
+
+  @include breakpoint($xm-bp) {
+    margin-bottom: 10rem;
+  }
 
   @include breakpoint($xs-bp) {
     gap: 2rem;
+    margin-top: 1rem;
   }
 
   &__wrapper {
