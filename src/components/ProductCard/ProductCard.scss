@@ -9,11 +9,27 @@
   justify-content: space-between;
   height: 39rem;
   color: $primary-inverse;
+  position: relative;
 
   @include breakpoint($xm-bp) {
     height: 23rem;
     padding: 2rem;
     border-radius: 2rem;
+  }
+
+  .flag {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 0.2rem solid #f2f2f2;
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+
+    @include breakpoint($xm-bp) {
+      top: 2rem;
+      right: 2rem;
+    }
   }
 
   &__container {

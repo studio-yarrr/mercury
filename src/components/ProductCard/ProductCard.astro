@@ -7,10 +7,11 @@ interface Props {
   price: string;
   img: string;
   active?: boolean;
+  flag?: string;
   className?: string;
 }
 
-const { title, price, img, active, className, ...rest } = Astro.props;
+const { title, price, img, active, flag, className, ...rest } = Astro.props;
 ---
 
 <div class:list={["product-card", className]} {...rest}>
@@ -45,4 +46,5 @@ const { title, price, img, active, className, ...rest } = Astro.props;
   <div class="product-card__img">
     <img src={img} alt="" />
   </div>
+  {flag && <img src={flag} alt="" class="flag" />}
 </div>
