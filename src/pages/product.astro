@@ -1,6 +1,7 @@
 ---
 import Footer from "@modules/Footer/Footer.astro";
 import Header from "@modules/Header/Header.astro";
+import ProductContent from "@modules/Product/ProductContent/ProductContent.astro";
 import ProductHead from "@modules/Product/ProductHead/ProductHead.astro";
 import Layout from "src/layouts/Layout.astro";
 ---
@@ -10,6 +11,8 @@ import Layout from "src/layouts/Layout.astro";
 
   <div class="wrapper">
     <ProductHead />
+
+    <ProductContent activeIndex={0} />
   </div>
 
   <Footer />
