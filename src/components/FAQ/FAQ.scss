@@ -1,0 +1,61 @@
+.faq {
+  display: flex;
+  flex-direction: column;
+  border-radius: 3rem;
+  background-color: $strokes-secondary;
+  transition: 0.5s;
+  padding: 2.8rem;
+
+  &._dropped {
+    background-color: $primary;
+    color: $primary-inverse;
+
+    .faq {
+      &__btn-icon {
+        color: $primary-inverse;
+        border-color: $secondary-inverse;
+      }
+
+      &__container {
+        grid-template-rows: 1fr;
+        padding-top: 6rem;
+      }
+
+      &__content {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
+    &-icon {
+      flex: none;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: 0.5s;
+    overflow: hidden;
+  }
+
+  &__content {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    opacity: 0;
+    transition: 0.3s;
+    color: $primary-inverse;
+  }
+
+  &__subtitle {
+    color: $secondary-active;
+  }
+}
