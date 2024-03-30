@@ -24,6 +24,7 @@ import { ScrollTrigger } from "gsap/all";
 import { initSpinner } from "@components/Spinner/Spinner";
 import { initMainCategoryAnim } from "@modules/Main/MainCategory/MainCategory";
 import { initProductHeadSwiper } from "@modules/Product/ProductHead/ProductHead";
+import { initLeasingSteps } from "@modules/Leasing/Leasing";
 
 Swiper.use([Navigation, Pagination, Scrollbar, Thumbs, FreeMode]);
 gsap.registerPlugin(ScrollTrigger);
@@ -44,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMainCategoryAnim();
 
   initProductHeadSwiper();
+  initLeasingSteps();
 
   initFadeAnim();
 
@@ -59,8 +61,18 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", () => {
     clearTimeout(resizeID);
     resizeID = setTimeout(() => {
+      ScrollTrigger.refresh();
       ScrollTrigger.update();
-    }, 100);
+    }, 200);
+  });
+
+  let dropID = 0;
+  document.addEventListener("dropdown", () => {
+    clearTimeout(dropID);
+    dropID = setTimeout(() => {
+      ScrollTrigger.refresh();
+      ScrollTrigger.update();
+    }, 600);
   });
 });
 

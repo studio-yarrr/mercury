@@ -29,6 +29,7 @@ export class Dropdown {
   btn: HTMLElement | null;
   controller: DropdownController;
   controllerID: string | null;
+  event: Event;
   // scrollTo: boolean;
 
   constructor(container: HTMLElement) {
@@ -39,6 +40,7 @@ export class Dropdown {
 
     // блок с data-dropdown-btn станет кнопкой
     this.btn = this.container.querySelector<HTMLElement>("[data-btn]");
+    this.event = new Event("dropdown", { bubbles: true });
 
     if (this.btn) {
       this.btn.addEventListener("click", (e) =>
@@ -83,6 +85,7 @@ export class Dropdown {
     } else {
       this.open();
     }
+    document.dispatchEvent(this.event);
   }
 
   open() {

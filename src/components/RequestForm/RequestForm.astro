@@ -1,0 +1,42 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import TextInput from "@components/TextInput/TextInput.astro";
+---
+
+<form action="#" class="request-form" data-action="form-submit">
+  <div class="request-form__head">
+    <h3 class="heading-3 medium request-form__title">
+      Оставьте заявку на лизинг
+    </h3>
+    <span class="body-3 request-form__subtitle">
+      Наш менеджер отправит вам персональные условия по лизингу
+    </span>
+  </div>
+  <div class="request-form__container">
+    <div class="request-form__inner">
+      <TextInput
+        className="fv"
+        label="Имя"
+        placeholder=""
+        data-action="required-text"
+        required
+      />
+      <TextInput
+        className="fv"
+        label="Электронная почта"
+        placeholder=""
+        data-action="required-email"
+        required
+      />
+      <TextInput
+        className="fv"
+        label="Номер телефона"
+        placeholder=""
+        data-action="required-text"
+        required
+      />
+      <TextInput className="fv" label="Организация" placeholder="" />
+    </div>
+    <DefaultBtn type="submit" viewType="width">Отправить</DefaultBtn>
+  </div>
+</form>

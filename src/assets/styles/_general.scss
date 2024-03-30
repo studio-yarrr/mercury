@@ -107,6 +107,11 @@ textarea {
   font-weight: 700;
 }
 
+.underline {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
 .primary {
   color: $primary;
 }

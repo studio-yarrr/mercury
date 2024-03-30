@@ -1,0 +1,172 @@
+.leasing {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .payment__text {
+      max-width: 54.7rem;
+    }
+  }
+}
+
+.leasing-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.leasing-advant {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  &__title {
+    text-transform: unset;
+  }
+
+  &__text {
+    color: $secondary-inverse-hover$primary-hover;
+    max-width: 38.8rem;
+  }
+
+  .payment-advant-item {
+    width: 100%;
+    height: 40.5rem;
+    border: 0.1rem solid $secondary;
+    background-color: transparent;
+
+    &__img {
+      width: 12rem;
+      height: 12rem;
+    }
+  }
+}
+
+.leasing-about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13rem;
+  max-width: 66.5rem;
+  margin: 10rem 0rem;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7rem;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.4rem;
+
+    &.leasing-about-item_main {
+      .leasing-about-item {
+        &__text {
+          font-size: 2.6rem;
+          line-height: 1.1em;
+        }
+      }
+    }
+
+    &__icon {
+      width: 7rem;
+      height: 7rem;
+      border: 0.1rem solid $secondary;
+      border-radius: 2.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 2.8rem;
+        height: 2.8rem;
+      }
+    }
+  }
+}
+
+.leasing-steps {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+  margin-bottom: calc(var(--items-count, 4) * 3rem) !important;
+
+  &-item {
+    width: 100%;
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 3rem;
+    border-radius: 3rem;
+    background-color: $secondary;
+    color: $primary;
+    position: relative;
+
+    &:not(:first-child) {
+      margin-top: -37rem;
+    }
+
+    &:last-child {
+      opacity: 1;
+      color: $primary;
+    }
+
+    // &:first-child {
+    //   opacity: 1;
+    //   color: $primary;
+    // }
+
+    // &:nth-child(2) {
+    //   transform: translateY(3rem);
+    // }
+
+    // &:nth-child(3) {
+    //   transform: translateY(6rem);
+    //   opacity: 0.15;
+    // }
+
+    // &:nth-child(4) {
+    //   transform: translateY(9rem);
+    //   opacity: 1;
+    //   color: $primary;
+    // }
+
+    &__num {
+      opacity: 0.5;
+    }
+
+    &__text {
+      max-width: 71.5rem;
+    }
+  }
+}

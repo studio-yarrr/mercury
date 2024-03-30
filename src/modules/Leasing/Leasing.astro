@@ -1,0 +1,201 @@
+---
+import FAQ from "@components/FAQ/FAQ.astro";
+import RequestForm from "@components/RequestForm/RequestForm.astro";
+import { Sprite } from "astro-icon";
+---
+
+<div class="leasing">
+  <div class="leasing__container">
+    <div class="leasing__head">
+      <h3 class="heading-3 medium payment__title">
+        Компания Mercury рада представить нашим клиентам возможность оформления
+        стоматологического оборудования в лизинг от BfofB leasing.
+      </h3>
+      <p class="body-2 template payment__text">
+        BfofB leasing - первая в России лизинговая компания для малого и
+        среднего бизнеса.
+      </p>
+    </div>
+
+    <div class="leasing-faq">
+      <div class="leasing-faq__list">
+        <FAQ title="На какие суммы даете лизинг?" data-group="ga">
+          <p>Для большинства регионов РФ, в том числе для Крыма</p>
+        </FAQ>
+        <FAQ title="На какой срок даете лизинг?" data-group="ga">
+          <p>Для большинства регионов РФ, в том числе для Крыма</p>
+        </FAQ>
+        <FAQ title="Кому оформляете лизинг?" data-group="ga">
+          <p>Для большинства регионов РФ, в том числе для Крыма</p>
+        </FAQ>
+        <FAQ
+          title="Сколько времени требуется для ответа по лизингу?"
+          data-group="ga"
+        >
+          <p>Для большинства регионов РФ, в том числе для Крыма</p>
+        </FAQ>
+      </div>
+      <div class="leasing__form">
+        <RequestForm />
+      </div>
+    </div>
+  </div>
+
+  <div class="payment__inner">
+    <h3 class="heading-3 medium payment__title">
+      Партнерское предложение«Лизинг медицинского оборудования для новых клиник»
+    </h3>
+    <div class="body-2 template payment__text">
+      <p>
+        Специальное предложение для компаний, начинающих медицинский бизнес. Мы
+        готовы предоставить лизинговое финансирование для покупки медицинского,
+        косметологического и сопутствующего оборудования для новых клиник.
+        <br /><br />
+         Единственное предложение на рынке - лизинг для стартапа
+        <br /><br />
+         Нет ограничения по возрасту компании и жестких требований
+        <br /><br />
+         Возможность лизинга с авансированием 0% на новое оборудование со сроком
+        от 12 до 36 месяцев с возможностью досрочного погашения.*значения
+        авансового платежа до 0% возможно при предоставлении лизингополучателем
+        дополнительного залогового имущества (личное поручительство; автомобиль;
+        недвижимое и движимое имущество). При отсутствии от 15% годовых при
+        покупке нового оборудования.
+      </p>
+    </div>
+  </div>
+
+  <div class="payment__inner">
+    <div class="payment-advant__list leasing-advant">
+      <div class="payment-advant-item">
+        <div class="payment-advant-item__img">
+          <img src="./img/advantages-4.svg" alt="" />
+        </div>
+        <div class="leasing-advant__info">
+          <span class="title-4 medium leasing-advant__title">
+            от 200 000 ₽</span
+          >
+          <span class="body-2 leasing-advant__text">
+            минимальный объем лизинговой инвестиции на 1 предмет
+          </span>
+        </div>
+      </div>
+      <div class="payment-advant-item">
+        <div class="payment-advant-item__img">
+          <img src="./img/advantages-5.svg" alt="" />
+        </div>
+        <div class="leasing-advant__info">
+          <span class="title-4 medium leasing-advant__title"> до 10 млн ₽</span>
+          <span class="body-2 leasing-advant__text">
+            минимальный объем лизинговой инвестиции на 1 предмет
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="body-2 template payment__text">
+      <p>
+        Минимальный объем лизинговой инвестиции на один Предмет лизинга от 200
+        000 руб на 1 предмет. Максимальный объем лизинговой инвестиции на один
+        Предмет лизинга до 10 000 000 руб на 1 предмет.
+        <br /><br />
+         Наличие лицензии на осуществление медицинской деятельности обязательно.
+      </p>
+    </div>
+  </div>
+
+  <div class="leasing-about">
+    <div class="leasing-about-item leasing-about-item_main">
+      <div class="leasing-about-item__icon">
+        <Sprite name="bookmark" />
+      </div>
+      <p class="body-1 medium leasing-about-item__text">
+        Наличие лицензии на осуществление медицинской деятельности <span
+          class="underline"
+        >
+          6 лет на момент приобретения оборудования
+        </span>
+      </p>
+    </div>
+
+    <div class="leasing-about__list">
+      <div class="leasing-about-item">
+        <div class="leasing-about-item__icon">
+          <Sprite name="box" />
+        </div>
+        <p class="body-1 medium leasing-about-item__text">
+          Возможен выкуп <br /> на ФЛ
+        </p>
+      </div>
+      <div class="leasing-about-item">
+        <div class="leasing-about-item__icon">
+          <Sprite name="mouse-square" />
+        </div>
+        <p class="body-1 medium leasing-about-item__text">
+          Есть досрочный и <br /> частично-досрочный выкуп
+        </p>
+      </div>
+      <div class="leasing-about-item">
+        <div class="leasing-about-item__icon">
+          <Sprite name="chart-2" />
+        </div>
+        <p class="body-1 medium leasing-about-item__text">
+          Возможны лизинговые <br /> каникулы до 3 месяцев
+        </p>
+      </div>
+      <div class="leasing-about-item">
+        <div class="leasing-about-item__icon">
+          <Sprite name="format-circle" />
+        </div>
+        <p class="body-1 medium leasing-about-item__text">
+          Есть сезонные <br /> графики платежей
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="payment__inner">
+    <h3 class="heading-3 medium payment__title">
+      Получение финансирования <br />
+       по возвратному лизингу
+    </h3>
+    <div class="body-2 template payment__text">
+      <p>
+        Если вам необходимы денежные средства, но банки отказывают в кредите, то
+        можно воспользоваться возвратным лизингом.
+        <br /><br />
+         Возвратный лизинг – это вид финансирования, при котором предприниматель
+        продает свое оборудование(технику в мед центре) лизинговой компании, а
+        взамен получает деньги для своего бизнеса, при этом остается возможность
+        пользоваться проданным оборудованием, на условиях лизинга (аренда), в
+        том числе и выкупить его обратно.
+      </p>
+    </div>
+  </div>
+
+  <div class="leasing-steps" style="--items-count: 4">
+    <div class="leasing-steps-item">
+      <span class="heading-3 leasing-steps-item__num">Шаг 1</span>
+      <p class="heading-3 leasing-steps-item__text">
+        Забираете обратно проданное оборудование по договору лизинга
+      </p>
+    </div>
+    <div class="leasing-steps-item">
+      <span class="heading-3 leasing-steps-item__num">Шаг 2</span>
+      <p class="heading-3 leasing-steps-item__text">
+        Забираете обратно проданное оборудование по договору лизинга
+      </p>
+    </div>
+    <div class="leasing-steps-item">
+      <span class="heading-3 leasing-steps-item__num">Шаг 3</span>
+      <p class="heading-3 leasing-steps-item__text">
+        Забираете обратно проданное оборудование по договору лизинга
+      </p>
+    </div>
+    <div class="leasing-steps-item">
+      <span class="heading-3 leasing-steps-item__num">Шаг 4</span>
+      <p class="heading-3 leasing-steps-item__text">
+        Забираете обратно проданное оборудование по договору лизинга
+      </p>
+    </div>
+  </div>
+</div>
