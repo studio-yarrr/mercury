@@ -11,7 +11,7 @@ const { className, title, ...rest } = Astro.props;
 ---
 
 <div class:list={["faq", className]} data-dropdown {...rest}>
-  <button type="button" class="heading-3 faq__btn" data-btn>
+  <button type="button" class="heading-3 medium faq__btn" data-btn>
     {title}
     <DefaultBtn
       as="span"

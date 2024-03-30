@@ -9,38 +9,84 @@ export function initLeasingSteps() {
     const TL = gsap.timeline({
       scrollTrigger: {
         trigger: container,
-        start: `500px 80%`,
-        end: `bottom 80%`,
-        scrub: true,
+        start: `150% bottom`,
+        end: `${items.length * 200}% bottom`,
         pin: true,
+        pinSpacing: true,
+        scrub: true,
       },
     });
 
     items.forEach((item, index) => {
       if (index === 0) {
-        TL.to(item, {
-          opacity: 0.15,
-          color: "rgba(255,255,255,0)",
+        TL.from(item, {
+          opacity: 1,
+          color: "rgba(255,255,255,1)",
           duration: 4,
         });
       } else {
         TL.from(
           item,
           {
-            marginTop: "4rem",
+            top: "150%",
             duration: 4,
           },
           "-=4",
         );
-
         if (index !== items.length - 1) {
-          TL.to(item, {
-            opacity: 0.15,
-            color: "rgba(255,255,255,0)",
+          TL.from(item, {
+            opacity: 1,
+            color: "rgba(255,255,255,1)",
             duration: 4,
           });
         }
       }
+      // if (index === 0) {
+      //   TL.from(item, {
+      //     opacity: 1,
+      //     color: "rgba(255,255,255,1)",
+      //     duration: 4,
+      //   });
+      // } else {
+      //   TL.from(
+      //     item,
+      //     {
+      //       translateY: "100%",
+      //       duration: 4,
+      //     },
+      //     "-=4",
+      //   );
+      //   if (index !== items.length - 1) {
+      //     TL.from(item, {
+      //       opacity: 1,
+      //       color: "rgba(255,255,255,1)",
+      //       duration: 4,
+      //     });
+      //   }
+      // }
+      // if (index === 0) {
+      //   TL.to(item, {
+      //     opacity: 0.15,
+      //     color: "rgba(255,255,255,0)",
+      //     duration: 4,
+      //   });
+      // } else {
+      //   TL.from(
+      //     item,
+      //     {
+      //       marginTop: "4rem",
+      //       duration: 4,
+      //     },
+      //     "-=4",
+      //   );
+      //   if (index !== items.length - 1) {
+      //     TL.to(item, {
+      //       opacity: 0.15,
+      //       color: "rgba(255,255,255,0)",
+      //       duration: 4,
+      //     });
+      //   }
+      // }
     });
   }
 }
