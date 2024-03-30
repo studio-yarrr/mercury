@@ -510,6 +510,16 @@ export function initDefaultSwipers() {
         prevEl: "[data-prev]",
         nextEl: "[data-next]",
       },
+      pagination: {
+        type: "custom",
+        el: "[data-fraction]",
+        renderCustom: (swiper, current, total) => {
+          return `
+            <span>${current > 9 ? current : "0" + current}</span>
+            <span>${total > 9 ? total : "0" + total}</span>
+          `;
+        },
+      },
     });
   });
 }

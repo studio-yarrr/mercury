@@ -1,0 +1,23 @@
+---
+import Footer from "@modules/Footer/Footer.astro";
+import Header from "@modules/Header/Header.astro";
+import Payment from "@modules/Payment/Payment.astro";
+import ProductContent from "@modules/Product/ProductContent/ProductContent.astro";
+import ProductHead from "@modules/Product/ProductHead/ProductHead.astro";
+import RelatedProd from "@modules/RelatedProd/RelatedProd.astro";
+import Layout from "src/layouts/Layout.astro";
+---
+
+<Layout title="">
+  <Header />
+
+  <ProductHead />
+
+  <ProductContent activeIndex={2}>
+    <Payment />
+  </ProductContent>
+
+  <RelatedProd />
+
+  <Footer />
+</Layout>

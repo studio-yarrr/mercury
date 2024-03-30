@@ -1,0 +1,272 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import { Sprite } from "astro-icon";
+---
+
+<div class="payment">
+  <div class="payment__container payment__ind">
+    <div class="payment__inner">
+      <h3 class="heading-3 medium payment__title">Для физических лиц</h3>
+      <div class="body-2 template payment__text">
+        <p>
+          Для выбора оплаты товара с помощью банковской карты на соответствующей
+          странице необходимо нажать кнопку Оплата заказа банковской картой.
+          <br /><br />
+           Оплата происходит через ПАО СБЕРБАНК с использованием банковских карт
+          следующих платёжных систем:
+        </p>
+      </div>
+    </div>
+
+    <div class="payment__cards">
+      <div class="payment__cards-item">
+        <img src="./img/mir.svg" alt="" />
+      </div>
+      <div class="payment__cards-item">
+        <img src="./img/visa.svg" alt="" />
+      </div>
+      <div class="payment__cards-item">
+        <img src="./img/mastercard.svg" alt="" />
+      </div>
+      <div class="payment__cards-item">
+        <img src="./img/international.svg" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <div class="payment__container payment-variants">
+    <div class="body-2 template payment__text">
+      <p>
+        Для оплаты (ввода реквизитов Вашей карты) Вы будете перенаправлены на
+        платёжный шлюз ПАО СБЕРБАНК. Соединение с платёжным шлюзом и передача
+        информации осуществляется в защищённом режиме с использованием протокола
+        шифрования SSL.
+        <br /><br />
+         В случае если Ваш банк поддерживает технологию безопасного проведения
+        интернет-платежей Verified By Visa, MasterCard SecureCode, MIR Accept,
+        J-Secure, для проведения платежа также может потребоваться ввод
+        специального пароля.
+        <br /><br />
+         Настоящий сайт поддерживает 256-битное шифрование. Конфиденциальность
+        сообщаемой персональной информации обеспечивается ПАО СБЕРБАНК.
+        <br /><br />
+         Введённая информация не будет предоставлена третьим лицам за
+        исключением случаев, предусмотренных законодательством РФ. Проведение
+        платежей по банковским картам осуществляется в строгом соответствии с
+        требованиями платёжных систем МИР, Visa Int., MasterCard Europe Sprl,
+        JCB.
+      </p>
+    </div>
+
+    <div class="payment-variants__container">
+      <h4 class="heading-5 medium payment-variants__title">Варианты оплат:</h4>
+      <ol class="payment-variants__list">
+        <li class="body-3 payment-variants__item">
+          <p class="template payment-variants__item-text">
+            Наличными (курьеру интернет-магазина при доставке).
+          </p>
+        </li>
+        <li class="body-3 payment-variants__item">
+          <p class="template payment-variants__item-text">
+            Банковским переводом по счету, выставленным компанией.
+          </p>
+        </li>
+        <li class="body-3 payment-variants__item">
+          <p class="template payment-variants__item-text">
+            Покупай со Сбером" в рассрочку (условия кредитования). Срок
+            кредитования - 6 и 12 месяцев. Владельцы дебетовой банковской карты
+            ПАО Сбербанк, подключившиеся к услуге «Мобильный банк» и системе
+            «Сбербанк Онлайн», могут совершать покупки в рассрочку, не выходя из
+            дома!
+          </p>
+          <img src="./img/sber.jpg" alt="" class="payment-variants__item-img" />
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="payment-req">
+    <h3 class="heading-3 medium payment__title">
+      Рассрочка по программе "Покупай со Сбером"
+    </h3>
+    <div class="payment-req__container">
+      <h6 class="heading-6 medium payment-req__subtitle">
+        Основные требования:
+      </h6>
+      <div class="payment-req__list">
+        <div class="payment-req-item">
+          <span class="body-3 medium payment-req-item__title">
+            Гражданство
+          </span>
+          <p class="body-1 payment-req-item__text">Российская Федерация</p>
+        </div>
+        <div class="payment-req-item">
+          <span class="body-3 medium payment-req-item__title">
+            Возраст для получения
+          </span>
+          <p class="body-1 payment-req-item__text">
+            Возраст на момент предоставления кредита: не менее 21 года
+          </p>
+        </div>
+        <div class="payment-req-item">
+          <span class="body-3 medium payment-req-item__title">
+            Возраст возврата
+          </span>
+          <p class="body-1 payment-req-item__text">
+            Возраст на момент возврата кредита по договору: не более 70 лет
+          </p>
+        </div>
+        <div class="payment-req-item">
+          <span class="body-3 medium payment-req-item__title">
+            Регистрация
+          </span>
+          <p class="body-1 payment-req-item__text">
+            Наличие постоянной (временной) регистрации по месту
+            жительства/пребывания на территории Российской Федерации
+          </p>
+        </div>
+        <div class="payment-req-item">
+          <span class="body-3 medium payment-req-item__title">
+            Сервисы банка
+          </span>
+          <p class="body-1 payment-req-item__text">
+            Использование сервисов Банка: держатель дебетовой банковской карты,
+            выпущенной Банком, заключивший с Банком Договор банковского
+            обслуживания, а также подключившийся к услуге «Мобильный банк» и
+            системе СберБанк Онлайн
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="payment-advant payment__inner">
+    <h4 class="heading-5 payment-advant__title">Преимущества сервиса:</h4>
+    <div class="payment-advant__list">
+      <div class="payment-advant-item">
+        <div class="payment-advant-item__img">
+          <img src="./img/advantages-1.svg" alt="" />
+        </div>
+        <h6 class="heading-7 medium payment-advant-item__title">
+          Без первоначального взноса
+        </h6>
+      </div>
+      <div class="payment-advant-item">
+        <div class="payment-advant-item__img">
+          <img src="./img/advantages-2.svg" alt="" />
+        </div>
+        <h6 class="heading-7 medium payment-advant-item__title">
+          Срок действия рассрочки: 6 и 12 месяцев
+        </h6>
+      </div>
+      <div class="payment-advant-item">
+        <div class="payment-advant-item__img">
+          <img src="./img/advantages-3.svg" alt="" />
+        </div>
+        <h6 class="heading-7 medium payment-advant-item__title">
+          Сумма кредита <br /> от 3 000 до 300 000 рублей
+        </h6>
+      </div>
+    </div>
+  </div>
+
+  <div class="payment__inner">
+    <h3 class="heading-3 medium payment__title">Как оформить покупку?</h3>
+
+    <div class="payment-slider">
+      <div class="swiper" data-swiper>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide payment-slider__item">
+            <img
+              src="./img/payment-slide-1.jpg"
+              alt=""
+              class="payment-slider__img"
+            />
+            <p class="body-1 payment-slider__text">
+              Выберите на сайте товар, нажмите «Добавить в корзину», далее
+              перейдите на страницу "Корзина", щелкнув по ее значку в полосе
+              верхнего меню.
+            </p>
+          </div>
+          <div class="swiper-slide payment-slider__item">
+            <img
+              src="./img/payment-slide-1.jpg"
+              alt=""
+              class="payment-slider__img"
+            />
+            <p class="body-1 payment-slider__text">
+              Выберите на сайте товар, нажмите «Добавить в корзину», далее
+              верхнего меню.
+            </p>
+          </div>
+          <div class="swiper-slide payment-slider__item">
+            <img
+              src="./img/payment-slide-1.jpg"
+              alt=""
+              class="payment-slider__img"
+            />
+            <p class="body-1 payment-slider__text">
+              перейдите на страницу "Корзина", щелкнув по ее значку в полосе
+              верхнего меню.
+            </p>
+          </div>
+          <div class="swiper-slide payment-slider__item">
+            <img
+              src="./img/payment-slide-1.jpg"
+              alt=""
+              class="payment-slider__img"
+            />
+            <p class="body-1 payment-slider__text">
+              Выберите на сайте товар, нажмите «Добавить в корзину», далее
+              перейдите на страницу "Корзина", щелкнув по ее значку в полосе
+              верхнего меню.
+            </p>
+          </div>
+          <div class="swiper-slide payment-slider__item">
+            <img
+              src="./img/payment-slide-1.jpg"
+              alt=""
+              class="payment-slider__img"
+            />
+            <p class="body-1 payment-slider__text">
+              перейдите на страницу "Корзина", щелкнув по ее значку в полосе
+              верхнего меню.
+            </p>
+          </div>
+          <div class="swiper-slide payment-slider__item">
+            <img
+              src="./img/payment-slide-1.jpg"
+              alt=""
+              class="payment-slider__img"
+            />
+            <p class="body-1 payment-slider__text">
+              Выберите на сайте товар, нажмите «Добавить в корзину», далее
+            </p>
+          </div>
+          <div class="swiper-slide payment-slider__item">
+            <img
+              src="./img/payment-slide-1.jpg"
+              alt=""
+              class="payment-slider__img"
+            />
+            <p class="body-1 payment-slider__text">
+              Выберите на сайте товар, нажмите «Добавить в корзину», далее
+              перейдите на страницу "Корзина", щелкнув по ее значку в полосе
+              верхнего меню.
+            </p>
+          </div>
+        </div>
+        <div class="heading-3 medium payment-slider__progress" data-fraction>
+        </div>
+        <div class="payment-slider__btns">
+          <DefaultBtn type="button" viewType="icon" color="secondary" data-prev>
+            <Sprite name="chevron-left" />
+          </DefaultBtn>
+          <DefaultBtn type="button" viewType="icon" color="secondary" data-next>
+            <Sprite name="chevron-right" />
+          </DefaultBtn>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
