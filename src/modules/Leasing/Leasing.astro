@@ -1,4 +1,5 @@
 ---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
 import FAQ from "@components/FAQ/FAQ.astro";
 import RequestForm from "@components/RequestForm/RequestForm.astro";
 import { Sprite } from "astro-icon";
@@ -196,6 +197,33 @@ import { Sprite } from "astro-icon";
       <p class="heading-3 leasing-steps-item__text">
         Забираете обратно проданное оборудование по договору лизинга
       </p>
+    </div>
+  </div>
+
+  <div class="leasing-banner">
+    <div class="leasing-banner__container">
+      <div class="leasing-banner__img">
+        <img src="./img/leasing.png" alt="" />
+      </div>
+      <div class="body-2 medium template leasing-banner__text">
+        <ul>
+          <li>Быстрое привлечение капитала</li>
+          <li>Снижение налоговой нагрузки</li>
+          <li>
+            Возможность обновить материально-техническую базу, сохраняя
+            возможность пользования старой за разумную плату.
+          </li>
+        </ul>
+      </div>
+
+      <DefaultBtn
+        type="button"
+        viewType="width"
+        color="inverse"
+        className="leasing-banner__btn"
+      >
+        Оставить заявку на лизинг
+      </DefaultBtn>
     </div>
   </div>
 </div>
