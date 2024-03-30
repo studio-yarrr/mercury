@@ -58,7 +58,7 @@ export class Dropdown {
     }
 
     // data-open - открыт изначально
-    if (this.container.hasAttribute("data-open")) {
+    if (this.container.classList.contains("_dropped")) {
       this.open();
     }
 
