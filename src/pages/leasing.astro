@@ -1,0 +1,23 @@
+---
+import PageHead from "@components/PageHead/PageHead.astro";
+import Footer from "@modules/Footer/Footer.astro";
+import Header from "@modules/Header/Header.astro";
+import LeasingModule from "@modules/Leasing/Leasing.astro";
+import Layout from "src/layouts/Layout.astro";
+---
+
+<Layout title="">
+  <Header />
+
+  <div class="leasing-page container">
+    <PageHead
+      title="лизинг и Рассрочка"
+      breadcrumbs={["главная", "лизинг и рассрочка"]}
+    />
+    <div class="leasing-page__container">
+      <LeasingModule />
+    </div>
+  </div>
+
+  <Footer />
+</Layout>

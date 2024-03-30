@@ -1,0 +1,19 @@
+.leasing-page {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  margin: 5rem 0 15rem;
+
+  @include breakpoint($xm-bp) {
+    margin: 3rem 0rem 10rem;
+    gap: 4rem;
+  }
+
+  @include breakpoint($xs-bp) {
+    margin: 1.5rem 0rem 10rem;
+  }
+
+  &__container {
+    max-width: 100rem;
+  }
+}
