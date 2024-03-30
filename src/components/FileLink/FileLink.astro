@@ -1,0 +1,25 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import { Sprite } from "astro-icon";
+
+interface Props {
+  title: string;
+  color?: string;
+  className?: string;
+}
+
+const { title, className, ...rest } = Astro.props;
+---
+
+<DefaultBtn
+  as="a"
+  href="#"
+  download
+  className={"file-link " + className}
+  {...rest}
+  theme="stroke"
+  viewType="width"
+>
+  {title}
+  <Sprite name="download" />
+</DefaultBtn>

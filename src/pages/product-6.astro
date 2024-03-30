@@ -1,0 +1,26 @@
+---
+import FileLink from "@components/FileLink/FileLink.astro";
+import Footer from "@modules/Footer/Footer.astro";
+import Header from "@modules/Header/Header.astro";
+import ProductContent from "@modules/Product/ProductContent/ProductContent.astro";
+import ProductHead from "@modules/Product/ProductHead/ProductHead.astro";
+import RelatedProd from "@modules/RelatedProd/RelatedProd.astro";
+import Layout from "src/layouts/Layout.astro";
+---
+
+<Layout title="">
+  <Header />
+
+  <ProductHead />
+
+  <ProductContent activeIndex={5}>
+    <div class="file-list">
+      <FileLink title="Инструкция Mercury.pdf" color="secondary" />
+      <FileLink title="Монтажная схема 1 Mercury 3600.pdf" color="secondary" />
+    </div>
+  </ProductContent>
+
+  <RelatedProd />
+
+  <Footer />
+</Layout>
