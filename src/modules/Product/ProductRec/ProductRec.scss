@@ -1,0 +1,11 @@
+.product-rec {
+  @include breakpoint($xm-bp) {
+    font-size: 1.8rem;
+    line-height: 1.2em;
+  }
+
+  @include breakpoint($xs-bp) {
+    font-size: 1.6rem;
+    line-height: 1.25em;
+  }
+}
