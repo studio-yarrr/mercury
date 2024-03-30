@@ -5,6 +5,13 @@
     margin-bottom: 10rem;
   }
 
+  &__title {
+    @include breakpoint($xm-bp) {
+      font-size: 1.8rem;
+      line-height: 1.1em;
+    }
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
