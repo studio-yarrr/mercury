@@ -14,6 +14,10 @@
       &__btn-icon {
         color: $primary-inverse;
         border-color: $secondary-inverse;
+
+        svg {
+          transform: rotate(45deg);
+        }
       }
 
       &__container {
@@ -46,6 +50,10 @@
 
     &-icon {
       flex: none;
+
+      svg {
+        transition: transform 0.5s;
+      }
     }
   }
 
