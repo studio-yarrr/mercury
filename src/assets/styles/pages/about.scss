@@ -1,0 +1,11 @@
+.about-margin {
+  margin-bottom: 20rem;
+
+  @include breakpoint($xm-bp) {
+    margin-bottom: 15rem;
+  }
+
+  @include breakpoint($xs-bp) {
+    margin-bottom: 10rem;
+  }
+}
