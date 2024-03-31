@@ -1,0 +1,121 @@
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+
+  @include breakpoint($xm-bp) {
+    margin-bottom: 10rem;
+    gap: 4rem;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+
+    @include breakpoint($xm-bp) {
+      gap: 5rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      gap: 6rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+
+    @include breakpoint($xm-bp) {
+      gap: 5rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      gap: 6rem;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 5rem;
+    @include breakpoint($xm-bp) {
+      gap: 4rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    &__img {
+      flex: none;
+      width: 66rem;
+      height: 36rem;
+      border-radius: 3rem;
+      overflow: hidden;
+
+      @include breakpoint($xm-bp) {
+        width: 38.2rem;
+        height: 28rem;
+      }
+
+      @include breakpoint($xs-bp) {
+        width: 100%;
+        height: 26rem;
+      }
+
+      img {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2.4rem;
+      max-width: 48.8rem;
+
+      @include breakpoint($xs-bp) {
+        gap: 1.2rem;
+      }
+    }
+
+    &__date {
+      color: $secondary-inverse-active;
+
+      @include breakpoint($xm-bp) {
+        font-size: 1.8rem;
+        line-height: 1.2em;
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.6rem;
+        line-height: 1.25em;
+      }
+    }
+
+    &__title {
+      @include breakpoint($xm-bp) {
+        font-size: 2.8rem;
+        line-height: 1.1em;
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 2.4rem;
+        line-height: 1.1em;
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import PageHead from "@components/PageHead/PageHead.astro";
+import Pagination from "@components/Pagination/Pagination.astro";
+import Footer from "@modules/Footer/Footer.astro";
+import Header from "@modules/Header/Header.astro";
+import Layout from "src/layouts/Layout.astro";
+---
+
+<Layout>
+  <Header />
+
+  <div class="wrapper">
+    <div class="container blog-list">
+      <PageHead
+        title="Блог компании"
+        breadcrumbs={["главная", "блог компании"]}
+      />
+
+      <div class="blog-list__container">
+        <div class="blog-list__list">
+          {
+            [...new Array(4)].map(() => (
+              <div class="blog-list-item">
+                <div class="blog-list-item__img">
+                  <img src="./img/blog-1.jpg" alt="" />
+                </div>
+                <div class="blog-list-item__content">
+                  <span class="body-1 blog-list-item__date">
+                    {" "}
+                    23 февраля 2024
+                  </span>
+                  <a
+                    href="#"
+                    class="heading-3 medium primary-hover blog-list-item__title"
+                  >
+                    Компания Mercury совершила деловую поездку в Китай к своим
+                    партнерам.
+                  </a>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+        <div class="blog-list__pagination">
+          <DefaultBtn type="button" viewType="width" theme="stroke">
+            Показать еще
+          </DefaultBtn>
+          <Pagination />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <Footer />
+</Layout>
