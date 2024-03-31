@@ -1,0 +1,145 @@
+.about-history {
+  &__container {
+    max-width: 111.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    margin-left: auto;
+
+    @include breakpoint($xs-bp) {
+      gap: 6rem;
+    }
+  }
+
+  &__title {
+    @include breakpoint($xm-bp) {
+      font-size: 2.8rem;
+      line-height: 1em;
+    }
+
+    @include breakpoint($xs-bp) {
+      font-size: 2.4rem;
+      line-height: 1.1em;
+    }
+  }
+
+  &-slider {
+    width: 100%;
+    padding-top: 16rem;
+    user-select: none;
+
+    @include breakpoint($xs-bp) {
+      padding-top: 12.2rem;
+    }
+
+    &__slide {
+      &.swiper-slide-active {
+        .about-history-slider__year {
+          color: $primary;
+
+          @include breakpoint($xs-bp) {
+            opacity: 1;
+          }
+        }
+        .about-history-slider__text {
+          opacity: 1;
+        }
+      }
+
+      &.swiper-slide-next {
+        .about-history-slider__year {
+          transform: translate(calc(-200% - 4rem), -16rem);
+
+          @include breakpoint($xs-bp) {
+            transform: translate(0, -12.2rem);
+          }
+        }
+        & + .about-history-slider__slide {
+          .about-history-slider__year {
+            transform: translate(calc(-100% - 111.3rem), -16rem);
+
+            @include breakpoint($xm-bp) {
+              transform: translate(calc(-100% - 100dvw + 6rem), -16rem);
+            }
+
+            @include breakpoint($xs-bp) {
+              transform: translate(0, -12.2rem);
+            }
+          }
+        }
+      }
+    }
+
+    &__year {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(0, -16rem);
+      transition: 0.8s;
+      color: $secondary-hover;
+
+      @include breakpoint($xs-bp) {
+        transform: translate(0, -12.2rem);
+        opacity: 0;
+      }
+    }
+
+    &__text {
+      max-width: 64.5rem;
+      opacity: 0;
+      transition: 0.8s;
+
+      @include breakpoint($xm-bp) {
+        max-width: 60.4rem;
+        font-size: 1.8rem;
+        line-height: 1.2em;
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.6rem;
+        line-height: 1.25em;
+      }
+    }
+
+    &__btns {
+      position: absolute;
+      z-index: 2;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      @include breakpoint($xs-bp) {
+        bottom: unset;
+        top: 0;
+      }
+
+      .default-btn {
+        &:disabled {
+          opacity: 0.8;
+          color: $secondary-hover;
+        }
+      }
+    }
+
+    &__progress {
+      position: absolute;
+      z-index: 2;
+      top: 11rem;
+      left: 0;
+      width: 100%;
+
+      @include breakpoint($xs-bp) {
+        top: 10.2rem;
+      }
+
+      .grad-bg {
+        display: block;
+        height: 0.2rem;
+        width: 100%;
+        transform-origin: left;
+      }
+    }
+  }
+}

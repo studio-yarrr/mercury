@@ -1,0 +1,63 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import { Sprite } from "astro-icon";
+---
+
+<section class="container about-margin about-history">
+  <div class="about-history__container">
+    <h3 class="heading-3 about-history__title">История Mercury</h3>
+    <div class="swiper about-history-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide about-history-slider__slide">
+          <span class="title-3 medium about-history-slider__year">2013</span>
+          <div class="body-1 template about-history-slider__text">
+            <p>
+              В феврале 2013 года заключен контракт с заводом Джингл Медикал
+              Фошан, единственным заводом по производству стоматологических
+              наконечников с полным циклом производства в Фошане и Южном Китае.
+            </p>
+          </div>
+        </div>
+        <div class="swiper-slide about-history-slider__slide">
+          <span class="title-3 medium about-history-slider__year">2015</span>
+          <div class="body-1 template about-history-slider__text">
+            <p>
+              В феврале 2013 года заключен контракт с заводом Джингл Медикал
+              Фошан, единственным заводом по производству стоматологических
+              наконечников с полным циклом производства в Фошане и Южном Китае.
+            </p>
+          </div>
+        </div>
+        <div class="swiper-slide about-history-slider__slide">
+          <span class="title-3 medium about-history-slider__year">2017</span>
+          <div class="body-1 template about-history-slider__text">
+            <p>
+              В феврале 2013 года заключен контракт с заводом Джингл Медикал
+              Фошан, единственным заводом по производству стоматологических
+              наконечников с полным циклом производства в Фошане и Южном Китае.
+            </p>
+          </div>
+        </div>
+        <div class="swiper-slide about-history-slider__slide">
+          <span class="title-3 medium about-history-slider__year">2020</span>
+          <div class="body-1 template about-history-slider__text">
+            <p>
+              В феврале 2013 года заключен контракт с заводом Джингл Медикал
+              Фошан, единственным заводом по производству стоматологических
+              наконечников с полным циклом производства в Фошане и Южном Китае.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="about-history-slider__progress"></div>
+      <div class="about-history-slider__btns">
+        <DefaultBtn type="button" data-prev viewType="icon" color="secondary">
+          <Sprite name="chevron-left" />
+        </DefaultBtn>
+        <DefaultBtn type="button" data-next viewType="icon" color="secondary">
+          <Sprite name="chevron-right" />
+        </DefaultBtn>
+      </div>
+    </div>
+  </div>
+</section>

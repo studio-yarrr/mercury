@@ -25,6 +25,7 @@ import { initSpinner } from "@components/Spinner/Spinner";
 import { initMainCategoryAnim } from "@modules/Main/MainCategory/MainCategory";
 import { initProductHeadSwiper } from "@modules/Product/ProductHead/ProductHead";
 import { initLeasingSteps } from "@modules/Leasing/Leasing";
+import { initAboutHistory } from "@modules/About/AboutHistory/AboutHistory";
 
 Swiper.use([Navigation, Pagination, Scrollbar, Thumbs, FreeMode]);
 gsap.registerPlugin(ScrollTrigger);
@@ -46,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initProductHeadSwiper();
   initLeasingSteps();
+  initAboutHistory();
 
   initFadeAnim();
 
