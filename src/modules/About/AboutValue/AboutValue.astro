@@ -1,0 +1,58 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import { Sprite } from "astro-icon";
+---
+
+<section class="container about-margin about-value">
+  <div class="about-value__container">
+    <h3 class="heading-5 medium about-value__title">Mercury в цифрах:</h3>
+
+    <div class="swiper about-value__slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="about-value-item">
+            <span class="medium about-value-item__value">11</span>
+            <p class="boty-1 about-value-item__text">
+              Лет компания производит стоматологическое оборудование и
+              поставляет его клиникам и частным стоматологам.
+            </p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="about-value-item">
+            <span class="medium about-value-item__value">>1000</span>
+            <p class="boty-1 about-value-item__text">
+              Установок импортируются каждый год на протяжении 5 лет
+            </p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="about-value-item">
+            <span class="medium about-value-item__value">11</span>
+            <p class="boty-1 about-value-item__text">
+              Лет компания производит стоматологическое оборудование и
+              поставляет его клиникам и частным стоматологам.
+            </p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="about-value-item">
+            <span class="medium about-value-item__value">>1000</span>
+            <p class="boty-1 about-value-item__text">
+              Установок импортируются каждый год на протяжении 5 лет
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-value__btns">
+      <DefaultBtn type="button" data-prev viewType="icon" color="secondary">
+        <Sprite name="chevron-left" />
+      </DefaultBtn>
+      <DefaultBtn type="button" data-next viewType="icon" color="secondary">
+        <Sprite name="chevron-right" />
+      </DefaultBtn>
+    </div>
+  </div>
+</section>

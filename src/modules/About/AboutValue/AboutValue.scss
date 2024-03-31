@@ -1,0 +1,106 @@
+.about-value {
+  &__container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 111.3rem;
+    gap: 2rem;
+    overflow: hidden;
+
+    @include breakpoint($xm-bp) {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+  }
+
+  &__btns {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    @include breakpoint($xm-bp) {
+      position: static;
+    }
+
+    .default-btn {
+      &:disabled {
+        opacity: 0.8;
+        color: $secondary-hover;
+      }
+    }
+  }
+
+  &__slider {
+    width: calc(100% + 2rem);
+    margin-right: -2rem;
+
+    @include breakpoint($xm-bp) {
+      width: calc(100% + 1rem);
+      margin-right: -1rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      width: 100%;
+      margin: 0;
+    }
+
+    .swiper-wrapper {
+      align-items: stretch;
+    }
+
+    .swiper-slide {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      padding-right: 2rem;
+
+      @include breakpoint($xm-bp) {
+        padding-right: 1rem;
+      }
+
+      @include breakpoint($xs-bp) {
+        padding: 0;
+      }
+    }
+  }
+
+  &-item {
+    height: 100%;
+    border: 0.1rem solid $secondary;
+    padding: 4rem;
+    border-radius: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 45rem;
+
+    @include breakpoint($xm-bp) {
+      min-height: 32rem;
+      padding: 3rem;
+    }
+
+    &__value {
+      font-size: 10rem;
+      line-height: 1em;
+
+      @include breakpoint($xm-bp) {
+        font-size: 7rem;
+      }
+    }
+
+    &__text {
+      @include breakpoint($xm-bp) {
+        font-size: 1.8rem;
+        line-height: 1.2em;
+      }
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.6rem;
+        line-height: 1.25em;
+      }
+    }
+  }
+}
