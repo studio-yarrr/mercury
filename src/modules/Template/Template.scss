@@ -8,6 +8,78 @@
     font-style: italic;
   }
 
+  h1 {
+    font-size: 7rem;
+    line-height: 1em;
+    font-weight: 500;
+    @include breakpoint($xm-bp) {
+      font-size: 5.5rem;
+    }
+    @include breakpoint($xs-bp) {
+      font-size: 5rem;
+    }
+  }
+
+  h2 {
+    font-size: 5.5rem;
+    line-height: 1em;
+    font-weight: 500;
+    @include breakpoint($xm-bp) {
+      font-size: 5rem;
+    }
+    @include breakpoint($xs-bp) {
+      font-size: 4rem;
+    }
+  }
+
+  h3 {
+    font-size: 5rem;
+    line-height: 1em;
+    font-weight: 500;
+    @include breakpoint($xm-bp) {
+      font-size: 4rem;
+    }
+    @include breakpoint($xs-bp) {
+      font-size: 3rem;
+    }
+  }
+
+  h4 {
+    font-size: 4rem;
+    line-height: 1em;
+    font-weight: 500;
+    @include breakpoint($xm-bp) {
+      font-size: 3rem;
+    }
+    @include breakpoint($xs-bp) {
+      font-size: 2.5rem;
+    }
+  }
+
+  h5 {
+    font-size: 3rem;
+    line-height: 1.1em;
+    font-weight: 500;
+    @include breakpoint($xm-bp) {
+      font-size: 2.5rem;
+    }
+    @include breakpoint($xs-bp) {
+      font-size: 2rem;
+    }
+  }
+
+  h6 {
+    font-size: 2.5rem;
+    line-height: 1.1em;
+    font-weight: 500;
+    @include breakpoint($xm-bp) {
+      font-size: 2rem;
+    }
+    @include breakpoint($xs-bp) {
+      font-size: 1.8rem;
+    }
+  }
+
   ul {
     list-style-type: disc;
     list-style-position: outside;

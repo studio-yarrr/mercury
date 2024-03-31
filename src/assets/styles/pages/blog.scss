@@ -119,3 +119,161 @@
     }
   }
 }
+
+.blog {
+  display: grid;
+  grid-template-columns: 100rem 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+  position: relative;
+  margin-bottom: 5rem;
+
+  @include breakpoint($xm-bp) {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10rem;
+  }
+
+  &__download {
+    margin-left: auto;
+    position: sticky;
+    top: 12rem;
+    right: 0;
+
+    @include breakpoint($xm-bp) {
+      position: fixed;
+      bottom: 2rem;
+      right: 3rem;
+      z-index: 500;
+      top: unset;
+      background-color: rgba(153, 153, 153, 0.25) !important;
+    }
+  }
+
+  .page-head {
+    .page-title {
+      text-transform: unset;
+      font-size: 4rem;
+      line-height: 1.1em;
+      max-width: 78.2rem;
+
+      @include breakpoint($xm-bp) {
+        font-size: 3rem;
+        line-height: 1.1em;
+      }
+    }
+  }
+
+  .footer-form {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0;
+
+    @include breakpoint($xs-bp) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__title {
+      max-width: 33.4rem;
+    }
+  }
+
+  .product-desc__text {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include breakpoint($xm-bp) {
+      font-size: 1.8rem;
+      line-height: 1.2em;
+      gap: 2rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      font-size: 1.6rem;
+      line-height: 1.25em;
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+
+    @include breakpoint($xm-bp) {
+      gap: 4rem;
+    }
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 4rem;
+    border-radius: 3rem;
+    background-color: $primary;
+    color: $primary-inverse;
+
+    @include breakpoint($xm-bp) {
+      padding: 3rem;
+      gap: 3rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      border-radius: 2rem;
+    }
+
+    &__title {
+      @include breakpoint($xm-bp) {
+        font-size: 2.8rem;
+        line-height: 1em;
+      }
+      @include breakpoint($xs-bp) {
+        font-size: 2.4rem;
+        line-height: 1.1em;
+      }
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+      list-style: decimal;
+      padding-left: 1.2em;
+    }
+
+    &__item {
+      transition: 0.3s;
+      @include hover {
+        color: #ff0000;
+        text-decoration: underline;
+        text-underline-offset: 0.25em;
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+
+    @include breakpoint($xs-bp) {
+      gap: 6rem;
+    }
+  }
+}

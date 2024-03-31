@@ -1,0 +1,225 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import InputBtn from "@components/InputBtn/InputBtn.astro";
+import PageHead from "@components/PageHead/PageHead.astro";
+import ProductCard from "@components/ProductCard/ProductCard.astro";
+import Footer from "@modules/Footer/Footer.astro";
+import Header from "@modules/Header/Header.astro";
+import { Sprite } from "astro-icon";
+import Layout from "src/layouts/Layout.astro";
+---
+
+<Layout>
+  <Header />
+
+  <div class="wrapper">
+    <div class="container blog">
+      <div class="blog__wrapper">
+        <PageHead
+          title="Компания mercury совершила деловую поездку в китай к своим партнерам."
+          breadcrumbs={[
+            "главная",
+            "блог компании",
+            "компания mercury совершила деловую поездку в китай к своим партнерам",
+          ]}
+        />
+
+        <div class="blog__container">
+          <div class="blog__content">
+            <div class="blog__head">
+              <div class="product-desc__card">
+                <div class="product-desc__card-img">
+                  <img src="./img/product/3.jpg" alt="" />
+                </div>
+              </div>
+              <div class="blog-nav">
+                <h6 class="heading-3 medium blog-nav__title">Навигация</h6>
+                <ol class="blog-nav__list">
+                  <li class="body-2 blog-nav__item">
+                    <a href="#" class="blog-nav__link">Широкий ассортимент</a>
+                  </li>
+                  <li class="body-2 blog-nav__item">
+                    <a href="#" class="blog-nav__link">Широкий ассортимент</a>
+                  </li>
+                  <li class="body-2 blog-nav__item">
+                    <a href="#" class="blog-nav__link">Широкий ассортимент</a>
+                  </li>
+                  <li class="body-2 blog-nav__item">
+                    <a href="#" class="blog-nav__link">Широкий ассортимент</a>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="template body-1 product-desc__text">
+              <h5>Широкий ассортимент</h5>
+              <p>
+                На протяжении долгих лет компания Новгодент занимается прямым
+                импортом стоматологического оборудования из Китая, Италии,
+                Швейцарии, Кореи, Германии, США и других стран.
+                <br /><br />
+                 Рады представить наш самый крупный в России выставочный зал
+                стоматологического оборудования.
+                <br /><br />
+                 Здесь вы можете ознакомиться с оборудованием для стоматологии,
+                а также проверить его в работе. В ассортименте представлен
+                практически весть каталог оборудования компании NOVGODENT.
+                <br /><br />
+                 Большую часть места мы выделили под самое главное и важное
+                оборудование для врачей стоматологов - стоматологические
+                установки наших ключевых брендов.
+              </p>
+            </div>
+
+            <div class="template body-1 product-desc__text">
+              <h5>Широкий ассортимент</h5>
+              <p>
+                На протяжении долгих лет компания Новгодент занимается прямым
+                импортом стоматологического оборудования из Китая, Италии,
+                Швейцарии, Кореи, Германии, США и других стран.
+                <br /><br />
+                 Рады представить наш самый крупный в России выставочный зал
+                стоматологического оборудования.
+                <br /><br />
+                 Здесь вы можете ознакомиться с оборудованием для стоматологии,
+                а также проверить его в работе. В ассортименте представлен
+                практически весть каталог оборудования компании NOVGODENT.
+                <br /><br />
+                 Большую часть места мы выделили под самое главное и важное
+                оборудование для врачей стоматологов - стоматологические
+                установки наших ключевых брендов.
+              </p>
+            </div>
+
+            <div class="product-desc__card">
+              <div class="swiper product-desc__card-swiper" data-swiper>
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide product-desc__card-img">
+                    <img src="./img/product/3.jpg" alt="" />
+                  </div>
+                  <div class="swiper-slide product-desc__card-img">
+                    <img src="./img/product/3.jpg" alt="" />
+                  </div>
+                  <div class="swiper-slide product-desc__card-img">
+                    <img src="./img/product/3.jpg" alt="" />
+                  </div>
+                  <div class="swiper-slide product-desc__card-img">
+                    <img src="./img/product/3.jpg" alt="" />
+                  </div>
+                  <div class="swiper-slide product-desc__card-img">
+                    <img src="./img/product/3.jpg" alt="" />
+                  </div>
+                </div>
+                <DefaultBtn
+                  type="button"
+                  viewType="icon"
+                  color="secondary"
+                  data-prev
+                >
+                  <Sprite name="chevron-left" />
+                </DefaultBtn>
+                <DefaultBtn
+                  type="button"
+                  viewType="icon"
+                  color="secondary"
+                  data-next
+                >
+                  <Sprite name="chevron-right" />
+                </DefaultBtn>
+              </div>
+              <span class="body-3 product-desc__card-text">
+                Два удобных стула для стоматологов с эргономичным сиденьем и
+                спинкой
+              </span>
+            </div>
+
+            <div class="product-desc__cards">
+              <div class="product-desc__card product-desc__card_min">
+                <div class="product-desc__card-img">
+                  <img src="./img/product/1.jpg" alt="" />
+                </div>
+                <span class="body-3 product-desc__card-text">
+                  Два удобных стула для стоматологов с эргономичным сиденьем и
+                  спинкой
+                </span>
+              </div>
+              <div class="product-desc__card product-desc__card_min">
+                <div class="product-desc__card-img">
+                  <img src="./img/product/2.jpg" alt="" />
+                </div>
+                <span class="body-3 product-desc__card-text">
+                  Сенсорная панель на модуле врача и модуле ассистента, диодная
+                  подсветка
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <form action="#" class="footer-form">
+            <h6 class="heading-5 medium footer-form__title">
+              Подпишитесь на рассылку о выгодных предложениях и получите скидку
+              5%
+            </h6>
+
+            <InputBtn
+              className="footer-form__input"
+              placeholder="Электронная почта"
+            >
+              Отправить
+            </InputBtn>
+          </form>
+        </div>
+      </div>
+
+      <DefaultBtn
+        as="a"
+        href="#"
+        className="blog__download"
+        viewType="icon"
+        theme="stroke"
+        color="secondary"
+      >
+        <Sprite name="download" />
+      </DefaultBtn>
+    </div>
+  </div>
+  <section class="related-prod">
+    <div class="container related-prod__container">
+      <h3 class="title-6 related-prod__title">другие статьи</h3>
+      <div class="category__list">
+        <div class="blog-list-item">
+          <div class="blog-list-item__img">
+            <img src="./img/blog-1.jpg" alt="" />
+          </div>
+          <div class="blog-list-item__content">
+            <span class="body-1 blog-list-item__date">23 февраля 2024</span>
+            <a
+              href="#"
+              class="heading-3 medium primary-hover blog-list-item__title"
+            >
+              Компания Mercury совершила деловую поездку в Китай к своим
+              партнерам.
+            </a>
+          </div>
+        </div>
+        <div class="blog-list-item">
+          <div class="blog-list-item__img">
+            <img src="./img/blog-1.jpg" alt="" />
+          </div>
+          <div class="blog-list-item__content">
+            <span class="body-1 blog-list-item__date">23 февраля 2024</span>
+            <a
+              href="#"
+              class="heading-3 medium primary-hover blog-list-item__title"
+            >
+              Компания Mercury совершила деловую поездку в Китай к своим
+              партнерам.
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
