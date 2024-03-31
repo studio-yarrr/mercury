@@ -175,7 +175,9 @@
     background-color: $secondary;
     color: $primary;
     position: absolute;
+    z-index: 1;
     top: 0;
+    --progress: 0;
 
     @include breakpoint($xs-bp) {
       padding: 3rem 2rem;

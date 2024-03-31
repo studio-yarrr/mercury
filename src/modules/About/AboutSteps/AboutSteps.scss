@@ -1,0 +1,80 @@
+.about-steps {
+  display: grid;
+  grid-template-columns: 1fr 111.3rem;
+  align-items: flex-start;
+  gap: 2rem;
+  position: relative;
+
+  @include breakpoint($xm-bp) {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4rem;
+  }
+
+  &__title {
+    position: sticky;
+    top: 20dvh;
+    left: 0;
+
+    @include breakpoint($xm-bp) {
+      position: static;
+    }
+  }
+
+  .leasing-steps {
+    height: 43rem;
+    width: 100%;
+
+    @include breakpoint($xs-bp) {
+      height: 32rem;
+    }
+  }
+
+  &-item {
+    &:not(:last-child) {
+      .about-steps-item__img {
+        opacity: var(--progress, 1);
+      }
+    }
+
+    &__img {
+      width: 14rem;
+      height: 14rem;
+
+      @include breakpoint($xs-bp) {
+        height: 10rem;
+        width: 10rem;
+      }
+
+      img {
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 68.2rem;
+      gap: 2rem;
+    }
+
+    &__title {
+      @include breakpoint($xs-bp) {
+        font-size: 1.8rem;
+        line-height: 1.1em;
+      }
+    }
+
+    &__text {
+      color: $secondary-inverse-active;
+
+      @include breakpoint($xs-bp) {
+        font-size: 1.6rem;
+        line-height: 1.25em;
+      }
+    }
+  }
+}
