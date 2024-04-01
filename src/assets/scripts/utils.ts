@@ -526,3 +526,9 @@ export function initDefaultSwipers() {
     });
   });
 }
+
+export function vCloseHandler(target: HTMLElement) {
+  if ((window as any).vBox && target.closest("[data-vclose]")) {
+    (window as any).vBox.close();
+  }
+}

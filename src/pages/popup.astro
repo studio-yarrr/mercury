@@ -1,0 +1,77 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import Layout from "src/layouts/Layout.astro";
+import icons from "src/icons.json";
+import { Sprite } from "astro-icon";
+---
+
+<Layout>
+  <div
+    style="display: flex; flex-direction: column; align-items: flex-start; gap: 2rem; padding: 5rem 2rem"
+  >
+    <DefaultBtn
+      as="a"
+      href="./popup/popup-feedback.html"
+      data-vopen
+      data-vbtype="ajax"
+    >
+      Получить консультацию
+    </DefaultBtn>
+    <DefaultBtn
+      as="a"
+      href="./popup/popup-order.html"
+      data-vopen
+      data-vbtype="ajax"
+    >
+      Заявка на лизинг
+    </DefaultBtn>
+    <DefaultBtn
+      as="a"
+      href="./popup/popup-feedback-sent.html"
+      data-vopen
+      data-vbtype="ajax"
+    >
+      Ваши отправлены!
+    </DefaultBtn>
+    <DefaultBtn
+      as="a"
+      href="./popup/popup-confirm.html"
+      data-vopen
+      data-vbtype="ajax"
+    >
+      Удалить товар?
+    </DefaultBtn>
+    <DefaultBtn
+      as="a"
+      href="./popup/popup-logout.html"
+      data-vopen
+      data-vbtype="ajax"
+    >
+      Выйти из аккаунта
+    </DefaultBtn>
+  </div>
+
+  <div style="display: none;">
+    {
+      icons.map((icon) => (
+        <Sprite name={icon} style="width: 30px;height: 30px;" />
+      ))
+    }
+  </div>
+
+  <script is:inline>
+    console.log(
+      "Для вызова попап из кода:\n%copenVBox(src: string, vtype?: 'ajax' | 'iframe' | 'inline' | 'video')",
+      "color: green; font-size: 18px;",
+    );
+    console.log(
+      "Для закрытия:\n%cvBox.close()",
+      "color: green; font-size: 18px;",
+    );
+    console.log(
+      "Что бы вызвать код после загрузки контента можно подписаться на ивент:\n%cdocument.addEventListener('vBoxContentLoaded', () => {})",
+      "color: green; font-size: 18px;",
+    );
+    console.log("Типы контента тут: https://veno.es/venobox/");
+  </script>
+</Layout>

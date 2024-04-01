@@ -1,21 +1,33 @@
 ---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
 import { Sprite } from "astro-icon";
 
 interface Props extends astroHTML.JSX.HTMLAttributes {
+  title?: string;
+  subtitle?: string;
   className?: string;
-  close?: boolean;
 }
 
-const { className, close = true, ...rest } = Astro.props;
+const { title, subtitle, className, ...rest } = Astro.props;
 ---
 
 <div class:list={["popup", className]} {...rest}>
-  {
-    close && (
-      <button type="button" class="popup__close" data-vclose>
-        <Sprite name="close" />
-      </button>
-    )
-  }
+  <slot name="head">
+    <div class="popup__head">
+      <h6 class="heading-6 medium popup__title">{title}</h6>
+      <DefaultBtn
+        type="button"
+        data-vclose
+        viewType="icon"
+        color="inverse"
+        theme="stroke"
+      >
+        <Sprite name="x" />
+      </DefaultBtn>
+
+      {subtitle && <span class="body-3 popup__subtitle" set:html={subtitle} />}
+    </div>
+  </slot>
+
   <slot />
 </div>

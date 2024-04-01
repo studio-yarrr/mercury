@@ -6,6 +6,7 @@ import {
   initMenuItems,
   initSelectInputs,
   scrollUpHandler,
+  vCloseHandler,
 } from "./utils";
 import {
   Navigation,
@@ -30,6 +31,34 @@ import { initAboutValueSlider } from "@modules/About/AboutValue/AboutValue";
 
 Swiper.use([Navigation, Pagination, Scrollbar, Thumbs, FreeMode]);
 gsap.registerPlugin(ScrollTrigger);
+
+const VBOX_OPTIONS = {
+  selector: "[data-vopen]",
+  overlayColor: "rgba(0, 0, 0, 0.75)",
+  bgcolor: null,
+  spinner: "grid",
+  onContentLoadedEvent: new Event("vBoxContentLoaded", { bubbles: true }),
+  onContentLoaded: (): void => {
+    document.dispatchEvent(VBOX_OPTIONS.onContentLoadedEvent);
+  },
+};
+
+const vBox = new VenoBox(VBOX_OPTIONS);
+
+(window as any).vBox = vBox;
+(window as any).openVBox = openVBox;
+
+function openVBox(src: string, vbtype?: string) {
+  const link = document.createElement("a");
+  link.href = src;
+  link.dataset.vbtype = vbtype ? vbtype : "ajax";
+  (link as any).settings = vBox.settings;
+
+  vBox.close();
+  setTimeout(() => {
+    vBox.open(link);
+  }, 500);
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   initSpinner();
@@ -59,6 +88,11 @@ document.addEventListener("DOMContentLoaded", () => {
     textInputHandler(target);
     scrollUpHandler(target);
     categoryFilterHandler(target);
+    vCloseHandler(target);
+  });
+
+  document.addEventListener("vBoxContentLoaded", () => {
+    formValidateInit(".popup .fv");
   });
 
   let resizeID = 0;
@@ -80,38 +114,21 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-const vboxOptions = {
-  overlayColor: "rgba(22, 22, 22, 0.45)",
-  bgcolor: null,
-  spinner: "grid",
-  onContentLoadedEvent: new Event("vBoxContentLoaded", { bubbles: true }),
-  onContentLoaded: (): void => {
-    console.log(this);
-    // document.dispatchEvent(this.)
-  },
-  onPreOpen: (): void => {
-    vBox.isOpen = true;
-  },
-  onPreClose: (): void => {
-    vBox.isOpen = false;
-  },
-};
+function categoryFilterHandler(target: HTMLElement) {
+  if (target.closest("[data-toggle-filter]")) {
+    document.body.classList.toggle("_open-filter");
+    return;
+  }
 
-const vBox = new VenoBox(vboxOptions);
+  if (target.closest("[data-close-filter]")) {
+    document.body.classList.remove("_open-filter");
+    return;
+  }
 
-(window as any).vBox = vBox;
-(window as any).openVBox = openVBox;
-
-function openVBox(src: string, vbtype?: string) {
-  const link = document.createElement("a");
-  link.href = src;
-  link.dataset.vbtype = vbtype ? vbtype : "ajax";
-  (link as any).settings = vBox.settings;
-
-  vBox.close();
-  setTimeout(() => {
-    vBox.open(link);
-  }, 500);
+  if (target.closest("[data-open-filter]")) {
+    document.body.classList.add("_open-filter");
+    return;
+  }
 }
 
 function initFadeAnim() {
@@ -131,22 +148,5 @@ function initFadeAnim() {
         });
       },
     });
-  }
-}
-
-function categoryFilterHandler(target: HTMLElement) {
-  if (target.closest("[data-toggle-filter]")) {
-    document.body.classList.toggle("_open-filter");
-    return;
-  }
-
-  if (target.closest("[data-close-filter]")) {
-    document.body.classList.remove("_open-filter");
-    return;
-  }
-
-  if (target.closest("[data-open-filter]")) {
-    document.body.classList.add("_open-filter");
-    return;
   }
 }

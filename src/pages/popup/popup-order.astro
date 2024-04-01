@@ -1,0 +1,49 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import TextInput from "@components/TextInput/TextInput.astro";
+import Popup from "@modules/Popup/Popup.astro";
+---
+
+<Popup title="Заявка на лизинг">
+  <form action="#" class="popup-form" data-action="form-submit">
+    <div class="popup-form__inputs">
+      <TextInput
+        color="inverse"
+        placeholder=""
+        label="Имя"
+        className="fv"
+        required
+        data-action="required-text"
+      />
+      <TextInput
+        color="inverse"
+        placeholder=""
+        label="Номер телефона"
+        className="fv"
+        required
+        data-mask="8 (999) 9999-999"
+        data-mask-init
+        data-action="required-text"
+      />
+      <TextInput
+        color="inverse"
+        placeholder=""
+        label="Электронная почта"
+        className="fv"
+        required
+        data-action="required-email"
+      />
+    </div>
+    <div class="popup-form__btns">
+      <DefaultBtn type="submit" color="inverse" viewType="width">
+        Отправить
+      </DefaultBtn>
+      <p class="template body-4 popup-form__legal">
+        Отправляя свои данные, вы соглашаетесь на обработку <a
+          href="#"
+          class="medium">персональных данных</a
+        >
+      </p>
+    </div>
+  </form>
+</Popup>

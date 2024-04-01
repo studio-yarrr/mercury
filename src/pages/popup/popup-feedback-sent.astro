@@ -1,0 +1,17 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import TextInput from "@components/TextInput/TextInput.astro";
+import Popup from "@modules/Popup/Popup.astro";
+---
+
+<Popup
+  className="popup_form-sent"
+  title="Ваши данные успешно отправлены!"
+  subtitle="В ближайшее время наш менеджер<br/>свяжется с вами!"
+>
+  <div class="popup-form__btns">
+    <DefaultBtn type="button" color="inverse" viewType="width" data-vclose>
+      Вернуться назад
+    </DefaultBtn>
+  </div>
+</Popup>

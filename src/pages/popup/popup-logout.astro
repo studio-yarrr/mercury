@@ -1,0 +1,32 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import TextInput from "@components/TextInput/TextInput.astro";
+import Popup from "@modules/Popup/Popup.astro";
+import { Sprite } from "astro-icon";
+---
+
+<Popup className="popup-confirm">
+  <div class="popup-confirm__head" slot="head">
+    <div class="popup-confirm__head-inner">
+      <h6 class="heading-6 medium popup__title">
+        Вы уверены, что хотите выйти из аккаунта?
+      </h6>
+    </div>
+    <DefaultBtn
+      type="button"
+      data-vclose
+      viewType="icon"
+      color="inverse"
+      theme="stroke"
+    >
+      <Sprite name="x" />
+    </DefaultBtn>
+  </div>
+
+  <div class="popup-confirm__btns">
+    <DefaultBtn type="button" color="inverse" viewType="width" data-vclose>
+      Нет, не выходить
+    </DefaultBtn>
+    <DefaultBtn type="submit" viewType="width">Да, выйти</DefaultBtn>
+  </div>
+</Popup>

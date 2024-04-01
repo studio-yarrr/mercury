@@ -1,0 +1,34 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import TextInput from "@components/TextInput/TextInput.astro";
+import Popup from "@modules/Popup/Popup.astro";
+import { Sprite } from "astro-icon";
+---
+
+<Popup className="popup-confirm">
+  <div class="popup-confirm__head" slot="head">
+    <div class="popup-confirm__head-inner">
+      <h6 class="heading-6 medium popup__title">Удалить товар?</h6>
+      <span class="body-3 popup__subtitle">
+        Вы точно хотите удалить выбранный товар? Отменить данное действие будет
+        невозможно
+      </span>
+    </div>
+    <DefaultBtn
+      type="button"
+      data-vclose
+      viewType="icon"
+      color="inverse"
+      theme="stroke"
+    >
+      <Sprite name="x" />
+    </DefaultBtn>
+  </div>
+
+  <div class="popup-confirm__btns">
+    <DefaultBtn type="button" color="inverse" viewType="width" data-vclose>
+      Отменить
+    </DefaultBtn>
+    <DefaultBtn type="submit" viewType="width">Удалить</DefaultBtn>
+  </div>
+</Popup>

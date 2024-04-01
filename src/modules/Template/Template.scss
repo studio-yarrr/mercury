@@ -125,8 +125,10 @@
 
   a {
     text-decoration: underline;
+    text-underline-offset: 0.25em;
     transition: 0.3s;
     @include hover {
+      text-decoration: none;
     }
   }
 }
