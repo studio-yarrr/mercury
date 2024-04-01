@@ -532,3 +532,25 @@ export function vCloseHandler(target: HTMLElement) {
     (window as any).vBox.close();
   }
 }
+
+const inputEvent = new Event("input");
+export function counterHandler(target: HTMLElement) {
+  const closestCounter = target.closest("[data-counter]");
+  if (closestCounter) {
+    const input = closestCounter.querySelector<HTMLInputElement>(
+      "[data-counter-input]",
+    );
+    if (input) {
+      const max = Number(input.max) || Infinity;
+      const min = Number(input.min) || 0;
+      let value = Number(input.value) || 0;
+      if (target.closest("[data-counter-dec]") && value > min) {
+        input.value = (value - 1).toString();
+        input.dispatchEvent(inputEvent);
+      } else if (target.closest("[data-counter-inc]") && value < max) {
+        input.value = (value + 1).toString();
+        input.dispatchEvent(inputEvent);
+      }
+    }
+  }
+}

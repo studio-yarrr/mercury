@@ -16,8 +16,10 @@ import { Sprite } from "astro-icon";
     <input
       type="number"
       value="2"
+      min="3"
+      max="10"
       class="cart-product-counter__input"
-      cart-product-input
+      data-counter-input
     />
     <button type="button" class="cart-product-counter__btn" data-counter-inc>
       <Sprite name="plus" />

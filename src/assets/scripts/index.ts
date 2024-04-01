@@ -1,6 +1,7 @@
 import VenoBox from "venobox/dist/venobox";
 import { formValidateInit } from "./fv";
 import {
+  counterHandler,
   initDefaultSwipers,
   initDropdownItems,
   initMenuItems,
@@ -89,6 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollUpHandler(target);
     categoryFilterHandler(target);
     vCloseHandler(target);
+    counterHandler(target);
   });
 
   document.addEventListener("vBoxContentLoaded", () => {
