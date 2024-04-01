@@ -2,7 +2,7 @@ import * as BABYLON from "@babylonjs/core";
 import "@babylonjs/loaders/glTF";
 import gsap from "gsap";
 
-export function initMainAbout() {
+function initMainAbout() {
   const container = document.querySelector<HTMLElement>(".main-about");
   const title =
     container && container.querySelector<HTMLElement>(".main-about__title");
@@ -506,3 +506,5 @@ function mobAnim(
     });
   }
 }
+
+initMainAbout();

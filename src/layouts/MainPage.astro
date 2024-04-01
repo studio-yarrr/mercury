@@ -1,0 +1,37 @@
+---
+import { Sprite } from "astro-icon";
+import "../assets/styles/style.scss";
+import Spinner from "@components/Spinner/Spinner.astro";
+
+interface Props {
+  title?: string;
+}
+
+const { title = "заголовок страницы" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- fonts -->
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <Sprite.Provider>
+      <slot name="beforePage" />
+      <main class="page">
+        <slot />
+      </main>
+    </Sprite.Provider>
+  </body>
+</html>
+
+<script src="../modules/Main/MainAbout/MainAbout.ts"></script>
+<script src="../assets/scripts/index.ts"></script>

@@ -19,7 +19,7 @@ import Swiper from "swiper";
 import { textInputHandler } from "@components/TextInput/TextInput";
 import { initMeaderMenu } from "@modules/Header/Header";
 import { initMainBannerSlider } from "@modules/Main/MainBanner/MainBanner";
-import { initMainAbout } from "@modules/Main/MainAbout/MainAbout";
+// import { initMainAbout } from "@modules/Main/MainAbout/MainAbout";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { initSpinner } from "@components/Spinner/Spinner";
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMeaderMenu();
   initMainBannerSlider();
 
-  initMainAbout();
+  // initMainAbout();
   initMainCategoryAnim();
 
   initProductHeadSwiper();

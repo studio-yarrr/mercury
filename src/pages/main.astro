@@ -5,10 +5,10 @@ import Header from "@modules/Header/Header.astro";
 import MainAbout from "@modules/Main/MainAbout/MainAbout.astro";
 import MainBanner from "@modules/Main/MainBanner/MainBanner.astro";
 import MainCategory from "@modules/Main/MainCategory/MainCategory.astro";
-import Layout from "src/layouts/Layout.astro";
+import MainPage from "src/layouts/MainPage.astro";
 ---
 
-<Layout title="Главная страница">
+<MainPage title="Главная страница">
   <Spinner slot="beforePage" />
 
   <Header />
@@ -22,4 +22,4 @@ import Layout from "src/layouts/Layout.astro";
   </div>
 
   <Footer />
-</Layout>
+</MainPage>
