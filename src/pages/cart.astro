@@ -1,0 +1,92 @@
+---
+import Breadcrumbs from "@components/Breadcrumbs/Breadcrumbs.astro";
+import CartProduct from "@components/CartProduct/CartProduct.astro";
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import Footer from "@modules/Footer/Footer.astro";
+import Header from "@modules/Header/Header.astro";
+import { Sprite } from "astro-icon";
+import Layout from "src/layouts/Layout.astro";
+---
+
+<Layout>
+  <Header />
+
+  <div class="container cart">
+    <Breadcrumbs items={["главная", "корзина"]} />
+
+    <div class="cart__wrapper">
+      <div class="cart-container">
+        <div class="cart-container__head">
+          <span class="body-4 medium cart-container__head-title">Фото</span>
+          <span class="body-4 medium cart-container__head-title">
+            Наименование товара
+          </span>
+          <span class="body-4 medium cart-container__head-title">
+            Количество
+          </span>
+          <span class="body-4 medium cart-container__head-title">Цена</span>
+        </div>
+        <div class="cart-container__list">
+          <CartProduct />
+          <CartProduct />
+        </div>
+      </div>
+
+      <div class="cart-info">
+        <h1 class="heading-4 medium cart-info__title">Ваша корзина</h1>
+        <div class="cart-info__container">
+          <div class="cart-info-list">
+            <div class="body-2 cart-info-list__item">
+              <span class="cart-info-list__text">Товары (2)</span>
+              <span class="cart-info-list__text" data-currency="₽">
+                473 800
+              </span>
+            </div>
+            <div class="body-2 cart-info-list__item">
+              <span class="cart-info-list__text">Скидка</span>
+              <span class="cart-info-list__text" data-currency="₽">
+                – 30 800
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="cart-info__inner">
+          <form action="#" class="cart-info-discount" data-action="form-submit">
+            <label class="fv text-input cart-info-discount__input">
+              <input
+                type="text"
+                class="text-input__field"
+                placeholder=""
+                required
+                data-action="required-text"
+              />
+              <span class="text-input__label">Купон на скидку</span>
+            </label>
+            <DefaultBtn
+              type="submit"
+              viewType="icon"
+              color="secondary"
+              className="cart-info-discount__btn"
+            >
+              <Sprite name="chevron-right" />
+            </DefaultBtn>
+          </form>
+          <div class="heading-6 medium cart-info-list__item cart-info__result">
+            <span class="cart-info-list__text">Итого:</span>
+            <span class="cart-info-list__text" data-currency="₽"> 443 000</span>
+          </div>
+        </div>
+        <DefaultBtn
+          as="a"
+          href="#"
+          viewType="basket"
+          className="cart-info__btn"
+        >
+          Продолжить оформление
+        </DefaultBtn>
+      </div>
+    </div>
+  </div>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,138 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 10rem;
+
+  @include breakpoint($xs-bp) {
+    margin-top: 1rem;
+    gap: 2rem;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 88.7rem 1fr;
+    gap: 2rem;
+
+    @include breakpoint($xm-bp) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    background-color: $primary;
+    border-radius: 4rem;
+    padding: 3rem;
+    min-height: 100%;
+    color: $primary-inverse;
+
+    @include breakpoint($xs-bp) {
+      border-radius: 3rem;
+    }
+
+    &__head {
+      display: grid;
+      grid-template-columns: 10rem 26.2rem 14.5rem 14.1rem 1fr;
+      gap: 2.5rem;
+
+      @include breakpoint($xs-bp) {
+        display: none;
+      }
+
+      &-title {
+        color: $secondary-inverse-hover;
+      }
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 4rem;
+    }
+  }
+
+  &-info {
+    padding: 3rem;
+    background-color: $strokes-secondary;
+    border-radius: 4rem;
+    min-height: 56.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include breakpoint($xm-bp) {
+      min-height: unset;
+    }
+
+    @include breakpoint($xs-bp) {
+      border-radius: 3rem;
+    }
+
+    &__title {
+      @include breakpoint($xs-bp) {
+        font-size: 2.4rem;
+        line-height: 1.1em;
+      }
+    }
+
+    &__btn {
+      margin-top: auto;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 2rem;
+
+      &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      &__text {
+        &:nth-child(2) {
+          text-align: right;
+        }
+
+        &[data-currency] {
+          &::after {
+            content: " " attr(data-currency);
+          }
+        }
+      }
+    }
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 3rem;
+    }
+
+    &-discount {
+      width: 100%;
+      display: flex;
+      align-items: stretch;
+      gap: 1rem;
+
+      &__input {
+        flex: 1;
+      }
+
+      &__btn {
+        flex: none;
+      }
+    }
+
+    &__result {
+    }
+  }
+}

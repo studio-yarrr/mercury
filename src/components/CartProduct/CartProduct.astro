@@ -1,0 +1,39 @@
+---
+import { Sprite } from "astro-icon";
+---
+
+<div class="cart-product">
+  <div class="cart-product__img">
+    <img src="./img/products/prod-13.png" alt="" />
+  </div>
+  <a href="#" class="primary-hover heading-7 medium cart-product__title">
+    Стоматологическая установка Mercury 330 люкс, черная
+  </a>
+  <div class="cart-product-counter" data-counter>
+    <button type="button" class="cart-product-counter__btn" data-counter-dec>
+      <Sprite name="minus" />
+    </button>
+    <input
+      type="number"
+      value="2"
+      class="cart-product-counter__input"
+      cart-product-input
+    />
+    <button type="button" class="cart-product-counter__btn" data-counter-inc>
+      <Sprite name="plus" />
+    </button>
+  </div>
+  <span
+    class="body-2 medium cart-product__price"
+    data-price="339000"
+    data-currency="₽">339 000</span
+  >
+  <a
+    href="./popup/popup-confirm.html"
+    class="primary-hover body-4 cart-product__del"
+    data-vopen
+    data-vbtype="ajax"
+  >
+    удалить
+  </a>
+</div>
