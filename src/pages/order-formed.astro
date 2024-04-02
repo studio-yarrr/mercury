@@ -1,33 +1,35 @@
 ---
 import Breadcrumbs from "@components/Breadcrumbs/Breadcrumbs.astro";
-import CartProduct from "@components/CartProduct/CartProduct.astro";
 import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
 import Footer from "@modules/Footer/Footer.astro";
 import Header from "@modules/Header/Header.astro";
-import { Sprite } from "astro-icon";
 import Layout from "src/layouts/Layout.astro";
 ---
 
 <Layout>
   <Header />
 
-  <div class="container cart cart-empty">
+  <div class="container cart cart-empty order-formed">
     <Breadcrumbs items={["главная", "корзина"]} />
 
     <div class="cart__wrapper">
       <div class="cart-container">
-        <h1 class="heading-4 medium order__title">Корзина</h1>
+        <h1 class="heading-4 medium order__title">Заказ сформирован</h1>
         <div class="cart-empty__container">
           <div class="cart-empty__inner">
             <span class="body-3 medium cart-empty__subtitle">
-              В корзине нет товаров.
+              Ваш заказ №1074 от 18.01.2024 11:16 на сумму 170000 р. успешно
+              создан. <br />
+               Номер вашей оплаты: №1074/1
             </span>
             <span class="body-4 cart-empty__text">
-              Перейдите в каталог и добавьте товары в корзину
+              Вы можете следить за выполнением своего заказа в Персональном
+              разделе сайта. Обратите внимание, что для входа в этот раздел вам
+              необходимо будет ввести логин и пароль пользователя сайта.
             </span>
           </div>
           <DefaultBtn as="a" href="#" viewType="width" color="inverse">
-            Перейти в каталог
+            Перейти в личный кабинет
           </DefaultBtn>
         </div>
       </div>
