@@ -20,7 +20,6 @@ import Swiper from "swiper";
 import { textInputHandler } from "@components/TextInput/TextInput";
 import { initMeaderMenu } from "@modules/Header/Header";
 import { initMainBannerSlider } from "@modules/Main/MainBanner/MainBanner";
-// import { initMainAbout } from "@modules/Main/MainAbout/MainAbout";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { initSpinner } from "@components/Spinner/Spinner";
@@ -29,6 +28,7 @@ import { initProductHeadSwiper } from "@modules/Product/ProductHead/ProductHead"
 import { initLeasingSteps } from "@modules/Leasing/Leasing";
 import { initAboutHistory } from "@modules/About/AboutHistory/AboutHistory";
 import { initAboutValueSlider } from "@modules/About/AboutValue/AboutValue";
+import { Sidebar, SidebarController } from "@modules/Sidebar/Sidebar";
 
 Swiper.use([Navigation, Pagination, Scrollbar, Thumbs, FreeMode]);
 gsap.registerPlugin(ScrollTrigger);
@@ -62,6 +62,15 @@ function openVBox(src: string, vbtype?: string) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  const sidebarController = new SidebarController();
+
+  document.querySelectorAll<HTMLElement>("[data-sidebar]").forEach((el) => {
+    const key = el.getAttribute("data-sidebar");
+    if (key) {
+      new Sidebar(sidebarController, el, key);
+    }
+  });
+
   initSpinner();
 
   formValidateInit(".fv");
@@ -73,7 +82,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initMeaderMenu();
   initMainBannerSlider();
 
-  // initMainAbout();
   initMainCategoryAnim();
 
   initProductHeadSwiper();
@@ -91,6 +99,8 @@ document.addEventListener("DOMContentLoaded", () => {
     categoryFilterHandler(target);
     vCloseHandler(target);
     counterHandler(target);
+
+    sidebarController.clickHandler(target);
   });
 
   document.addEventListener("vBoxContentLoaded", () => {

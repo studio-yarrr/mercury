@@ -1,0 +1,15 @@
+---
+interface Props {
+  key: string;
+  className?: string;
+}
+
+const { key, className } = Astro.props;
+---
+
+<div class:list={["sidebar", className]} data-sidebar={key}>
+  <div class="sidebar__bg" data-close-sidebar></div>
+  <div class="sidebar__container">
+    <slot />
+  </div>
+</div>

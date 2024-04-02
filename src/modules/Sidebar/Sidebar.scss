@@ -1,0 +1,193 @@
+.sidebar {
+  position: fixed;
+  z-index: 5000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: $primary-inverse;
+  pointer-events: none;
+
+  &._open {
+    pointer-events: all;
+
+    .sidebar {
+      &__bg {
+        opacity: 1;
+      }
+
+      &__container {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(16, 16, 16, 0.7);
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  &__container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: 0.5s;
+    height: 100%;
+    overflow: hidden;
+    width: 59.5rem;
+    max-width: calc(100% - 3rem);
+    background-color: $primary;
+    border-radius: 3rem 0 0 3rem;
+    display: grid;
+    align-items: center;
+    padding: 3rem;
+    transform: translateX(105%);
+  }
+
+  &__close {
+    flex: none;
+    width: 2.4rem;
+    height: 2.4rem;
+    transition: 0.3s;
+    @include secondary-inverse-hover;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.sidebar-cart {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  &__head {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  &__count {
+    color: $secondary-inverse-hover;
+  }
+
+  &__container {
+    flex: 1;
+    position: relative;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      width: 100%;
+      pointer-events: none;
+    }
+
+    &::before {
+      top: 0;
+      height: 8rem;
+      background: linear-gradient(180deg, #ffffff 0%, #ffffff 20%, transparent);
+    }
+
+    &::after {
+      bottom: 0;
+      height: 4rem;
+      background: linear-gradient(0deg, #ffffff 0%, #ffffff 50%, transparent);
+    }
+  }
+
+  &__list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% + 2rem);
+    height: 100%;
+    padding-right: 2rem;
+    padding: 8rem 2rem 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4rem;
+    overflow: auto;
+    @include scroll($primary-inverse);
+
+    @include breakpoint($xm-bp) {
+      padding-top: 4rem;
+    }
+  }
+
+  &__footer {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4rem;
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem 4rem;
+
+    @include breakpoint($xs-bp) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__link {
+    color: $secondary-inverse-hover;
+  }
+
+  .cart-product {
+    padding: 0;
+    border: none;
+    display: flex;
+    align-items: flex-start;
+
+    @include breakpoint($xs-bp) {
+      gap: 2rem;
+    }
+
+    &__img {
+      flex: none;
+      width: 10rem;
+      height: 10rem;
+      margin: 0;
+    }
+
+    &__inner {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.8rem;
+    }
+
+    &__title {
+      max-width: 25.8rem;
+    }
+  }
+}

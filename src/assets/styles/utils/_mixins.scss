@@ -48,3 +48,17 @@
     color: $secondary-inverse-hover;
   }
 }
+
+@mixin scroll($color) {
+  &::-webkit-scrollbar {
+    width: 0.6rem;
+    height: 0.6rem;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background-color: $color;
+  }
+}

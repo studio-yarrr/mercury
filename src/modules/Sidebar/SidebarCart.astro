@@ -1,0 +1,93 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import Sidebar from "./Sidebar.astro";
+import { Sprite } from "astro-icon";
+---
+
+<Sidebar key="cart">
+  <div class="sidebar-cart">
+    <div class="sidebar-cart__head">
+      <h6 class="heading-5 medium sidebar-cart__title">
+        Корзина
+        <span class="sidebar-cart__count">(2 товара)</span>
+      </h6>
+      <button type="button" class="sidebar__close" data-close-sidebar>
+        <Sprite name="x" />
+      </button>
+    </div>
+
+    <div class="sidebar-cart__container">
+      <div class="sidebar-cart__list">
+        <div class="cart-product">
+          <div class="cart-product__img">
+            <img src="./img/products/prod-13.png" alt="" />
+          </div>
+          <div class="cart-product__inner">
+            <a
+              href="#"
+              class="primary-hover heading-7 medium cart-product__title"
+            >
+              Стоматологическая установка Mercury 330 люкс, черная
+            </a>
+            <span
+              class="body-2 medium cart-product__price"
+              data-price="339000"
+              data-currency="₽">339 000</span
+            >
+          </div>
+          <a
+            href="./popup/popup-confirm.html"
+            class="primary-hover body-4 cart-product__del"
+            data-vopen
+            data-vbtype="ajax"
+          >
+            удалить
+          </a>
+        </div>
+        <div class="cart-product">
+          <div class="cart-product__img">
+            <img src="./img/main-banner-1.png" alt="" />
+          </div>
+          <div class="cart-product__inner">
+            <a
+              href="#"
+              class="primary-hover heading-7 medium cart-product__title"
+            >
+              Стоматологическая наконечник с понижением mercury 333
+            </a>
+            <span
+              class="body-2 medium cart-product__price"
+              data-price="339000"
+              data-currency="₽">339 000</span
+            >
+          </div>
+          <a
+            href="./popup/popup-confirm.html"
+            class="primary-hover body-4 cart-product__del"
+            data-vopen
+            data-vbtype="ajax"
+          >
+            удалить
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-cart__footer">
+      <span class="heading-5 bold sidebar-cart__sum">Итого: 359 000 ₽</span>
+      <div class="sidebar-cart__btns">
+        <div class="sidebar-cart__links">
+          <a href="#" class="body-4 medium primary-hover sidebar-cart__link">
+            Условия доставки
+          </a>
+          <a href="#" class="body-4 medium primary-hover sidebar-cart__link">
+            Лизинг и рассрочка
+          </a>
+        </div>
+        <DefaultBtn as="a" href="#" viewType="width" color="inverse">
+          Оформить заказ
+        </DefaultBtn>
+      </div>
+    </div>
+  </div>
+</Sidebar>
