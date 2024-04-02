@@ -60,6 +60,10 @@ textarea {
   text-decoration: none;
 }
 
+* {
+  text-underline-offset: 0.2em;
+}
+
 .page {
   min-height: 100vh;
   display: flex;

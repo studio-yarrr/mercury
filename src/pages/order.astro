@@ -1,0 +1,340 @@
+---
+import Breadcrumbs from "@components/Breadcrumbs/Breadcrumbs.astro";
+import CartProduct from "@components/CartProduct/CartProduct.astro";
+import Checkbox from "@components/Checkbox/Checkbox.astro";
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import TextInput from "@components/TextInput/TextInput.astro";
+import Footer from "@modules/Footer/Footer.astro";
+import Header from "@modules/Header/Header.astro";
+import { Sprite } from "astro-icon";
+import Layout from "src/layouts/Layout.astro";
+---
+
+<Layout>
+  <Header />
+
+  <div class="container cart order">
+    <Breadcrumbs items={["главная", "корзина", "оформление заказа"]} />
+
+    <div class="cart__wrapper">
+      <div class="cart-container">
+        <div class="order-head">
+          <DefaultBtn
+            as="a"
+            href="#"
+            className="order-head__back-btn"
+            viewType="width"
+            theme="stroke"
+            color="inverse"
+            size="sm"
+          >
+            <Sprite name="chevron-left" />
+             Вернуться в корзину
+          </DefaultBtn>
+          <h1 class="heading-3 medium order-head__title">Товаров в заказе</h1>
+        </div>
+        <div class="cart-container__head">
+          <span class="body-4 medium cart-container__head-title">Фото</span>
+          <span class="body-4 medium cart-container__head-title">
+            Наименование товара
+          </span>
+          <span class="body-4 medium cart-container__head-title">
+            Количество
+          </span>
+          <span class="body-4 medium cart-container__head-title">Цена</span>
+        </div>
+        <div class="cart-container__list">
+          <div class="cart-product">
+            <div class="cart-product__img">
+              <img src="./img/products/prod-13.png" alt="" />
+            </div>
+            <a
+              href="#"
+              class="primary-hover heading-7 medium cart-product__title"
+            >
+              Стоматологическая установка Mercury 330 люкс, черная
+            </a>
+            <div class="cart-product-counter" data-counter>
+              <span class="heading-7 medium cart-product-counter__value"
+                >2 шт.</span
+              >
+            </div>
+            <span
+              class="body-2 medium cart-product__price"
+              data-price="339000"
+              data-currency="₽">339 000</span
+            >
+          </div>
+          <div class="cart-product">
+            <div class="cart-product__img">
+              <img src="./img/products/prod-13.png" alt="" />
+            </div>
+            <a
+              href="#"
+              class="primary-hover heading-7 medium cart-product__title"
+            >
+              Стоматологическая установка Mercury 330 люкс, черная
+            </a>
+            <div class="cart-product-counter" data-counter>
+              <span class="heading-7 medium cart-product-counter__value"
+                >2 шт.</span
+              >
+            </div>
+            <span
+              class="body-2 medium cart-product__price"
+              data-price="339000"
+              data-currency="₽">339 000</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-info order-info">
+        <h3 class="heading-4 medium cart-info__title">Ваша корзина</h3>
+        <div class="cart-info__container">
+          <div class="cart-info-list">
+            <div class="body-2 cart-info-list__item">
+              <span class="cart-info-list__text">Товары (2)</span>
+              <span class="cart-info-list__text" data-currency="₽">
+                473 800
+              </span>
+            </div>
+            <div class="body-2 cart-info-list__item">
+              <span class="cart-info-list__text">Общий вес</span>
+              <span class="cart-info-list__text"> 150 кг</span>
+            </div>
+            <div class="body-2 cart-info-list__item">
+              <span class="cart-info-list__text">Доставка</span>
+              <span class="cart-info-list__text" data-currency="₽"> 800</span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="heading-6 medium cart-info-list__item cart-info__result order-info__result"
+        >
+          <span class="cart-info-list__text">Итого:</span>
+          <span class="cart-info-list__text" data-currency="₽"> 443 000</span>
+        </div>
+      </div>
+
+      <form
+        action="#"
+        class="cart-container order-form"
+        data-action="form-submit"
+      >
+        <h3 class="heading-3 medium order-head__title">Оформление товара</h3>
+        <div class="order-form__inner">
+          <h6 class="body-2 medium order-form__subtitle">Тип плательщика:</h6>
+          <div class="order-form__list order-form__list_grid">
+            <label class="order-form-radio order-form-radio_min">
+              <input
+                type="radio"
+                name="1"
+                class="order-form-radio__input"
+                hidden
+                checked
+              />
+              <span class="order-form-radio__icon">
+                <Sprite name="check" />
+              </span>
+              <span class="body-3 medium order-form-radio__title"
+                >Физическое лицо</span
+              >
+            </label>
+            <label class="order-form-radio order-form-radio_min">
+              <input
+                type="radio"
+                name="1"
+                class="order-form-radio__input"
+                hidden
+              />
+              <span class="order-form-radio__icon">
+                <Sprite name="check" />
+              </span>
+              <span class="body-3 medium order-form-radio__title"
+                >Юридическое лицо</span
+              >
+            </label>
+          </div>
+        </div>
+        <div class="order-form__inner">
+          <h6 class="body-2 medium order-form__subtitle">Покупатель:</h6>
+          <div class="order-form__list">
+            <TextInput
+              className="fv"
+              placeholder=""
+              label="ФИО*"
+              color="inverse"
+              required
+              data-action="required-text"
+            />
+            <TextInput
+              className="fv"
+              placeholder=""
+              label="E-mail*"
+              color="inverse"
+              required
+              data-action="required-text"
+            />
+            <TextInput
+              placeholder=""
+              label="Телефон"
+              color="inverse"
+              type="tel"
+            />
+            <TextInput placeholder="" label="Адрес доставки" color="inverse" />
+            <label class="text-input text-input_textarea inverse">
+              <textarea class="text-input__field" name="" id="" placeholder=""
+              ></textarea>
+
+              <span class="text-input__label">Комментарий к заказу</span>
+            </label>
+          </div>
+        </div>
+        <div class="order-form__inner">
+          <h6 class="body-2 medium order-form__subtitle">Способ доставки:</h6>
+          <div class="order-form__list">
+            <label class="order-form-radio">
+              <input
+                type="radio"
+                name="2"
+                class="order-form-radio__input"
+                hidden
+                checked
+              />
+              <span class="order-form-radio__icon">
+                <Sprite name="check" />
+              </span>
+              <div class="order-form-radio__inner">
+                <span class="body-3 medium order-form-radio__title">
+                  Самовывоз со склада в Ставрополе
+                </span>
+                <p class="order-form-radio__text">
+                  Оптово-розничный склад Адрес: Ставропольский кр., Шпаковский
+                  р-н, с. Верхнерусское, ул. Батайская, 24г Доставка Бесплатное
+                  Телефон +7 (8655) 333 888 Режим работы: Пн.-Пт. с 9:00 до
+                  18:00, Сб. с 9:00 до 14:00
+                </p>
+              </div>
+            </label>
+            <label class="order-form-radio">
+              <input
+                type="radio"
+                name="2"
+                class="order-form-radio__input"
+                hidden
+              />
+              <span class="order-form-radio__icon">
+                <Sprite name="check" />
+              </span>
+              <div class="order-form-radio__inner">
+                <span class="body-3 medium order-form-radio__title">
+                  Доставка по Ставрополю
+                </span>
+                <p class="order-form-radio__text">
+                  Доставка в г. Ставрополь, с. Верхнерусское, г. Михайловск.
+                  Бесплатно при сумме заказа не менее 3000 р.
+                </p>
+              </div>
+            </label>
+            <label class="order-form-radio">
+              <input
+                type="radio"
+                name="2"
+                class="order-form-radio__input"
+                hidden
+              />
+              <span class="order-form-radio__icon">
+                <Sprite name="check" />
+              </span>
+              <div class="order-form-radio__inner">
+                <span class="body-3 medium order-form-radio__title">
+                  Доставка за пределы г. Ставрополя (стоимость уточняется)
+                </span>
+                <p class="order-form-radio__text">
+                  Доставка транспортной компанией или курьером. Стоимость
+                  доставки уточнит наш менеджер!
+                </p>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="order-form__inner">
+          <h6 class="body-2 medium order-form__subtitle">Способ оплаты:</h6>
+          <div class="order-form__list">
+            <label class="order-form-radio order-form-radio_min">
+              <input
+                type="radio"
+                name="3"
+                class="order-form-radio__input"
+                hidden
+                checked
+              />
+              <span class="order-form-radio__icon">
+                <Sprite name="check" />
+              </span>
+              <span class="body-3 medium order-form-radio__title">
+                Оплата банковской картой
+              </span>
+            </label>
+            <label class="order-form-radio">
+              <input
+                type="radio"
+                name="3"
+                class="order-form-radio__input"
+                hidden
+              />
+              <span class="order-form-radio__icon">
+                <Sprite name="check" />
+              </span>
+              <div class="order-form-radio__inner">
+                <span class="body-3 medium order-form-radio__title">
+                  Оплата при получении
+                </span>
+                <p class="order-form-radio__text">
+                  Оплата наличными, банковской картой либо по выставленному
+                  счету.
+                </p>
+              </div>
+            </label>
+            <label class="order-form-radio">
+              <input
+                type="radio"
+                name="3"
+                class="order-form-radio__input"
+                hidden
+              />
+              <span class="order-form-radio__icon">
+                <Sprite name="check" />
+              </span>
+              <div class="order-form-radio__container">
+                <div class="order-form-radio__inner">
+                  <span class="body-3 medium order-form-radio__title">
+                    Рассрочка с OTP-банком
+                  </span>
+                  <p class="order-form-radio__text">
+                    С вами свяжется наш менеджер для уточнения деталей
+                  </p>
+                </div>
+                <img
+                  src="./img/opt-bank.png"
+                  alt=""
+                  class="order-form-radio__img"
+                />
+              </div>
+            </label>
+          </div>
+
+          <Checkbox className="order-form__checkbox">
+            <span>Я принимаю <a href="#">условия соглашения</a></span>
+          </Checkbox>
+        </div>
+        <DefaultBtn type="submit" viewType="width" color="inverse">
+          Оформить заказ
+        </DefaultBtn>
+      </form>
+    </div>
+  </div>
+
+  <Footer />
+</Layout>

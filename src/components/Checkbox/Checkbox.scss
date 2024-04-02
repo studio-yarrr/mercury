@@ -36,4 +36,13 @@
       height: 1.2rem;
     }
   }
+
+  a {
+    color: $secondary-inverse-hover;
+    text-decoration: underline;
+    transition: 0.3s;
+    @include hover {
+      color: $secondary;
+    }
+  }
 }

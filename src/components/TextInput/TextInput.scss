@@ -9,6 +9,21 @@
     }
   }
 
+  &.text-input_textarea {
+    .text-input {
+      &__field {
+        resize: none;
+        height: 14rem;
+        vertical-align: top;
+      }
+
+      &__label {
+        top: 2.7rem;
+        left: 1.9rem;
+      }
+    }
+  }
+
   &.invalid {
     .text-input__field {
       border-color: $error;

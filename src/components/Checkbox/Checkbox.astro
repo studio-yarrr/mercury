@@ -8,7 +8,7 @@ interface Props extends astroHTML.JSX.InputHTMLAttributes {
 const { className, ...rest } = Astro.props;
 ---
 
-<label class:list={["body-3 checkbox", className]}>
+<label class:list={["body-3 medium checkbox", className]}>
   <input type="checkbox" class="checkbox__input" {...rest} hidden />
   <span class="checkbox__icon">
     <Sprite name="check" />
