@@ -136,3 +136,36 @@
     }
   }
 }
+
+.cart-empty {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 3rem;
+    max-width: 35.1rem;
+
+    @include breakpoint($xs-bp) {
+      gap: 2rem;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+
+    @include breakpoint($xs-bp) {
+      gap: 0.5rem;
+    }
+  }
+
+  &__text {
+    color: $secondary-inverse-active;
+
+    @include breakpoint($xs-bp) {
+      max-width: 26.8rem;
+    }
+  }
+}

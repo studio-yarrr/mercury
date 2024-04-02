@@ -1,0 +1,38 @@
+---
+import Breadcrumbs from "@components/Breadcrumbs/Breadcrumbs.astro";
+import CartProduct from "@components/CartProduct/CartProduct.astro";
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import Footer from "@modules/Footer/Footer.astro";
+import Header from "@modules/Header/Header.astro";
+import { Sprite } from "astro-icon";
+import Layout from "src/layouts/Layout.astro";
+---
+
+<Layout>
+  <Header />
+
+  <div class="container cart cart-empty">
+    <Breadcrumbs items={["главная", "корзина"]} />
+
+    <div class="cart__wrapper">
+      <div class="cart-container">
+        <h1 class="heading-3 medium order__title">Корзина</h1>
+        <div class="cart-empty__container">
+          <div class="cart-empty__inner">
+            <span class="body-3 medium cart-empty__subtitle">
+              В корзине нет товаров.
+            </span>
+            <span class="body-4 cart-empty__text">
+              Перейдите в каталог и добавьте товары в корзину
+            </span>
+          </div>
+          <DefaultBtn as="a" href="#" viewType="width" color="inverse">
+            Перейти в каталог
+          </DefaultBtn>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <Footer />
+</Layout>
