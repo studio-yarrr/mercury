@@ -1,0 +1,70 @@
+---
+import Checkbox from "@components/Checkbox/Checkbox.astro";
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import TextInput from "@components/TextInput/TextInput.astro";
+import Sidebar from "@modules/Sidebar/Sidebar.astro";
+import { Sprite } from "astro-icon";
+---
+
+<Sidebar className="sidebar-login">
+  <button type="button" class="sidebar__close" data-vclose>
+    <Sprite name="x" />
+  </button>
+  <form action="#" class="sidebar-login__form" data-action="form-submit">
+    <div class="sidebar-login__head">
+      <h6 class="title-6 medium sidebar-login__title">Регистрация</h6>
+      <span class="body-4 sidebar-login__text"> Заполните поля данных</span>
+    </div>
+    <div class="sidebar-login__container">
+      <div class="sidebar-login__inner">
+        <TextInput
+          color="inverse"
+          placeholder=""
+          label="Имя"
+          className="fv"
+          required
+          data-action="required-text"
+        />
+        <TextInput
+          color="inverse"
+          placeholder=""
+          label="Фамилия"
+          className="fv"
+          required
+          data-action="required-text"
+        />
+        <TextInput
+          color="inverse"
+          placeholder=""
+          label="Электронная почта"
+          className="fv"
+          required
+          data-action="required-email"
+        />
+        <TextInput
+          color="inverse"
+          placeholder=""
+          label="Пароль"
+          type="password"
+          isPassword
+          className="fv"
+          required
+          data-action="required-text"
+        />
+        <TextInput
+          color="inverse"
+          placeholder=""
+          label="Подтверждение пароля"
+          type="password"
+          isPassword
+          className="fv"
+          required
+          data-action="required-text"
+        />
+      </div>
+      <DefaultBtn type="submit" viewType="width" color="inverse">
+        Зарегистрироваться
+      </DefaultBtn>
+    </div>
+  </form>
+</Sidebar>

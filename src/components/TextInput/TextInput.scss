@@ -104,6 +104,23 @@
 
       & ~ .text-input__btn {
         opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    &[type="text"] {
+      & ~ .text-input__btn[data-password] {
+        svg {
+          &:nth-child(1) {
+            opacity: 0;
+            transform: scale(0);
+          }
+
+          &:nth-child(2) {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
       }
     }
   }
@@ -128,7 +145,26 @@
     top: 50%;
     transform: translateY(-50%);
     opacity: 0;
+    pointer-events: none;
     transition: 0.3s;
+
+    &[data-password] {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        position: absolute;
+        transition:
+          transform 0.3s,
+          opacity 0.3s;
+
+        &:nth-child(2) {
+          opacity: 0;
+          transform: scale(0);
+        }
+      }
+    }
 
     svg {
       width: 100%;

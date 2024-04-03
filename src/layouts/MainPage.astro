@@ -1,8 +1,6 @@
 ---
 import { Sprite } from "astro-icon";
 import "../assets/styles/style.scss";
-import Spinner from "@components/Spinner/Spinner.astro";
-import SidebarCart from "@modules/Sidebar/SidebarCart.astro";
 
 interface Props {
   title?: string;
@@ -30,7 +28,6 @@ const { title = "заголовок страницы" } = Astro.props;
       <main class="page">
         <slot />
       </main>
-      <SidebarCart />
     </Sprite.Provider>
   </body>
 </html>

@@ -7,9 +7,10 @@ interface Props extends astroHTML.JSX.InputHTMLAttributes {
   className?: string;
   message?: string;
   color?: "inverse";
+  isPassword?: boolean;
 }
 
-const { label, className, message, color, ...rest } = Astro.props;
+const { label, className, message, color, isPassword, ...rest } = Astro.props;
 ---
 
 <label class:list={["text-input", color, className]}>
@@ -21,8 +22,21 @@ const { label, className, message, color, ...rest } = Astro.props;
 
   {label && <span class="text-input__label">{label}</span>}
 
-  <button type="button" class="text-input__btn">
-    <Sprite name="x" />
+  <button
+    type="button"
+    class="text-input__btn"
+    {...{ "data-clear": !isPassword, "data-password": isPassword }}
+  >
+    {
+      isPassword ? (
+        <>
+          <Sprite name="eye" />
+          <Sprite name="eye-off" />
+        </>
+      ) : (
+        <Sprite name="x" />
+      )
+    }
   </button>
 
   {message && <span class="text-input__message">{message}</span>}

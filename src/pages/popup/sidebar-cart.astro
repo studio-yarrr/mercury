@@ -1,17 +1,17 @@
 ---
 import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
-import Sidebar from "./Sidebar.astro";
+import Sidebar from "@modules/Sidebar/Sidebar.astro";
 import { Sprite } from "astro-icon";
 ---
 
-<Sidebar key="cart">
+<Sidebar>
   <div class="sidebar-cart">
     <div class="sidebar-cart__head">
       <h6 class="heading-5 medium sidebar-cart__title">
         Корзина
         <span class="sidebar-cart__count">(2 товара)</span>
       </h6>
-      <button type="button" class="sidebar__close" data-close-sidebar>
+      <button type="button" class="sidebar__close" data-vclose>
         <Sprite name="x" />
       </button>
     </div>

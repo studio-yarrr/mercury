@@ -1,0 +1,31 @@
+---
+import Checkbox from "@components/Checkbox/Checkbox.astro";
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import TextInput from "@components/TextInput/TextInput.astro";
+import Sidebar from "@modules/Sidebar/Sidebar.astro";
+import { Sprite } from "astro-icon";
+---
+
+<Sidebar className="sidebar-login">
+  <button type="button" class="sidebar__close" data-vclose>
+    <Sprite name="x" />
+  </button>
+  <div class="sidebar-login__form">
+    <div class="sidebar-login__head">
+      <h6 class="title-6 medium sidebar-login__title">Успешно!</h6>
+      <span class="body-4 sidebar-login__text">
+        Инструкция по восстановлению пароля отправлена на почту
+        hello@design-nikitin.ru
+      </span>
+    </div>
+    <div class="sidebar-login__links">
+      <a href="#" class="body-4 medium primary-hover sidebar-login__link">
+        Забыли свой пароль?
+      </a>
+
+      <a href="#" class="body-4 medium primary-hover sidebar-login__link">
+        Зарегистрироваться
+      </a>
+    </div>
+  </div>
+</Sidebar>

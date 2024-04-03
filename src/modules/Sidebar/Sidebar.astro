@@ -1,14 +1,12 @@
 ---
 interface Props {
-  key: string;
   className?: string;
 }
 
-const { key, className } = Astro.props;
+const { className } = Astro.props;
 ---
 
-<div class:list={["sidebar", className]} data-sidebar={key}>
-  <div class="sidebar__bg" data-close-sidebar></div>
+<div class:list={["sidebar", className]}>
   <div class="sidebar__container">
     <slot />
   </div>

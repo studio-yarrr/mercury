@@ -28,19 +28,30 @@ import { initProductHeadSwiper } from "@modules/Product/ProductHead/ProductHead"
 import { initLeasingSteps } from "@modules/Leasing/Leasing";
 import { initAboutHistory } from "@modules/About/AboutHistory/AboutHistory";
 import { initAboutValueSlider } from "@modules/About/AboutValue/AboutValue";
-import { Sidebar, SidebarController } from "@modules/Sidebar/Sidebar";
 
 Swiper.use([Navigation, Pagination, Scrollbar, Thumbs, FreeMode]);
 gsap.registerPlugin(ScrollTrigger);
 
 const VBOX_OPTIONS = {
-  selector: "[data-vopen]",
+  // selector: "[data-vopen]",
   overlayColor: "rgba(0, 0, 0, 0.75)",
   bgcolor: null,
   spinner: "grid",
   onContentLoadedEvent: new Event("vBoxContentLoaded", { bubbles: true }),
   onContentLoaded: (): void => {
     document.dispatchEvent(VBOX_OPTIONS.onContentLoadedEvent);
+  },
+  onPostOpen: function (obj: any, gallIndex: any, thenext: any, theprev: any) {
+    const overlay = document.querySelector(".vbox-overlay.v-sidebar");
+    if (overlay) {
+      overlay.classList.add("_show");
+    }
+  },
+  onPreClose: () => {
+    const overlay = document.querySelector(".vbox-overlay.v-sidebar");
+    if (overlay) {
+      overlay.classList.remove("_show");
+    }
   },
 };
 
@@ -61,16 +72,26 @@ function openVBox(src: string, vbtype?: string) {
   }, 500);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const sidebarController = new SidebarController();
+function vOpenHandler(e: Event, target: HTMLElement) {
+  const link = target.closest<HTMLLinkElement>("[data-vopen]");
+  if (link) {
+    e.preventDefault();
+    const type = link.getAttribute("data-vbtype");
+    const href = link.href;
+    (link as any).settings = vBox.settings;
 
-  document.querySelectorAll<HTMLElement>("[data-sidebar]").forEach((el) => {
-    const key = el.getAttribute("data-sidebar");
-    if (key) {
-      new Sidebar(sidebarController, el, key);
+    if (href) {
+      vBox.close();
+      setTimeout(() => {
+        vBox.open(link);
+      }, 500);
+    } else {
+      throw new Error("href attribute is undefined");
     }
-  });
+  }
+}
 
+document.addEventListener("DOMContentLoaded", () => {
   initSpinner();
 
   formValidateInit(".fv");
@@ -99,8 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
     categoryFilterHandler(target);
     vCloseHandler(target);
     counterHandler(target);
-
-    sidebarController.clickHandler(target);
+    vOpenHandler(e, target);
   });
 
   document.addEventListener("vBoxContentLoaded", () => {

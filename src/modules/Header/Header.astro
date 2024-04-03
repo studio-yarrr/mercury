@@ -207,18 +207,26 @@ import { Sprite } from "astro-icon";
         <span class="grad-bg shadow-m header-control__btn-count" data-count=""
         ></span>
       </button>
-      <button
-        type="button"
+      <a
         class="primary-hover header-control__btn"
-        data-open-sidebar="cart"
+        href="./popup/sidebar-cart.html"
+        data-vopen
+        data-vbtype="ajax"
+        data-customclass="v-sidebar"
       >
         <Sprite name="shopping-cart" />
         <span class="grad-bg shadow-m header-control__btn-count" data-count="2"
         ></span>
-      </button>
-      <button type="button" class="primary-hover header-control__btn">
+      </a>
+      <a
+        class="primary-hover header-control__btn"
+        href="./popup/sidebar-login.html"
+        data-vopen
+        data-vbtype="ajax"
+        data-customclass="v-sidebar"
+      >
         <Sprite name="user" />
-      </button>
+      </a>
     </div>
   </div>
 </header>

@@ -1,0 +1,37 @@
+---
+import Checkbox from "@components/Checkbox/Checkbox.astro";
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import TextInput from "@components/TextInput/TextInput.astro";
+import Sidebar from "@modules/Sidebar/Sidebar.astro";
+import { Sprite } from "astro-icon";
+---
+
+<Sidebar className="sidebar-login">
+  <button type="button" class="sidebar__close" data-vclose>
+    <Sprite name="x" />
+  </button>
+  <form action="#" class="sidebar-login__form" data-action="form-submit">
+    <div class="sidebar-login__head">
+      <h6 class="title-6 medium sidebar-login__title">Восстановление пароля</h6>
+      <span class="body-4 sidebar-login__text">
+        Укажите адрес электронной почты указанный вами при регистрации. На него
+        будет выслана инструкция по восстановлению пароля.
+      </span>
+    </div>
+    <div class="sidebar-login__container">
+      <div class="sidebar-login__inner">
+        <TextInput
+          color="inverse"
+          placeholder=""
+          label="Электронная почта"
+          className="fv"
+          required
+          data-action="required-email"
+        />
+      </div>
+      <DefaultBtn type="submit" viewType="width" color="inverse">
+        Отправить
+      </DefaultBtn>
+    </div>
+  </form>
+</Sidebar>

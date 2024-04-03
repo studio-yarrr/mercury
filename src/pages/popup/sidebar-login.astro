@@ -1,0 +1,55 @@
+---
+import Checkbox from "@components/Checkbox/Checkbox.astro";
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import TextInput from "@components/TextInput/TextInput.astro";
+import Sidebar from "@modules/Sidebar/Sidebar.astro";
+import { Sprite } from "astro-icon";
+---
+
+<Sidebar className="sidebar-login">
+  <button type="button" class="sidebar__close" data-vclose>
+    <Sprite name="x" />
+  </button>
+  <form action="#" class="sidebar-login__form" data-action="form-submit">
+    <div class="sidebar-login__head">
+      <h6 class="title-6 medium sidebar-login__title">
+        Добро пожаловать <nobr>в Mercury</nobr>
+      </h6>
+    </div>
+    <div class="sidebar-login__container">
+      <div class="sidebar-login__inner">
+        <TextInput
+          color="inverse"
+          placeholder=""
+          label="Электронная почта"
+          className="fv"
+          required
+          data-action="required-email"
+        />
+        <TextInput
+          color="inverse"
+          placeholder=""
+          label="Пароль"
+          type="password"
+          isPassword
+          className="fv"
+          required
+          data-action="required-text"
+        />
+        <Checkbox>Запомнить меня</Checkbox>
+      </div>
+      <DefaultBtn type="submit" viewType="width" color="inverse">
+        Войти
+      </DefaultBtn>
+    </div>
+    <div class="sidebar-login__links">
+      <a href="#" class="body-4 medium primary-hover sidebar-login__link">
+        Забыли свой пароль?
+      </a>
+
+      <a href="#" class="body-4 medium primary-hover sidebar-login__link">
+        Зарегистрироваться
+      </a>
+    </div>
+  </form>
+</Sidebar>
