@@ -1,0 +1,140 @@
+.pa {
+  display: grid;
+  grid-template-columns: 1fr 88.7rem;
+  gap: 2rem;
+  margin-bottom: 15rem;
+  margin-top: 2rem;
+
+  @include breakpoint($xm-bp) {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10rem;
+  }
+
+  @include breakpoint($xs-bp) {
+    margin-top: 1rem;
+  }
+
+  &-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 4rem;
+    border-radius: 4rem;
+    background-color: $strokes-secondary;
+
+    @include breakpoint($xm-bp) {
+      position: relative;
+    }
+
+    @include breakpoint($xs-bp) {
+      padding: 3rem;
+      gap: 3rem;
+      border-radius: 3rem;
+    }
+
+    &-user {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+
+      &__img {
+        flex: none;
+        width: 8rem;
+        height: 8rem;
+        border-radius: 1.5rem;
+        overflow: hidden;
+
+        img {
+          object-fit: cover;
+          object-position: center;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &__inner {
+        display: flex;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.6rem;
+      }
+
+      &__email {
+        color: $secondary-inverse-active;
+      }
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4rem;
+
+      @include breakpoint($xm-bp) {
+        display: grid;
+        grid-template-columns: repeat(2, 29rem);
+        gap: 2rem;
+      }
+
+      @include breakpoint($xs-bp) {
+        display: flex;
+      }
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      @include secondary-inverse-hover;
+
+      &.active {
+        .pa-nav-link__icon {
+          background-color: $secondary-active;
+        }
+      }
+
+      &__icon {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 1.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $primary-inverse-active;
+
+        svg {
+          width: 1.6rem;
+          height: 1.6rem;
+          color: $primary;
+        }
+      }
+    }
+
+    &__logout {
+      margin-top: 12rem;
+
+      @include breakpoint($xm-bp) {
+        margin: 0;
+        gap: 0rem;
+        font-size: 0rem;
+        position: absolute;
+        top: 4rem;
+        right: 4rem;
+      }
+
+      .pa-nav-link__icon {
+        background-color: transparent;
+        border: 0.1rem solid $primary;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

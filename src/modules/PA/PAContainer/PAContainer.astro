@@ -1,0 +1,71 @@
+---
+import { Sprite } from "astro-icon";
+
+interface Props {
+  activeIndex: number;
+}
+
+const nav: { title: string; icon: string }[] = [
+  {
+    title: "Текущие заказы",
+    icon: "loader",
+  },
+  {
+    title: "История заказов",
+    icon: "menu",
+  },
+  {
+    title: "Список профилей",
+    icon: "users",
+  },
+  {
+    title: "Изменить профиль",
+    icon: "edit",
+  },
+];
+
+const { activeIndex } = Astro.props;
+---
+
+<section class="container pa">
+  <div class="pa-nav">
+    <div class="pa-nav-user">
+      <div class="pa-nav-user__img">
+        <img src="./img/user.jpg" alt="" />
+      </div>
+      <div class="pa-nav-user__inner">
+        <span class="body-4 pa-nav-user__email">hello@design-nikitin.ru</span>
+        <span class="heading-5 bold pa-nav-user__name">Илья Никитин</span>
+      </div>
+    </div>
+    <div class="pa-nav__list">
+      {
+        nav.map((el, i) => (
+          <a
+            href="#"
+            class:list={["pa-nav-link", { active: i === activeIndex }]}
+          >
+            <span class="pa-nav-link__icon">
+              <Sprite name={el.icon} />
+            </span>
+            {el.title}
+          </a>
+        ))
+      }
+    </div>
+    <a
+      href="./popup/popup-logout.html"
+      data-vopen
+      data-vbtype="ajax"
+      class="pa-nav-link pa-nav__logout"
+    >
+      <span class="pa-nav-link__icon">
+        <Sprite name="log-out" />
+      </span>
+       Выйти из аккаунта
+    </a>
+  </div>
+  <div class="pa__wrapper">
+    <slot />
+  </div>
+</section>
