@@ -60,10 +60,26 @@ const vBox = new VenoBox(VBOX_OPTIONS);
 (window as any).vBox = vBox;
 (window as any).openVBox = openVBox;
 
-function openVBox(src: string, vbtype?: string) {
+function openVBox(
+  src: string,
+  options?: {
+    vbtype?: string;
+    isSidebar?: boolean;
+  },
+) {
   const link = document.createElement("a");
   link.href = src;
-  link.dataset.vbtype = vbtype ? vbtype : "ajax";
+
+  if (options?.vbtype) {
+    link.setAttribute("data-vbtype", options.vbtype);
+  } else {
+    link.setAttribute("data-vbtype", "ajax");
+  }
+
+  if (options?.isSidebar) {
+    link.setAttribute("data-customclass", "v-sidebar");
+  }
+
   (link as any).settings = vBox.settings;
 
   vBox.close();
@@ -76,15 +92,11 @@ function vOpenHandler(e: Event, target: HTMLElement) {
   const link = target.closest<HTMLLinkElement>("[data-vopen]");
   if (link) {
     e.preventDefault();
-    const type = link.getAttribute("data-vbtype");
     const href = link.href;
-    (link as any).settings = vBox.settings;
+    const isSidebar = link.getAttribute("data-customclass");
 
     if (href) {
-      vBox.close();
-      setTimeout(() => {
-        vBox.open(link);
-      }, 500);
+      isSidebar ? openVBox(href, { isSidebar: true }) : openVBox(href);
     } else {
       throw new Error("href attribute is undefined");
     }

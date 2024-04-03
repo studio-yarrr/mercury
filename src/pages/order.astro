@@ -162,7 +162,6 @@ import Layout from "src/layouts/Layout.astro";
           <div class="order-form__list">
             <TextInput
               className="fv"
-              placeholder=""
               label="ФИО*"
               color="inverse"
               required
@@ -170,21 +169,19 @@ import Layout from "src/layouts/Layout.astro";
             />
             <TextInput
               className="fv"
-              placeholder=""
               label="E-mail*"
               color="inverse"
               required
               data-action="required-text"
             />
             <TextInput
-              placeholder=""
               label="Телефон"
               color="inverse"
               type="tel"
             />
-            <TextInput placeholder="" label="Адрес доставки" color="inverse" />
+            <TextInput label="Адрес доставки" color="inverse" />
             <label class="text-input text-input_textarea inverse">
-              <textarea class="text-input__field" name="" id="" placeholder=""
+              <textarea class="text-input__field" name="" id="" 
               ></textarea>
 
               <span class="text-input__label">Комментарий к заказу</span>

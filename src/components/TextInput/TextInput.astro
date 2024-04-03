@@ -17,6 +17,7 @@ const { label, className, message, color, isPassword, ...rest } = Astro.props;
   <input
     type={rest.type ? rest.type : "text"}
     class="text-input__field"
+    placeholder="placeholder"
     {...rest}
   />
 
