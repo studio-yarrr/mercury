@@ -1,0 +1,13 @@
+---
+interface Props {
+  color?: "yellow" | "red";
+  theme?: "stroke";
+  className?: string;
+}
+
+const { color, theme, className } = Astro.props;
+---
+
+<span class:list={["body-4 medium tag", color, theme, className]}>
+  <slot />
+</span>

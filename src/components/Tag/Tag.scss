@@ -1,0 +1,47 @@
+.tag {
+  color: $primary-inverse;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem 1rem 1.5rem;
+  border: 0.1rem solid #dbeddb;
+  background-color: #dbeddb;
+  border-radius: 10rem;
+  width: fit-content;
+
+  &::before {
+    content: "";
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background-color: #4ac476;
+  }
+
+  &.stroke {
+    background-color: transparent;
+  }
+
+  &.yellow {
+    border-color: #fdecc8;
+
+    &:not(.stroke) {
+      background-color: #fdecc8;
+    }
+
+    &::before {
+      background-color: #f6b034;
+    }
+  }
+
+  &.red {
+    border-color: #fac9c9;
+
+    &:not(.stroke) {
+      background-color: #fac9c9;
+    }
+
+    &::before {
+      background-color: #e62b2b;
+    }
+  }
+}
