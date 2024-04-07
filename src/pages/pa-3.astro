@@ -1,0 +1,132 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import Tag from "@components/Tag/Tag.astro";
+import Footer from "@modules/Footer/Footer.astro";
+import Header from "@modules/Header/Header.astro";
+import PAContainer from "@modules/PA/PAContainer/PAContainer.astro";
+import PAOrder from "@modules/PA/PAOrder/PAOrder.astro";
+import Layout from "src/layouts/Layout.astro";
+---
+
+<Layout>
+  <Header />
+
+  <PAContainer activeIndex={1}>
+    <div class="pa__container pa-order">
+      <div class="pa-order__head">
+        <div class="pa-order__head-title">
+          <h5 class="heading-5 bold pa-order__title">
+            Заказ от 7 декабря 2023
+          </h5>
+          <Tag>Выполнен</Tag>
+        </div>
+        <div class="pa-order__head-inner">
+          <span class="body-4 medium pa-order-info">
+            <span class="pa-order-info__title">Номер заказа:</span>
+            <span class="pa-order-info__text">№732</span>
+          </span>
+          <span class="body-4 medium pa-order-info">
+            <span class="pa-order-info__title">Кол-во товаров:</span>
+            <span class="pa-order-info__text">2</span>
+          </span>
+          <span class="body-4 medium pa-order-info">
+            <span class="pa-order-info__title">Сумма заказа:</span>
+            <span class="pa-order-info__text">40 000 ₽</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="pa-order-products">
+        <h6 class="heading-5 bold pa-order__title">Товары</h6>
+        <div class="pa-order-products__list">
+          <div class="cart-product">
+            <div class="cart-product__img">
+              <img src="./img/products/prod-13.png" alt="" />
+            </div>
+            <div class="cart-product__inner">
+              <a
+                href="#"
+                class="primary-hover heading-7 medium cart-product__title"
+              >
+                Стоматологическая установка Mercury 330 люкс, черная
+              </a>
+              <span
+                class="body-2 medium cart-product__price"
+                data-price="339000"
+                data-currency="₽">339 000</span
+              >
+            </div>
+          </div>
+          <div class="cart-product">
+            <div class="cart-product__img">
+              <img src="./img/products/prod-13.png" alt="" />
+            </div>
+            <div class="cart-product__inner">
+              <a
+                href="#"
+                class="primary-hover heading-7 medium cart-product__title"
+              >
+                Стоматологическая установка Mercury 330 люкс, черная
+              </a>
+              <span
+                class="body-2 medium cart-product__price"
+                data-price="339000"
+                data-currency="₽">339 000</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pa__container pa-order">
+      <div class="pa-order__head">
+        <div class="pa-order__head-title">
+          <h5 class="heading-5 bold pa-order__title">
+            Заказ от 7 декабря 2023
+          </h5>
+          <Tag color="red">Отменен</Tag>
+        </div>
+        <div class="pa-order__head-inner">
+          <span class="body-4 medium pa-order-info">
+            <span class="pa-order-info__title">Номер заказа:</span>
+            <span class="pa-order-info__text">№732</span>
+          </span>
+          <span class="body-4 medium pa-order-info">
+            <span class="pa-order-info__title">Кол-во товаров:</span>
+            <span class="pa-order-info__text">1</span>
+          </span>
+          <span class="body-4 medium pa-order-info">
+            <span class="pa-order-info__title">Сумма заказа:</span>
+            <span class="pa-order-info__text">20 000 ₽</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="pa-order-products">
+        <h6 class="heading-5 bold pa-order__title">Товары</h6>
+        <div class="pa-order-products__list">
+          <div class="cart-product">
+            <div class="cart-product__img">
+              <img src="./img/products/prod-13.png" alt="" />
+            </div>
+            <div class="cart-product__inner">
+              <a
+                href="#"
+                class="primary-hover heading-7 medium cart-product__title"
+              >
+                Стоматологическая установка Mercury 330 люкс, черная
+              </a>
+              <span
+                class="body-2 medium cart-product__price"
+                data-price="339000"
+                data-currency="₽">339 000</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </PAContainer>
+
+  <Footer />
+</Layout>

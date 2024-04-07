@@ -3,10 +3,13 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 4rem;
-  min-height: 52rem;
 
-  @include breakpoint($xm-bp) {
-    min-height: 46rem;
+  &.pa-order_empty {
+    min-height: 52rem;
+
+    @include breakpoint($xm-bp) {
+      min-height: 46rem;
+    }
   }
 
   &__title {
