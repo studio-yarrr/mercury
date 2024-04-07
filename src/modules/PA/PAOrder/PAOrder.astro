@@ -1,12 +1,127 @@
 ---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
 import Tag from "@components/Tag/Tag.astro";
 ---
 
 <div class="pa__container pa-order">
-  <Tag>text</Tag>
-  <Tag theme="stroke">text</Tag>
-  <Tag color="yellow">text</Tag>
-  <Tag color="yellow" theme="stroke">text</Tag>
-  <Tag color="red">text</Tag>
-  <Tag color="red" theme="stroke">text</Tag>
+  <div class="pa-order__head">
+    <div class="pa-order__head-title">
+      <h5 class="heading-5 bold pa-order__title">Заказ от 7 декабря 2023</h5>
+      <Tag color="yellow">Принят, ожидается оплата</Tag>
+    </div>
+    <div class="pa-order__head-inner">
+      <span class="body-4 medium pa-order-info">
+        <span class="pa-order-info__title">Номер заказа:</span>
+        <span class="pa-order-info__text">№732</span>
+      </span>
+      <span class="body-4 medium pa-order-info">
+        <span class="pa-order-info__title">Кол-во товаров:</span>
+        <span class="pa-order-info__text">2</span>
+      </span>
+      <span class="body-4 medium pa-order-info">
+        <span class="pa-order-info__title">Сумма заказа:</span>
+        <span class="pa-order-info__text">40 000 ₽</span>
+      </span>
+    </div>
+  </div>
+
+  <div class="pa-order-products">
+    <h6 class="heading-5 bold pa-order__title">Товары</h6>
+    <div class="pa-order-products__list">
+      <div class="cart-product">
+        <div class="cart-product__img">
+          <img src="./img/products/prod-13.png" alt="" />
+        </div>
+        <div class="cart-product__inner">
+          <a
+            href="#"
+            class="primary-hover heading-7 medium cart-product__title"
+          >
+            Стоматологическая установка Mercury 330 люкс, черная
+          </a>
+          <span
+            class="body-2 medium cart-product__price"
+            data-price="339000"
+            data-currency="₽">339 000</span
+          >
+        </div>
+      </div>
+      <div class="cart-product">
+        <div class="cart-product__img">
+          <img src="./img/products/prod-13.png" alt="" />
+        </div>
+        <div class="cart-product__inner">
+          <a
+            href="#"
+            class="primary-hover heading-7 medium cart-product__title"
+          >
+            Стоматологическая установка Mercury 330 люкс, черная
+          </a>
+          <span
+            class="body-2 medium cart-product__price"
+            data-price="339000"
+            data-currency="₽">339 000</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pa-order-payment">
+    <div class="pa-order-payment__head">
+      <h6 class="heading-5 bold pa-order__title">Товары</h6>
+      <Tag color="red" theme="stroke">Не оплачено</Tag>
+    </div>
+    <div class="template body-3 medium pa-order-payment__text">
+      <p>
+        Счет №721/1 от 7.12.2023, <span class="red"
+          >оплата банковской картой</span
+        >
+      </p>
+      <p>Сумма к оплате по счету: 40 000 ₽</p>
+    </div>
+    <div class="pa-order-payment__btns">
+      <DefaultBtn as="a" href="" viewType="width" color="inverse">
+        Оплатить
+      </DefaultBtn>
+      <DefaultBtn
+        as="a"
+        href="./popup/popup-pay-type.html"
+        data-vopen
+        data-vbtype="ajax"
+        viewType="width"
+        color="secondary-inverse"
+        theme="stroke"
+      >
+        Изменить способ оплаты
+      </DefaultBtn>
+    </div>
+  </div>
+
+  <div class="pa-order-payment pa-order-delivery">
+    <div class="pa-order-payment__head">
+      <h6 class="heading-5 bold pa-order__title">Доставка</h6>
+      <Tag color="red" theme="stroke">Не оплачено</Tag>
+    </div>
+    <div class="template body-3 medium pa-order-payment__text">
+      <p>Отгрузка №721/2 от 7.12.2023</p>
+    </div>
+    <div class="template body-3 medium pa-order-payment__text">
+      <p>
+        Стоимость отгрузки: 0 ₽ <br />
+         Статус отгрузки: Ожидает обработки <br />
+         Служба доставки: Самовывоз со склада в Ставрополе
+      </p>
+    </div>
+  </div>
+
+  <DefaultBtn
+    type="button"
+    viewType="width"
+    color="secondary-inverse"
+    theme="stroke"
+    className="pa-order__cancel-btn"
+  >
+    Отменить заказ
+  </DefaultBtn>
 </div>

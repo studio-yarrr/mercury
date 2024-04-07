@@ -1,6 +1,7 @@
 ---
 import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
 import InputBtn from "@components/InputBtn/InputBtn.astro";
+import Tag from "@components/Tag/Tag.astro";
 import TextInput from "@components/TextInput/TextInput.astro";
 import { Sprite } from "astro-icon";
 import Layout from "src/layouts/Layout.astro";
@@ -127,6 +128,15 @@ import Layout from "src/layouts/Layout.astro";
           color="inverse"
         />
       </div>
+    </div>
+
+    <div class="box white">
+      <Tag>text</Tag>
+      <Tag theme="stroke">text</Tag>
+      <Tag color="yellow">text</Tag>
+      <Tag color="yellow" theme="stroke">text</Tag>
+      <Tag color="red">text</Tag>
+      <Tag color="red" theme="stroke">text</Tag>
     </div>
 
     <div class="box">

@@ -1,0 +1,19 @@
+---
+import Footer from "@modules/Footer/Footer.astro";
+import Header from "@modules/Header/Header.astro";
+import PAContainer from "@modules/PA/PAContainer/PAContainer.astro";
+import PAOrder from "@modules/PA/PAOrder/PAOrder.astro";
+import Layout from "src/layouts/Layout.astro";
+---
+
+<Layout>
+  <Header />
+
+  <PAContainer activeIndex={0}>
+    <div class="pa__container pa-order">
+      <h5 class="heading-5 bold pa-order__title">Текущие заказы отсутствуют</h5>
+    </div>
+  </PAContainer>
+
+  <Footer />
+</Layout>

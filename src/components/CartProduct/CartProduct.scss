@@ -23,7 +23,9 @@
   }
 
   &__img {
-    width: 100%;
+    flex: none;
+    width: 10rem;
+    height: 10rem;
     aspect-ratio: 1/1;
     border-radius: 2.5rem;
     border: 0.1rem solid $primary-hover;

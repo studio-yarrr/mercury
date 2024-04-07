@@ -1,6 +1,7 @@
 .pa {
   display: grid;
   grid-template-columns: 1fr 88.7rem;
+  align-items: flex-start;
   gap: 2rem;
   margin-bottom: 15rem;
   margin-top: 2rem;
@@ -8,6 +9,7 @@
   @include breakpoint($xm-bp) {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     margin-bottom: 10rem;
   }
 
@@ -142,6 +144,7 @@
     padding: 3rem 4rem;
     border-radius: 4rem;
     background-color: $primary;
+    color: $primary-inverse;
 
     @include breakpoint($xs-bp) {
       padding: 2rem 3rem;
