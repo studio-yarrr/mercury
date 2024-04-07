@@ -108,3 +108,30 @@
     }
   }
 }
+
+.pa-profile-edit {
+  &__link {
+    color: #6f79f7;
+    transition: 0.3s;
+    @include hover {
+      opacity: 0.6;
+    }
+  }
+
+  .img-input {
+    margin-bottom: -1rem;
+  }
+
+  .pa-profile {
+    &__inputs {
+      display: flex;
+      flex-direction: column;
+      max-width: 35rem;
+      margin-bottom: 2rem;
+    }
+
+    &__btns {
+      margin-top: auto;
+    }
+  }
+}

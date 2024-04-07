@@ -28,6 +28,7 @@ import { initProductHeadSwiper } from "@modules/Product/ProductHead/ProductHead"
 import { initLeasingSteps } from "@modules/Leasing/Leasing";
 import { initAboutHistory } from "@modules/About/AboutHistory/AboutHistory";
 import { initAboutValueSlider } from "@modules/About/AboutValue/AboutValue";
+import { ImgInput } from "@components/ImgInput/ImgInput";
 
 Swiper.use([Navigation, Pagination, Scrollbar, Thumbs, FreeMode]);
 gsap.registerPlugin(ScrollTrigger);
@@ -121,6 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initLeasingSteps();
   initAboutHistory();
   initAboutValueSlider();
+  initImgInputs();
 
   initFadeAnim();
 
@@ -193,4 +195,9 @@ function initFadeAnim() {
       },
     });
   }
+}
+
+function initImgInputs() {
+  const containers = document.querySelectorAll<HTMLElement>("[data-img-input]");
+  containers.forEach((container) => new ImgInput(container));
 }
