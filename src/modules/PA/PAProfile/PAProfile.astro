@@ -1,0 +1,40 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import { Sprite } from "astro-icon";
+---
+
+<div class="pa__container pa-order pa-profile">
+  <h5 class="heading-5 bold pa-order__title">Заказ от 7 декабря 2023</h5>
+  <div class="pa-profile__list">
+    <div class="pa-profile-item">
+      <a href="#" class="body-2 medium primary-hover pa-profile-item__title">
+        Ип Никитин И.А
+      </a>
+      <span class="body-4 medium pa-profile-item__type">Юридическое лицо</span>
+    </div>
+    <div class="pa-profile-item">
+      <a href="#" class="body-2 medium primary-hover pa-profile-item__title">
+        Никитин Илья Александрович
+      </a>
+      <span class="body-4 medium pa-profile-item__type">Физическое лицо</span>
+    </div>
+    <div class="pa-profile-item">
+      <a href="#" class="body-2 medium primary-hover pa-profile-item__title">
+        ООО Новгодент
+      </a>
+      <span class="body-4 medium pa-profile-item__type">Юридическое лицо</span>
+    </div>
+  </div>
+
+  <DefaultBtn
+    as="a"
+    href="#"
+    viewType="width"
+    theme="stroke"
+    color="inverse"
+    className="pa-profile__add-btn"
+  >
+    <Sprite name="plus" />
+     Добавить профиль
+  </DefaultBtn>
+</div>

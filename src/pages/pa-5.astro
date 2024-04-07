@@ -1,0 +1,18 @@
+---
+import Footer from "@modules/Footer/Footer.astro";
+import Header from "@modules/Header/Header.astro";
+import PAContainer from "@modules/PA/PAContainer/PAContainer.astro";
+import PAOrder from "@modules/PA/PAOrder/PAOrder.astro";
+import PAProfile from "@modules/PA/PAProfile/PAProfile.astro";
+import Layout from "src/layouts/Layout.astro";
+---
+
+<Layout>
+  <Header />
+
+  <PAContainer activeIndex={2}>
+    <PAProfile />
+  </PAContainer>
+
+  <Footer />
+</Layout>

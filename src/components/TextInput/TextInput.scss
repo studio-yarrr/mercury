@@ -82,6 +82,8 @@
     border: 0.1rem solid $secondary;
     border-radius: 2rem;
     transition: 0.3s;
+    font-size: 1.6rem;
+    line-height: 1.25em;
 
     @include hover {
       border-color: $primary;
@@ -133,6 +135,7 @@
   &__label {
     position: absolute;
     font-size: 1.6rem;
+    line-height: 1.25em;
     font-weight: 500;
     color: $text-02;
     left: 2rem;

@@ -1,0 +1,110 @@
+.pa-profile {
+  min-height: 52rem;
+
+  @include breakpoint($xm-bp) {
+    min-height: 46rem;
+  }
+
+  &__list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+  }
+
+  &-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 0.1rem solid $primary-hover;
+
+    @include breakpoint($xs-bp) {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
+
+    &__type {
+      color: $secondary-inverse-hover;
+      text-align: right;
+    }
+  }
+
+  &__add-btn {
+    margin-top: auto;
+  }
+
+  &__head {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    @include breakpoint($xs-bp) {
+      margin-bottom: -2rem;
+    }
+
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+  }
+
+  &__back {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: $secondary-inverse-hover;
+
+    svg {
+      flex: none;
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &__form {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+
+  &__inputs {
+    width: 100%;
+    max-width: 71rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    @include breakpoint($xs-bp) {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__btns {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem 2.5rem;
+
+    @include breakpoint($xs-bp) {
+      margin-top: 2rem;
+    }
+
+    &-info {
+      color: $secondary-inverse-hover;
+    }
+  }
+}

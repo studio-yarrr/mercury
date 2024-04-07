@@ -1,0 +1,88 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import TextInput from "@components/TextInput/TextInput.astro";
+import Footer from "@modules/Footer/Footer.astro";
+import Header from "@modules/Header/Header.astro";
+import PAContainer from "@modules/PA/PAContainer/PAContainer.astro";
+import PAOrder from "@modules/PA/PAOrder/PAOrder.astro";
+import PAProfile from "@modules/PA/PAProfile/PAProfile.astro";
+import { Sprite } from "astro-icon";
+import Layout from "src/layouts/Layout.astro";
+---
+
+<Layout>
+  <Header />
+
+  <PAContainer activeIndex={2}>
+    <div class="pa__container pa-order pa-profile">
+      <div class="pa-profile__head">
+        <div class="pa-profile__head-inner">
+          <a href="#" class="body-2 medium primary-hover pa-profile__back">
+            <Sprite name="chevron-left" />
+             В список профилей
+          </a>
+          <h5 class="heading-5 bold pa-order__title">Добавить профиль</h5>
+        </div>
+      </div>
+
+      <form action="#" class="pa-profile__form" data-action="form-submit">
+        <div class="pa-profile__inputs">
+          <TextInput
+            className="fv"
+            color="inverse"
+            label="Название организации"
+            required
+            data-action="required-text"
+          />
+          <TextInput
+            className="fv"
+            color="inverse"
+            label="Электронная почта"
+            required
+            data-action="required-email"
+          />
+          <TextInput
+            className="fv"
+            color="inverse"
+            label="ФИО"
+            required
+            data-action="required-text"
+          />
+          <TextInput
+            className="fv"
+            color="inverse"
+            label="Телефон"
+            required
+            data-action="required-text"
+            data-mask="8 (999) 9999-999"
+            data-mask-init
+          />
+          <TextInput
+            className="fv"
+            color="inverse"
+            label="Адрес доставки"
+            required
+            data-action="required-text"
+          />
+        </div>
+
+        <div class="pa-profile__btns">
+          <DefaultBtn
+            type="submit"
+            viewType="width"
+            color="inverse"
+            className="pa-profile__add-btn"
+          >
+            Добавить
+          </DefaultBtn>
+
+          <span class="body-3 medium pa-profile__btns-info">
+            Профиль успешно добавлен
+          </span>
+        </div>
+      </form>
+    </div>
+  </PAContainer>
+
+  <Footer />
+</Layout>
