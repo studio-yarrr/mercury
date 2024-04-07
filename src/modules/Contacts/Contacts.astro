@@ -1,0 +1,144 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import PageHead from "@components/PageHead/PageHead.astro";
+import TextInput from "@components/TextInput/TextInput.astro";
+import { Sprite } from "astro-icon";
+---
+
+<div class="container contacts">
+  <PageHead title="Контакты" breadcrumbs={["главная", "контакты"]} />
+
+  <div class="contacts__container">
+    <div class="contacts-info">
+      <div class="contacts-info__container">
+        <h3 class="heading-5 medium contacts-info__title">Контакты офиса</h3>
+        <div class="contacts-info-item">
+          <span class="body-4 contacts-info-item__title">Телефон:</span>
+          <a href="#" class="body-3 medium contacts-info-item__text"
+            >+7 800 234 58 88</a
+          >
+        </div>
+        <div class="contacts-info-item">
+          <span class="body-4 contacts-info-item__title"
+            >Электронная почта:</span
+          >
+          <a href="#" class="body-3 medium contacts-info-item__text"
+            >SHOP@MERCURY-DENT.PRO</a
+          >
+        </div>
+        <div class="contacts-info-item">
+          <span class="body-4 contacts-info-item__title">Адрес:</span>
+          <span class="body-3 medium contacts-info-item__text">
+            Ставропольский край, Шпаковский район, с. Верхнерусское, ул.
+            Батайская, 24Г, офис 1
+          </span>
+        </div>
+      </div>
+
+      <div class="contacts-info__container">
+        <h3 class="heading-5 medium contacts-info__title">
+          Контакты производства
+        </h3>
+        <div class="contacts-info-item">
+          <span class="body-4 contacts-info-item__title">Телефон:</span>
+          <a href="#" class="body-3 medium contacts-info-item__text"
+            >+7 800 234 58 88</a
+          >
+        </div>
+        <div class="contacts-info-item">
+          <span class="body-4 contacts-info-item__title"
+            >Электронная почта:</span
+          >
+          <a href="#" class="body-3 medium contacts-info-item__text">
+            SHOP@MERCURY-DENT.PRO</a
+          >
+        </div>
+        <div class="contacts-info-item">
+          <span class="body-4 contacts-info-item__title">Адрес:</span>
+          <span class="body-3 medium contacts-info-item__text">
+            Ставропольский край, Шпаковский район, с. Верхнерусское, ул.
+            Батайская, 24Г, офис 1
+          </span>
+        </div>
+      </div>
+
+      <div class="contacts-info__container contacts-info__map">
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?um=constructor%3Aefda7ec5f2137d4c4b5c03de81366840522b961f6c25e029578f51416efc1b52&source=constructor"
+          width="100%"
+          height="100%"
+          frameborder="0"></iframe>
+      </div>
+    </div>
+
+    <div class="contacts-feedback">
+      <div class="contacts-feedback__head">
+        <h4 class="heading-5 medium contacts-feedback__title">
+          Остались вопросы?
+        </h4>
+        <span class="contacts-feedback__subtitle"> Напишите свой вопросы</span>
+      </div>
+
+      <div class="contacts-feedback-info">
+        <div class="contacts-feedback-manager">
+          <div class="contacts-feedback-manager__img">
+            <img src="./img/user-2.jpg" alt="" />
+          </div>
+          <div class="contacts-feedback-manager__inner">
+            <h6 class="heading-6 medium contacts-feedback-manager__title">
+              Эдуард Арутянов
+            </h6>
+            <span class="body-3 contacts-feedback-manager__subtitle">
+              Менеджер по консультации
+            </span>
+          </div>
+        </div>
+        <h6 class="heading-5 medium contacts-feedback-info__title">
+          Если у вас остались вопросы, <br />
+           напишите их и наш менеджер <br />
+           вас проконсультирует
+        </h6>
+      </div>
+
+      <!-- добавить класс _sended на форму после отправки -->
+      <form class="contacts-feedback-form" data-action="form-submit">
+        <div class="body-3 contacts-feedback-form__send">
+          Ваши данные отправлены! <br />
+           В ближайшее время наш менеджер свяжется с вами.
+        </div>
+        <div class="contacts-feedback-form__inputs">
+          <TextInput
+            className="fv"
+            label="Ваше имя"
+            required
+            data-action="required-text"
+          />
+          <TextInput
+            className="fv"
+            label="Напишите свой email"
+            required
+            data-action="required-email"
+          />
+          <TextInput
+            className="fv"
+            label="Ваш номер телефона"
+            required
+            data-action="required-text"
+            data-mask="+9 999 999 99 99"
+            data-mask-init
+          />
+          <TextInput className="fv" label="Тема сообщения" />
+          <label class:list={["text-input", "text-input_textarea", "fv"]}>
+            <textarea class="text-input__field" placeholder="Текст сообщения"
+            ></textarea>
+            <span class="text-input__label">Текст сообщения</span>
+            <button type="button" class="text-input__btn" data-clear>
+              <Sprite name="x" />
+            </button>
+          </label>
+        </div>
+        <DefaultBtn type="submit" viewType="width">Отправить</DefaultBtn>
+      </form>
+    </div>
+  </div>
+</div>
