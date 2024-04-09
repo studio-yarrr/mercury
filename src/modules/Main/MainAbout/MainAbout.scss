@@ -2,6 +2,7 @@
   position: relative;
   padding-top: 18rem;
   height: 100dvh;
+  overflow: hidden;
 
   @include breakpoint($xm-bp) {
     padding-top: 14rem;
@@ -40,18 +41,33 @@
     left: 0;
     width: 100%;
     bottom: -10%;
-
-    // height: 100%;
-    // pointer-events: none;
     display: flex;
     align-items: flex-end;
     justify-content: center;
 
+    @include breakpoint($xm-bp) {
+      bottom: unset;
+      top: 20rem;
+    }
+
+    @include breakpoint($xs-bp) {
+      width: 120%;
+      left: -10%;
+    }
+
     img {
       object-fit: contain;
       object-position: center;
-      width: 60%;
+      width: 50%;
       height: 100%;
+
+      @include breakpoint($xm-bp) {
+        width: 80%;
+      }
+
+      @include breakpoint($xs-bp) {
+        width: 100%;
+      }
 
       &:not(:first-child) {
         display: none;
@@ -73,7 +89,7 @@
     border-radius: 3rem;
     overflow: hidden;
 
-    display: none;
+    // display: none;
 
     @include breakpoint($xm-bp) {
       padding: 3rem;
@@ -99,12 +115,11 @@
     }
 
     &[data-item="2"] {
-      top: calc(100% - 5rem);
+      bottom: 5rem;
       left: 50%;
-      transform: translate(-50%, -100%);
+      transform: translate(-50%, 0);
 
       @include breakpoint($xs-bp) {
-        top: unset;
         bottom: 2rem;
         transform: translateX(-50%);
       }
