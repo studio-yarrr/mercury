@@ -507,4 +507,101 @@ function mobAnim(
   }
 }
 
-initMainAbout();
+// initMainAbout();
+
+function initSequenceAnim() {
+  const container = document.querySelector<HTMLElement>(".main-about");
+  const title =
+    container && container.querySelector<HTMLElement>(".main-about__title");
+  const animContainer =
+    container &&
+    container.querySelector<HTMLCanvasElement>(".main-about__anim");
+  const imgList =
+    animContainer && animContainer.querySelectorAll<HTMLElement>("img");
+
+  if (container && title && animContainer && imgList) {
+    const mm = gsap.matchMedia();
+
+    const breakPoint = 835;
+    mm.add(
+      {
+        isDesktop: `(min-width: ${breakPoint}px)`,
+        isMobile: `(max-width: ${breakPoint - 1}px)`,
+      },
+      (context) => {
+        if (context.conditions) {
+          let { isDesktop, isMobile } = context.conditions;
+
+          if (isDesktop) {
+            const MAIN_TL = gsap.timeline({
+              scrollTrigger: {
+                trigger: container,
+                start: "top bottom",
+                end: "bottom bottom",
+                scrub: true,
+                // markers: true,
+              },
+            });
+
+            const imgTL = gsap.timeline({
+              scrollTrigger: {
+                trigger: container,
+                start: "bottom bottom",
+                end: `${(imgList.length + 1) * 1}% bottom`,
+                scrub: true,
+                pin: true,
+                markers: true,
+              },
+            });
+
+            MAIN_TL.from(
+              title,
+              {
+                opacity: 0,
+                translateY: "100%",
+                duration: 8,
+                ease: "none",
+              },
+              "step-1",
+            );
+
+            for (let i = 0; i < imgList.length; i++) {
+              if (imgList[i - 1]) {
+                imgTL.to(imgList[i - 1], {
+                  display: "none",
+                });
+              }
+
+              imgTL.to(imgList[i], {
+                display: "block",
+              });
+            }
+
+            // step-1
+            {
+              MAIN_TL.from(
+                animContainer,
+                {
+                  translateY: "200%",
+                  duration: 8,
+                  ease: "none",
+                },
+                "step-1",
+              );
+            }
+
+            // MAIN_TL.add(TL);
+
+            return;
+          } else if (isMobile) {
+            // mobAnim(container, model, title, infoItems);
+          }
+        }
+
+        return () => {};
+      },
+    );
+  }
+}
+
+initSequenceAnim();

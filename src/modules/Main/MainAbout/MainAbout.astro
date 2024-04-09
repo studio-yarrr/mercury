@@ -8,7 +8,15 @@
       Mercury – бренд, созданный в 2013 году врачом стоматологом для врачей и их
       комфортной работы.
     </h2>
-    <canvas class="main-about__canvas"></canvas>
+    <!-- <canvas class="main-about__canvas"></canvas> -->
+    <div class="main-about__anim">
+      {
+        [...new Array(400)].map((el, i) => {
+          const num = i.toString().padStart(3, "0");
+          return <img src={`./img/anim/3600_0${num}.webp`} alt="" />;
+        })
+      }
+    </div>
     <div class="main-about-info" data-item="1">
       <h6 class="title-6 medium main-about-info__title">
         Эргономичное оборудование

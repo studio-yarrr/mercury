@@ -34,6 +34,30 @@
     pointer-events: none;
   }
 
+  &__anim {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    bottom: -10%;
+    // height: 100%;
+    // pointer-events: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    img {
+      object-fit: contain;
+      object-position: center;
+      width: 60%;
+      height: 100%;
+
+      &:not(:first-child) {
+        display: none;
+      }
+    }
+  }
+
   &-info {
     position: absolute;
     z-index: 2;
@@ -47,6 +71,8 @@
     width: 50rem;
     border-radius: 3rem;
     overflow: hidden;
+
+    display: none;
 
     @include breakpoint($xm-bp) {
       padding: 3rem;
