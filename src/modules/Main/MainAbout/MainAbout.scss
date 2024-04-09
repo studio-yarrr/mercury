@@ -51,8 +51,8 @@
     }
 
     @include breakpoint($xs-bp) {
-      width: 120%;
-      left: -10%;
+      // width: 120%;
+      // left: -10%;
     }
 
     img {
