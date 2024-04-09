@@ -142,11 +142,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   let resizeID = 0;
+  let vw = window.innerWidth;
   window.addEventListener("resize", () => {
     clearTimeout(resizeID);
     resizeID = setTimeout(() => {
-      ScrollTrigger.refresh();
-      ScrollTrigger.update();
+      if (window.innerWidth !== vw) {
+        vw = window.innerWidth;
+        ScrollTrigger.refresh();
+        ScrollTrigger.update();
+      }
     }, 200);
   });
 
