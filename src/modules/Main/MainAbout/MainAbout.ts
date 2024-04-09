@@ -86,7 +86,7 @@ function initSequenceAnim() {
               });
             }
 
-            mainTL.add(imgTL, "step-2");
+            mainTL.add(imgTL);
 
             imgTL.to(
               title,
@@ -146,6 +146,11 @@ function initSequenceAnim() {
 
               imgTL.add(sub, 20);
             }
+
+            imgTL.to(animContainer, {
+              translateY: "-10%",
+              duration: 100,
+            });
 
             return;
           } else if (isMobile) {
