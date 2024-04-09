@@ -32,6 +32,20 @@ export function initSpinner() {
           }
         });
 
+        clone.addEventListener("error", () => {
+          img.setAttribute("src", clone.src);
+
+          loaded += 1;
+          valueText.textContent =
+            Math.round((100 / imgList.length) * loaded) + "%";
+
+          if (loaded >= imgList.length) {
+            container.classList.add("_loaded");
+            document.dispatchEvent(event);
+            document.body.classList.add("_loaded");
+          }
+        });
+
         clone.src = src;
       }
     });

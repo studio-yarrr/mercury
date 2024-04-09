@@ -183,7 +183,7 @@ function initFadeAnim() {
   if (items.length > 0) {
     ScrollTrigger.batch(items, {
       once: true,
-      start: "-100% bottom",
+      start: "-200% bottom",
       onEnter: (batch) => {
         gsap.to(batch, {
           duration: 0.8,
