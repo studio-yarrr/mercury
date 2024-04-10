@@ -156,18 +156,6 @@ function initSequenceAnim() {
 
             return;
           } else if (isMobile) {
-            const fragment = document.createDocumentFragment();
-
-            for (let i = 0; i < imgList.length; i++) {
-              if (i % 2) {
-                fragment.appendChild(imgList[i]);
-              }
-            }
-
-            animContainer.innerHTML = "";
-            animContainer.appendChild(fragment);
-            const mobImgList = animContainer.querySelectorAll("img");
-
             const mainTL = gsap.timeline();
 
             const step_1 = gsap.timeline({
@@ -208,24 +196,26 @@ function initSequenceAnim() {
               scrollTrigger: {
                 trigger: container,
                 start: "bottom bottom",
-                end: `${mobImgList.length * 3}% bottom`,
-                scrub: true,
+                end: `${imgList.length * 2}% bottom`,
+                scrub: 1,
                 pin: true,
                 // markers: true,
               },
             });
 
-            for (let i = 0; i < mobImgList.length; i++) {
-              if (mobImgList[i - 1]) {
-                imgTL.to(mobImgList[i - 1], {
+            for (let i = 0; i < imgList.length; i++) {
+              if (imgList[i - 1]) {
+                imgTL.to(imgList[i - 1], {
                   duration: 1,
                   display: "none",
+                  ease: "none",
                 });
               }
 
-              imgTL.to(mobImgList[i], {
+              imgTL.to(imgList[i], {
                 duration: 1,
                 display: "block",
+                ease: "none",
               });
             }
 
@@ -248,42 +238,42 @@ function initSequenceAnim() {
               sub.from(infoItems[0], {
                 opacity: 0,
                 translateY: "100%",
-                duration: 50,
+                duration: 100,
                 ease: "none",
               });
               sub.to(infoItems[0], {
                 opacity: 0,
                 translateY: "-100%",
                 delay: 30,
-                duration: 50,
+                duration: 100,
                 ease: "none",
               });
 
               sub.from(infoItems[1], {
                 opacity: 0,
                 translateY: "100%",
-                duration: 50,
+                duration: 100,
                 ease: "none",
               });
               sub.to(infoItems[1], {
                 opacity: 0,
                 translateY: "-100%",
                 delay: 30,
-                duration: 50,
+                duration: 100,
                 ease: "none",
               });
 
               sub.from(infoItems[2], {
                 opacity: 0,
                 translateY: "100%",
-                duration: 50,
+                duration: 100,
                 ease: "none",
               });
               sub.to(infoItems[2], {
                 opacity: 0,
                 translateY: "-100%",
                 delay: 30,
-                duration: 50,
+                duration: 100,
                 ease: "none",
               });
 
@@ -293,6 +283,7 @@ function initSequenceAnim() {
             imgTL.to(animContainer, {
               translateY: "-10%",
               duration: 100,
+              ease: "none",
             });
 
             return;
