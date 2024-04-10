@@ -208,7 +208,7 @@ function initSequenceAnim() {
               scrollTrigger: {
                 trigger: container,
                 start: "bottom bottom",
-                end: `${mobImgList.length + 2}% bottom`,
+                end: `${mobImgList.length * 3}% bottom`,
                 scrub: true,
                 pin: true,
                 // markers: true,
