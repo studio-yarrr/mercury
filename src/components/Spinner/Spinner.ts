@@ -17,12 +17,9 @@ export function initSpinner() {
       const src = imgList[i].getAttribute("src");
 
       if (src) {
-        imgList[i].removeAttribute("src");
         const clone = new Image();
 
-        clone.addEventListener("load", () => {
-          imgList[i].setAttribute("src", clone.src);
-
+        clone.onload = () => {
           loaded += 1;
           valueText.textContent = Math.round((100 / pers) * loaded) + "%";
 
@@ -31,11 +28,9 @@ export function initSpinner() {
             document.dispatchEvent(event);
             document.body.classList.add("_loaded");
           }
-        });
+        };
 
-        clone.addEventListener("error", () => {
-          imgList[i].setAttribute("src", clone.src);
-
+        clone.onerror = () => {
           loaded += 1;
           valueText.textContent = Math.round((100 / pers) * loaded) + "%";
 
@@ -44,7 +39,7 @@ export function initSpinner() {
             document.dispatchEvent(event);
             document.body.classList.add("_loaded");
           }
-        });
+        };
 
         clone.src = src;
       }
