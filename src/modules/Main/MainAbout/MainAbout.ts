@@ -10,7 +10,7 @@ class Canvas {
   constructor(
     container: HTMLElement,
     canvas: HTMLCanvasElement,
-    imgList: NodeListOf<HTMLImageElement>,
+    imgList: NodeListOf<HTMLImageElement> | HTMLImageElement[],
   ) {
     this.container = container;
     this.canvas = canvas;
@@ -74,20 +74,29 @@ function initSequenceAnim() {
     container.querySelector<HTMLCanvasElement>("#main-about-canvas");
 
   if (container && title && animContainer && imgList && infoItems && canvas) {
-    const anim = new Canvas(animContainer, canvas, imgList);
     const mm = gsap.matchMedia();
 
     const breakPoint = 1;
     mm.add(
       {
         isDesktop: `(min-width: ${breakPoint}px)`,
-        isMobile: `(max-width: ${breakPoint - 1}px)`,
+        isMobile: `(max-width: ${breakPoint - 834}px)`,
       },
       (context) => {
         if (context.conditions) {
           let { isDesktop, isMobile } = context.conditions;
+          const newImgList = [];
+
+          for (let i = 0; i < imgList.length; i++) {
+            if (i % 2) {
+              newImgList.push(imgList[i]);
+            }
+          }
+
+          const anim = new Canvas(animContainer, canvas, newImgList);
 
           if (isDesktop) {
+            const anim = new Canvas(animContainer, canvas, imgList);
             const mainTL = gsap.timeline();
 
             const step_1 = gsap.timeline({
