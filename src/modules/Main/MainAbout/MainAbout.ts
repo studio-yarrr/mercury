@@ -16,7 +16,7 @@ function initSequenceAnim() {
   if (container && title && animContainer && imgList && infoItems) {
     const mm = gsap.matchMedia();
 
-    const breakPoint = 1;
+    const breakPoint = 835;
     mm.add(
       {
         isDesktop: `(min-width: ${breakPoint}px)`,
@@ -67,7 +67,7 @@ function initSequenceAnim() {
               scrollTrigger: {
                 trigger: container,
                 start: "bottom bottom",
-                end: `${(imgList.length + 1) * 1}% bottom`,
+                end: `${imgList.length + 1}% bottom`,
                 scrub: true,
                 pin: true,
                 // markers: true,
@@ -77,11 +77,154 @@ function initSequenceAnim() {
             for (let i = 0; i < imgList.length; i++) {
               if (imgList[i - 1]) {
                 imgTL.to(imgList[i - 1], {
+                  duration: 1,
                   display: "none",
                 });
               }
 
               imgTL.to(imgList[i], {
+                duration: 1,
+                display: "block",
+              });
+            }
+
+            mainTL.add(imgTL);
+
+            imgTL.to(
+              title,
+              {
+                opacity: 0,
+                translateY: "-100%",
+                duration: 50,
+                ease: "none",
+              },
+              0,
+            );
+
+            if (infoItems.length >= 3) {
+              const sub = gsap.timeline();
+
+              sub.from(infoItems[0], {
+                opacity: 0,
+                translateY: "100%",
+                duration: 100,
+                ease: "none",
+              });
+              sub.to(infoItems[0], {
+                opacity: 0,
+                translateY: "-100%",
+                delay: 30,
+                duration: 100,
+                ease: "none",
+              });
+
+              sub.from(infoItems[1], {
+                opacity: 0,
+                translateY: "100%",
+                duration: 100,
+                ease: "none",
+              });
+              sub.to(infoItems[1], {
+                opacity: 0,
+                translateY: "-100%",
+                delay: 30,
+                duration: 100,
+                ease: "none",
+              });
+
+              sub.from(infoItems[2], {
+                opacity: 0,
+                translateY: "100%",
+                duration: 100,
+                ease: "none",
+              });
+              sub.to(infoItems[2], {
+                opacity: 0,
+                translateY: "-100%",
+                delay: 30,
+                duration: 100,
+                ease: "none",
+              });
+
+              imgTL.add(sub, 20);
+            }
+
+            imgTL.to(animContainer, {
+              translateY: "-10%",
+              duration: 100,
+            });
+
+            return;
+          } else if (isMobile) {
+            const fragment = document.createDocumentFragment();
+
+            for (let i = 0; i < imgList.length; i++) {
+              if (i % 2) {
+                fragment.appendChild(imgList[i]);
+              }
+            }
+
+            animContainer.innerHTML = "";
+            animContainer.appendChild(fragment);
+            const mobImgList = animContainer.querySelectorAll("img");
+
+            const mainTL = gsap.timeline();
+
+            const step_1 = gsap.timeline({
+              scrollTrigger: {
+                trigger: container,
+                start: "top bottom",
+                end: "bottom bottom",
+                scrub: true,
+                // markers: true,
+              },
+            });
+
+            step_1.from(
+              title,
+              {
+                opacity: 0,
+                translateY: "100%",
+                duration: 8,
+                ease: "none",
+              },
+              "step-1",
+            );
+
+            // step-1
+            step_1.from(
+              animContainer,
+              {
+                translateY: "200%",
+                duration: 8,
+                ease: "none",
+              },
+              "step-1",
+            );
+
+            mainTL.add(step_1);
+
+            const imgTL = gsap.timeline({
+              scrollTrigger: {
+                trigger: container,
+                start: "bottom bottom",
+                end: `${mobImgList.length + 2}% bottom`,
+                scrub: true,
+                pin: true,
+                // markers: true,
+              },
+            });
+
+            for (let i = 0; i < mobImgList.length; i++) {
+              if (mobImgList[i - 1]) {
+                imgTL.to(mobImgList[i - 1], {
+                  duration: 1,
+                  display: "none",
+                });
+              }
+
+              imgTL.to(mobImgList[i], {
+                duration: 1,
                 display: "block",
               });
             }
@@ -153,8 +296,6 @@ function initSequenceAnim() {
             });
 
             return;
-          } else if (isMobile) {
-            // mobAnim(container, model, title, infoItems);
           }
         }
 

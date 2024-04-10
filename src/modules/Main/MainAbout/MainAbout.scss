@@ -63,6 +63,10 @@
 
       @include breakpoint($xm-bp) {
         width: 80%;
+
+        &:nth-child(2n + 2) {
+          display: none;
+        }
       }
 
       @include breakpoint($xs-bp) {
