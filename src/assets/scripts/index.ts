@@ -150,6 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
         vw = window.innerWidth;
         ScrollTrigger.refresh();
         ScrollTrigger.update();
+        (window as any).aboutAnim && (window as any).aboutAnim.updateCanvas();
       }
     }, 200);
   });

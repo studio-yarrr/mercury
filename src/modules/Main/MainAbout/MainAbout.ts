@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import AnimateImages from "@its2easy/animate-images";
 
 function initSequenceAnim() {
   const container = document.querySelector<HTMLElement>(".main-about");
@@ -7,13 +8,31 @@ function initSequenceAnim() {
   const animContainer =
     container &&
     container.querySelector<HTMLCanvasElement>(".main-about__anim");
-  const imgList =
-    animContainer && animContainer.querySelectorAll<HTMLElement>("img");
   const infoItems =
     container &&
     container.querySelectorAll<HTMLElement>(".main-about-info[data-item]");
+  const canvas =
+    animContainer && animContainer.querySelector<HTMLCanvasElement>("canvas");
 
-  if (container && title && animContainer && imgList && infoItems) {
+  if (container && title && animContainer && infoItems && canvas) {
+    const imgList: string[] = [];
+
+    [...new Array(401)].map((el, i) => {
+      const num = i.toString().padStart(3, "0");
+      imgList.push(`../img/anim/3600_0${num}.webp`);
+    });
+
+    let aboutAnim = new AnimateImages(canvas, {
+      images: imgList,
+      preload: "partial",
+      fillMode: "contain",
+      preloadNumber: 20,
+      fps: 30,
+      poster: imgList[0],
+    });
+
+    (window as any).aboutAnim = aboutAnim;
+
     const mm = gsap.matchMedia();
 
     const breakPoint = 835;
@@ -35,7 +54,7 @@ function initSequenceAnim() {
                 start: "top bottom",
                 end: "bottom bottom",
                 scrub: true,
-                // markers: true,
+                markers: true,
               },
             });
 
@@ -44,7 +63,7 @@ function initSequenceAnim() {
               {
                 opacity: 0,
                 translateY: "100%",
-                duration: 8,
+                duration: 50,
                 ease: "none",
               },
               "step-1",
@@ -54,8 +73,8 @@ function initSequenceAnim() {
             step_1.from(
               animContainer,
               {
-                translateY: "200%",
-                duration: 8,
+                translateY: "150%",
+                duration: 50,
                 ease: "none",
               },
               "step-1",
@@ -67,26 +86,17 @@ function initSequenceAnim() {
               scrollTrigger: {
                 trigger: container,
                 start: "bottom bottom",
-                end: `${imgList.length + 1}% bottom`,
+                end: `${imgList.length * 2}% bottom`,
                 scrub: true,
                 pin: true,
-                // markers: true,
+                onUpdate: (self) => {
+                  const frame = Math.round(
+                    (imgList.length / 100) * (self.progress * 100),
+                  );
+                  aboutAnim.setFrame(frame);
+                },
               },
             });
-
-            for (let i = 0; i < imgList.length; i++) {
-              if (imgList[i - 1]) {
-                imgTL.to(imgList[i - 1], {
-                  duration: 1,
-                  display: "none",
-                });
-              }
-
-              imgTL.to(imgList[i], {
-                duration: 1,
-                display: "block",
-              });
-            }
 
             mainTL.add(imgTL);
 
@@ -173,7 +183,7 @@ function initSequenceAnim() {
               {
                 opacity: 0,
                 translateY: "100%",
-                duration: 8,
+                duration: 100,
                 ease: "none",
               },
               "step-1",
@@ -183,8 +193,8 @@ function initSequenceAnim() {
             step_1.from(
               animContainer,
               {
-                translateY: "200%",
-                duration: 8,
+                translateY: "100%",
+                duration: 100,
                 ease: "none",
               },
               "step-1",
@@ -196,28 +206,17 @@ function initSequenceAnim() {
               scrollTrigger: {
                 trigger: container,
                 start: "bottom bottom",
-                end: `${imgList.length * 2}% bottom`,
-                scrub: 1,
+                end: `${imgList.length * 3}% bottom`,
+                scrub: true,
                 pin: true,
-                // markers: true,
+                onUpdate: (self) => {
+                  const frame = Math.round(
+                    (imgList.length / 100) * (self.progress * 100),
+                  );
+                  aboutAnim.setFrame(frame);
+                },
               },
             });
-
-            for (let i = 0; i < imgList.length; i++) {
-              if (imgList[i - 1]) {
-                imgTL.to(imgList[i - 1], {
-                  duration: 1,
-                  display: "none",
-                  ease: "none",
-                });
-              }
-
-              imgTL.to(imgList[i], {
-                duration: 1,
-                display: "block",
-                ease: "none",
-              });
-            }
 
             mainTL.add(imgTL);
 
