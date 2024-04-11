@@ -26,8 +26,8 @@ function initSequenceAnim() {
       images: imgList,
       preload: "partial",
       fillMode: "contain",
-      preloadNumber: 20,
-      fps: 30,
+      preloadNumber: 100,
+      fps: 60,
       poster: imgList[0],
     });
 
@@ -206,7 +206,7 @@ function initSequenceAnim() {
               scrollTrigger: {
                 trigger: container,
                 start: "bottom bottom",
-                end: `${imgList.length * 3}% bottom`,
+                end: `${imgList.length * 2}% bottom`,
                 scrub: true,
                 pin: true,
                 onUpdate: (self) => {
