@@ -19,7 +19,7 @@ function initSequenceAnim() {
 
     [...new Array(401)].map((el, i) => {
       const num = i.toString().padStart(3, "0");
-      imgList.push(`../img/anim/3600_0${num}.webp`);
+      imgList.push(`./img/anim/3600_0${num}.webp`);
     });
 
     let aboutAnim = new AnimateImages(canvas, {
@@ -54,7 +54,7 @@ function initSequenceAnim() {
                 start: "top bottom",
                 end: "bottom bottom",
                 scrub: true,
-                markers: true,
+                // markers: true,
               },
             });
 
