@@ -1,0 +1,96 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import PageHead from "@components/PageHead/PageHead.astro";
+import Pagination from "@components/Pagination/Pagination.astro";
+import ProductCard from "@components/ProductCard/ProductCard.astro";
+import CategoryModule from "@modules/Category/Category.astro";
+import Footer from "@modules/Footer/Footer.astro";
+import Header from "@modules/Header/Header.astro";
+import { Sprite } from "astro-icon";
+import Layout from "src/layouts/Layout.astro";
+---
+
+<Layout title="стоматологические установки">
+  <Header />
+
+  <div class="wrapper">
+    <div class="category search">
+      <div class="container">
+        <div class="search-head">
+          <PageHead
+            title="Результаты поиска"
+            breadcrumbs={["главная", "поиск", "результаты поиска"]}
+          />
+
+          <form action="#" class="search-form">
+            <input
+              type="text"
+              class="body-1 medium search-form__input"
+              placeholder="Напишите какой товар вы хотите найти"
+            />
+            <div class="search-form__btns">
+              <DefaultBtn type="submit" viewType="icon" color="inverse">
+                <Sprite name="search" />
+              </DefaultBtn>
+            </div>
+          </form>
+
+          <span class="heading-6 search-head__result">
+            6 результатов поиска
+          </span>
+        </div>
+
+        <div class="category__container">
+          <div class="category__list">
+            <ProductCard
+              data-fade-anim
+              title="Стоматологическая установка mercury"
+              price="385 000"
+              img="./img/products/prod-8.png"
+              active
+            />
+            <ProductCard
+              data-fade-anim
+              title="Стоматологическая установка mercury"
+              price="385 000"
+              img="./img/products/prod-9.png"
+            />
+            <ProductCard
+              data-fade-anim
+              title="Стоматологическая установка mercury"
+              price="385 000"
+              img="./img/products/prod-10.png"
+            />
+            <ProductCard
+              data-fade-anim
+              title="Стоматологическая установка mercury"
+              price="385 000"
+              img="./img/products/prod-11.png"
+            />
+            <ProductCard
+              data-fade-anim
+              title="Стоматологическая установка mercury"
+              price="385 000"
+              img="./img/products/prod-12.png"
+            />
+            <ProductCard
+              data-fade-anim
+              title="Стоматологическая установка mercury"
+              price="385 000"
+              img="./img/products/prod-13.png"
+            />
+          </div>
+          <div class="category__pagination">
+            <DefaultBtn viewType="width" theme="stroke">
+              Показать еще
+            </DefaultBtn>
+
+            <Pagination />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <Footer />
+</Layout>
