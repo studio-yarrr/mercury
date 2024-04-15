@@ -13,13 +13,24 @@ function initSequenceAnim() {
     container.querySelectorAll<HTMLElement>(".main-about-info[data-item]");
   const canvas =
     animContainer && animContainer.querySelector<HTMLCanvasElement>("canvas");
+  const imgSrc = animContainer && animContainer.getAttribute("data-img-src");
+  const imgCount =
+    animContainer && animContainer.getAttribute("data-img-count");
 
-  if (container && title && animContainer && infoItems && canvas) {
+  if (
+    container &&
+    title &&
+    animContainer &&
+    infoItems &&
+    canvas &&
+    imgSrc &&
+    imgCount
+  ) {
     const imgList: string[] = [];
 
-    [...new Array(401)].map((el, i) => {
+    [...new Array(Number(imgCount))].map((el, i) => {
       const num = i.toString().padStart(3, "0");
-      imgList.push(`./img/anim/3600_0${num}.webp`);
+      imgList.push(`${imgSrc}/3600_0${num}.webp`);
     });
 
     let aboutAnim = new AnimateImages(canvas, {
