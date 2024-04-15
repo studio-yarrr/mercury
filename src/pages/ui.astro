@@ -13,9 +13,13 @@ import Layout from "src/layouts/Layout.astro";
       <InputBtn placeholder="Электронная почта">Text</InputBtn>
     </div>
     <div class="box">
-      <DefaultBtn>Text</DefaultBtn>
-      <DefaultBtn>
-        Text
+      <DefaultBtn onclick="window.toast.new({text: 'Тестовое оповещение'})">
+        Оповещение
+      </DefaultBtn>
+      <DefaultBtn
+        onclick="window.toast.new({text: 'Тестовое оповещение', duration: 5000})"
+      >
+        Оповещение (5сек)
         <Sprite name="plus" />
       </DefaultBtn>
       <DefaultBtn color="secondary">Text</DefaultBtn>

@@ -1,6 +1,7 @@
 import VenoBox from "venobox/dist/venobox";
 import { formValidateInit } from "./fv";
 import {
+  Toast,
   counterHandler,
   initDefaultSwipers,
   initDropdownItems,
@@ -127,6 +128,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initImgInputs();
 
   initFadeAnim();
+
+  const toast = new Toast();
+  (window as any).toast = toast;
 
   document.addEventListener("click", (e) => {
     const target = e.target as HTMLElement;
