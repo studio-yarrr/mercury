@@ -148,7 +148,7 @@
     color: $primary-inverse;
 
     @include breakpoint($xs-bp) {
-      padding: 2rem 3rem;
+      padding: 3rem;
       border-radius: 3rem;
     }
   }

@@ -4,8 +4,19 @@
   flex-wrap: wrap;
   gap: 0.5rem;
 
+  @include breakpoint($xs-bp) {
+    width: 100%;
+    padding-bottom: 0.5rem;
+    flex-wrap: nowrap;
+    overflow: auto;
+  }
+
   &__link {
     color: $secondary-inverse-active;
+
+    @include breakpoint($xs-bp) {
+      white-space: nowrap;
+    }
 
     &:not(:first-child) {
       display: flex;
