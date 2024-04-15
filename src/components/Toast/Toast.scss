@@ -29,6 +29,7 @@
     font-weight: 500;
     line-height: 1.2em;
     color: $primary-inverse;
+    border-radius: 1.2rem;
     box-shadow: 0 0 1rem rgba(113, 113, 113, 0.2);
     display: grid;
     grid-template-rows: 0fr;
@@ -62,7 +63,6 @@
     &__container {
       padding: 1rem 1.5rem;
       background-color: $primary;
-      border-radius: 1.2rem;
       display: flex;
       align-items: flex-start;
       gap: 1rem;
