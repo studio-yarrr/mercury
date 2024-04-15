@@ -4,6 +4,7 @@ import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
 import PageHead from "@components/PageHead/PageHead.astro";
 import Pagination from "@components/Pagination/Pagination.astro";
 import ProductCard from "@components/ProductCard/ProductCard.astro";
+import Select from "@components/Select/Select.astro";
 import { Sprite } from "astro-icon";
 ---
 
@@ -20,9 +21,48 @@ import { Sprite } from "astro-icon";
       />
 
       <div class="category-head-filter">
-        <span class="heading-7 medium category-head-filter__text">
+        <div class="category-sort">
+          <span class="heading-7 medium category-sort__title">Сортировка:</span>
+          <div class="category-sort-select" data-select data-close>
+            <button
+              type="button"
+              class="heading-7 medium category-sort__title category-sort-select__btn"
+              data-btn
+              data-btn-text></button>
+            <div class="category-sort-select__container">
+              <label class="body-4 category-sort-select-item" data-item>
+                <input hidden type="radio" name="sort" checked />
+                <span
+                  class="primary-hover category-sort-select-item__text"
+                  data-text
+                >
+                  По популярности
+                </span>
+              </label>
+              <label class="body-4 category-sort-select-item" data-item>
+                <input hidden type="radio" name="sort" />
+                <span
+                  class="primary-hover category-sort-select-item__text"
+                  data-text
+                >
+                  Сначала дорогие
+                </span>
+              </label>
+              <label class="body-4 category-sort-select-item" data-item>
+                <input hidden type="radio" name="sort" />
+                <span
+                  class="primary-hover category-sort-select-item__text"
+                  data-text
+                >
+                  Сначала не дорогие
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- <span class="heading-7 medium category-head-filter__text">
           Сортировка: <span>по популярности</span>
-        </span>
+        </span> -->
         <DefaultBtn
           type="button"
           className="category-head-filter__btn"

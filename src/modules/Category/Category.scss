@@ -311,4 +311,75 @@ body._open-filter {
     flex-direction: column;
     gap: 3rem;
   }
+
+  &-sort {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+
+    @include breakpoint($xs-bp) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0rem;
+    }
+
+    &__title {
+      color: $secondary-inverse-active;
+    }
+
+    &-select {
+      position: relative;
+
+      &._dropped {
+        .category-sort-select__container {
+          opacity: 1;
+          transform: translateY(0);
+          pointer-events: all;
+        }
+      }
+
+      &__btn {
+        text-align: left;
+      }
+
+      &-item {
+        input {
+          &:checked + .category-sort-select-item__text {
+            pointer-events: none;
+            color: $secondary-inverse-active;
+          }
+        }
+
+        &__text {
+          cursor: pointer;
+        }
+      }
+
+      &__container {
+        position: absolute;
+        right: 0;
+        z-index: 200;
+        top: calc(100% + 2rem);
+        box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.1);
+        background-color: $primary;
+        color: $primary-inverse;
+        padding: 2.5rem;
+        border-radius: 3rem 0px 3rem 3rem;
+        width: max-content;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        opacity: 0;
+        transform: translateY(1rem);
+        pointer-events: none;
+        transition: 0.5s;
+
+        @include breakpoint($xs-bp) {
+          top: calc(100% + 1rem);
+        }
+      }
+    }
+  }
 }
