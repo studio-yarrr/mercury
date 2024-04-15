@@ -65,7 +65,7 @@ function openVBox(
   src: string,
   options?: {
     vbtype?: string;
-    isSidebar?: boolean;
+    customClass?: string;
   },
 ) {
   const link = document.createElement("a");
@@ -77,8 +77,8 @@ function openVBox(
     link.setAttribute("data-vbtype", "ajax");
   }
 
-  if (options?.isSidebar) {
-    link.setAttribute("data-customclass", "v-sidebar");
+  if (options?.customClass) {
+    link.setAttribute("data-customclass", options.customClass);
   }
 
   (link as any).settings = vBox.settings;
@@ -94,10 +94,12 @@ function vOpenHandler(e: Event, target: HTMLElement) {
   if (link) {
     e.preventDefault();
     const href = link.href;
-    const isSidebar = link.getAttribute("data-customclass");
+    const customClass = link.getAttribute("data-customclass");
 
     if (href) {
-      isSidebar ? openVBox(href, { isSidebar: true }) : openVBox(href);
+      customClass
+        ? openVBox(href, { customClass: customClass })
+        : openVBox(href);
     } else {
       throw new Error("href attribute is undefined");
     }
