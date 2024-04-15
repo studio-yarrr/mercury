@@ -1,0 +1,32 @@
+---
+import DefaultBtn from "@components/DefaultBtn/DefaultBtn.astro";
+import { Sprite } from "astro-icon";
+
+interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<form action="#" class:list={["search-form", className]}>
+  <input
+    type="text"
+    class="body-1 medium search-form__input"
+    placeholder="Напишите какой товар вы хотите найти"
+  />
+  <div class="search-form__btns">
+    <DefaultBtn type="submit" viewType="icon" color="inverse">
+      <Sprite name="search" />
+    </DefaultBtn>
+    <DefaultBtn
+      type="button"
+      viewType="icon"
+      color="inverse"
+      theme="stroke"
+      data-vclose
+    >
+      <Sprite name="x" />
+    </DefaultBtn>
+  </div>
+</form>

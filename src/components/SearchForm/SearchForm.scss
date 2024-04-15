@@ -1,0 +1,38 @@
+.search-form {
+  padding: 1.5rem 1.5rem 1.5rem 3rem;
+  border-radius: 3rem;
+  background-color: $primary;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  @include breakpoint($xm-bp) {
+    padding: 1rem 1rem 1rem 2.5rem;
+    border-radius: 2rem;
+  }
+
+  @include breakpoint($xs-bp) {
+    padding: 0.5rem 0.5rem 0.5rem 2rem;
+  }
+
+  &__input {
+    flex: 1;
+    color: $primary-inverse;
+
+    @include breakpoint($xm-bp) {
+      font-size: 1.8rem;
+      line-height: 1.2em;
+    }
+
+    &::placeholder {
+      color: $secondary-active;
+    }
+  }
+
+  &__btns {
+    flex: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}

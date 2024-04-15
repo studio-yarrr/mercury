@@ -272,13 +272,10 @@ export class Toast {
       <div class="toast-item">
         <div class="toast-item__wrapper">
           <div class="toast-item__container">
-            <div class="toast-item__inner">
-              <span class="toast-item__title" data-title></span>
-              <span class="toast-item__text" data-text></span>
-            </div>
+            <span class="toast-item__text" data-text></span>
             <button type="button" class="toast-item__btn" data-btn>
-              <svg astro-icon="menu-close">
-                  <use xlink:href="#astroicon:menu-close"></use>
+              <svg>
+                  <use xlink:href="#astroicon:x"></use>
               </svg>
             </button>
           </div>
@@ -291,18 +288,9 @@ export class Toast {
     (window as any).toast = this;
   }
 
-  new(props: {
-    title: string;
-    text: string;
-    color?: "red" | "greed";
-    duration?: number;
-    closeable?: boolean;
-  }) {
+  new(props: { text: string; duration?: number }) {
     const toast = this.template.content.children[0].cloneNode(true);
 
-    const title = (toast as HTMLElement).querySelector<HTMLElement>(
-      "[data-title]",
-    );
     const text = (toast as HTMLElement).querySelector<HTMLElement>(
       "[data-text]",
     );
@@ -310,28 +298,21 @@ export class Toast {
       "[data-btn]",
     );
 
-    if (title && text && btn) {
-      title.textContent = props.title;
+    if (text && btn) {
       text.textContent = props.text;
       btn.addEventListener(
         "click",
         this.close.bind(this, toast as HTMLElement),
       );
 
-      if (props.color) {
-        (toast as HTMLElement).classList.add(props.color);
-      }
-
       if (props.duration) {
         setTimeout(this.close.bind(this, toast as HTMLElement), props.duration);
       }
 
-      if (props.closeable === false) {
-        btn.remove();
-      }
-
       this.container.appendChild(toast);
-      (toast as HTMLElement).classList.add("toast-in");
+      setTimeout(() => {
+        (toast as HTMLElement).classList.add("toast-in");
+      }, 50);
     }
   }
 

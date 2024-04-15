@@ -127,7 +127,7 @@ import { Sprite } from "astro-icon";
 
   <script is:inline>
     console.log(
-      "Для вызова попап из кода:\n%copenVBox(\nsrc: string, \noptions?: { \nvtype?: 'ajax' | 'iframe' | 'inline' | 'video', \nisSidebar?: bool \n})",
+      "Для вызова попап из кода:\n%copenVBox(\nsrc: string, \noptions?: { \nvtype?: 'ajax' | 'iframe' | 'inline' | 'video', \ncustomClass?: string \n})",
       "color: green; font-size: 18px;",
     );
     console.log(
@@ -135,9 +135,13 @@ import { Sprite } from "astro-icon";
       "color: green; font-size: 18px;",
     );
     console.log(
-      "Что бы вызвать код после загрузки контента можно подписаться на ивент:\n%cdocument.addEventListener('vBoxContentLoaded', () => {})",
+      "Что бы вызвать что либо после загрузки контента можно подписаться на ивент:\n%cdocument.addEventListener('vBoxContentLoaded', () => {})",
       "color: green; font-size: 18px;",
     );
     console.log("Типы контента тут: https://veno.es/venobox/");
+    console.log(
+      "Вызов тоста уведомлений:\n%cwindow.toast.new({text: string, duration?: number(ms)})",
+      "color: green; font-size: 18px;",
+    );
   </script>
 </Layout>

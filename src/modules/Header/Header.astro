@@ -153,55 +153,24 @@ import { Sprite } from "astro-icon";
             </div>
           </div>
         </div>
-        <div class="header-nav-item" data-menu-item data-group="menu">
+        <div class="header-nav-item">
           <a href="#" class="boby-3 primary-hover header-nav__link" data-btn
             >Контакты</a
           >
-          <div class="header-nav-item__container">
-            <div class="header-nav-item__inner">
-              <a
-                href="#"
-                class="medium body-4 primary-hover header-nav-item__link"
-              >
-                Стоматологические установки
-              </a>
-              <a
-                href="#"
-                class="medium body-4 primary-hover header-nav-item__link"
-              >
-                Стоматологические стулья
-              </a>
-              <a
-                href="#"
-                class="medium body-4 primary-hover header-nav-item__link"
-              >
-                Стоматологические наконечники
-              </a>
-              <a
-                href="#"
-                class="medium body-4 primary-hover header-nav-item__link"
-                >Цифровое оборудование</a
-              >
-              <a
-                href="#"
-                class="medium body-4 primary-hover header-nav-item__link"
-                >Микроскопы</a
-              >
-              <a
-                href="#"
-                class="medium body-4 primary-hover header-nav-item__link"
-                >Имплантология</a
-              >
-            </div>
-          </div>
         </div>
       </div>
     </nav>
 
     <div class="header-control">
-      <button type="button" class="primary-hover header-control__btn">
+      <a
+        class="primary-hover header-control__btn"
+        href="./popup/popup-search.html"
+        data-vopen
+        data-vbtype="ajax"
+        data-customclass="popup-search"
+      >
         <Sprite name="search" />
-      </button>
+      </a>
       <button type="button" class="primary-hover header-control__btn">
         <Sprite name="heart" />
         <span class="grad-bg shadow-m header-control__btn-count" data-count=""

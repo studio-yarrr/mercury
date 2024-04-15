@@ -40,42 +40,26 @@
     z-index: 1;
     left: 0;
     width: 100%;
-    bottom: -10%;
+    height: 100%;
+    bottom: 0;
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    // background-color: rgba(255, 255, 255, 0.1);
 
     @include breakpoint($xm-bp) {
-      bottom: unset;
-      top: 20rem;
     }
 
     @include breakpoint($xs-bp) {
-      // width: 120%;
-      // left: -10%;
     }
 
-    img {
-      object-fit: contain;
-      object-position: center;
-      width: 60%;
-      height: 100%;
-
-      @include breakpoint($xm-bp) {
-        width: 80%;
-
-        &:nth-child(2n + 2) {
-          display: none;
-        }
-      }
-
-      @include breakpoint($xs-bp) {
-        width: 100%;
-      }
-
-      &:not(:first-child) {
-        display: none;
-      }
+    canvas {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 90%;
+      // background-color: rgba(255, 255, 255, 0.1);
     }
   }
 

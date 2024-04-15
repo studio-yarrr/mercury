@@ -9,12 +9,7 @@
       комфортной работы.
     </h2>
     <div class="main-about__anim">
-      {
-        [...new Array(401)].map((el, i) => {
-          const num = i.toString().padStart(3, "0");
-          return <img src={`./img/anim/3600_0${num}.webp`} alt="" />;
-        })
-      }
+      <canvas></canvas>
     </div>
     <div class="main-about-info" data-item="1">
       <h6 class="title-6 medium main-about-info__title">

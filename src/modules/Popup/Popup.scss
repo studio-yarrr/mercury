@@ -14,8 +14,14 @@
 }
 
 .vbox-content {
+  padding: 5rem;
+
+  @include breakpoint($xm-bp) {
+    padding: 3rem;
+  }
+
   @include breakpoint($xs-bp) {
-    padding: 2.2rem;
+    padding: 1.5rem;
   }
 }
 
@@ -150,6 +156,39 @@
 
     .default-btn {
       flex: 1;
+    }
+  }
+}
+
+.popup-search {
+  .vbox-content {
+    align-items: flex-start;
+  }
+
+  .search-form {
+    margin-top: 7rem;
+    pointer-events: all;
+    margin-bottom: auto;
+
+    @include breakpoint($xs-bp) {
+      margin-top: 4rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 0.5rem;
+    }
+
+    &__input {
+      @include breakpoint($xs-bp) {
+        width: 100%;
+        flex: none;
+        padding: 1rem;
+      }
+    }
+
+    &__btns {
+      @include breakpoint($xs-bp) {
+        margin-left: auto;
+      }
     }
   }
 }

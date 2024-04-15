@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@babylonjs/loaders": "^6.48.1",
+    "@its2easy/animate-images": "^2.3.1",
     "astro": "^3.5.4",
     "gsap": "^3.12.5",
     "inputmask": "^5.0.8",
